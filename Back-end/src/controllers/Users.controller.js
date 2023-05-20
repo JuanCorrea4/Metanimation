@@ -360,7 +360,7 @@ async function SignIn(req,res,next){
     // Ejecucion de la cadena para encontrar los roles del usuario
     conexion.query(sqlRol,(err,rows,fields)=>{
         // si hay un error se cancela el procedimiento 
-        if(err)  res.status(401).json({message:err});
+        if(err)  throw err
         // Se guarda el rol Administrativo del usuario (Puede ser un moderador o un administrador)
         const RolAd = rows[0].RolAd;
         const Rol = rows[0].Rol;
