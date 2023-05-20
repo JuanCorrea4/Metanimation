@@ -1,5 +1,5 @@
 const Jwt = require('jsonwebtoken');
-const conexion = require('../config/conexion');
+const conexion = require('../config/mysql.config')
 require('dotenv').config();
 
 const verifyTokenEmailCompany = async (req,res,next)=>{

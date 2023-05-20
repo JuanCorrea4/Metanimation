@@ -1,4 +1,4 @@
-const conexion = require('../config/conexion')
+const conexion = require('../config/mysql.config')
 
 const GetAllTeacher = (req,res)=>{
     try {
@@ -31,9 +31,9 @@ const GetIdTeacher = (req,res)=>{
 
 const AddTeacher = (req,res)=>{
     try {
-        const {Experiencia,Estudio,PersonId} = req.body
+        const {Experiencia,Estudios,PersonId} = req.body
         let sql = `call AddTeacher(?,?,?)`
-        conexion.query(sql,[PersonId,Experiencia,Estudio],(err,rows,fields)=>{
+        conexion.query(sql,[PersonId,Experiencia,Estudios],(err,rows,fields)=>{
             if(err)throw err
             else{
                 res.status(200).json(rows)

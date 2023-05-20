@@ -1,6 +1,6 @@
 // librerias
 const Jwt =  require('jsonwebtoken')
-const conexion = require('../config/conexion')
+const conexion = require('../config/mysql.config')
 const bcrypt = require('bcrypt');
 
 // declaracion del .env 
@@ -14,7 +14,7 @@ function GetAll(req, res) {
         // Ejecución de la cadena SQl
         conexion.query(sql, (err, rows, fields) => {
             // Si hubo un error no se envia nada y se le pasa el codigo de status 404(not found)
-            if(err) res.status(404).json({message:"Usuario no encontrado"});
+            if(err) res.status(404).json({message:"no se encuentra ningun usuario registrado"});
             // si se encuentra algo se le pasa con el status 200
             else {
                 res.json(rows[0]);
@@ -65,20 +65,91 @@ async function SignUp(req,res,next){
         if(rows[0]==''){
             //constante para guardar la encryptacion de la contraseña pasada por el usuario
             const BcryptPassword = await bcrypt.hash(Password,10)
+
+            if(Rol==null){
+            let RolNull = 'User'
             //Cadena de sql para Guardar 
             let sql = `call SavePerson(?,?,?,?,?,?,?,?)`
             // Cadena Sql para verificar la CC no este repetida
             let sqlId = `call GetIdValidacionUser(?)`
             //Ejecucion de la cadena de verificacion de CC con la constante Cedula
             conexion.query(sqlId,[Cedula],(err,rows,fields)=>{
-                    // Guardando el resultado de la ejecucion de la cadena
-                    const idTemp = rows[0]
-                    const Id = idTemp[0]
-                    // si hay un error se cancela el procedimiento
-                    if(err)  res.status(400).json({message:err});
+                // Guardando el resultado de la ejecucion de la cadena
+                const idTemp = rows[0]
+                const Id = idTemp[0]
+                // si hay un error se cancela el procedimiento
+                if(err)  res.status(400).json({message:err});
                     //
                     let SqlEmailToken = `insert into EmailToken(email) values ('${Email}')`
                     conexion.query(SqlEmailToken,(err,rows,fields)=>{
+                        if(err) throw err;
+                        // Verificacion si no existe ninguna CC 
+                        if(Id==undefined){
+                            // Ejecucion de la cadena para guardar con los valores pasados por el usuario
+                            conexion.query(sql,[Cedula,Nombre, Apellido, Celular, Email, BcryptPassword,RolNull,RolAd], (err,rows,fields)=>{
+                                // si hay un error se cancela el procedimiento
+                                if(err)  res.status(400).json({message:err});
+                                else{
+                                    // si no hubo un error se le manda el mensaje con exito
+                                    res.status(201).json({status: 'Usuario Agregado'})
+                                    next()
+                                }
+                            })
+                        }
+                    // si existe una CC ya existente,se le manda un error 400 
+                    else if(Id.id == Cedula) res.status(400).json({message:"Cedula actualmente registrada"})
+                })
+            })
+            }
+            else if(Rol=="User"){
+                //Cadena de sql para Guardar 
+            let sql = `call SavePerson(?,?,?,?,?,?,?,?)`
+            // Cadena Sql para verificar la CC no este repetida
+            let sqlId = `call GetIdValidacionUser(?)`
+            //Ejecucion de la cadena de verificacion de CC con la constante Cedula
+            conexion.query(sqlId,[Cedula],(err,rows,fields)=>{
+                // Guardando el resultado de la ejecucion de la cadena
+                const idTemp = rows[0]
+                const Id = idTemp[0]
+                // si hay un error se cancela el procedimiento
+                if(err)  res.status(400).json({message:err});
+                    //
+                    let SqlEmailToken = `insert into EmailToken(email) values ('${Email}')`
+                    conexion.query(SqlEmailToken,(err,rows,fields)=>{
+                        if(err) throw err;
+                        // Verificacion si no existe ninguna CC 
+                        if(Id==undefined){
+                            // Ejecucion de la cadena para guardar con los valores pasados por el usuario
+                            conexion.query(sql,[Cedula,Nombre, Apellido, Celular, Email, BcryptPassword,Rol,RolAd], (err,rows,fields)=>{
+                                // si hay un error se cancela el procedimiento
+                                if(err)  res.status(400).json({message:err});
+                                else{
+                                    // si no hubo un error se le manda el mensaje con exito
+                                    res.status(201).json({status: 'Usuario Agregado'})
+                                    next()
+                                }
+                            })
+                        }
+                    // si existe una CC ya existente,se le manda un error 400 
+                    else if(Id.id == Cedula) res.status(400).json({message:"Cedula actualmente registrada"})
+                })
+            })
+            }
+            else if(RolAd=='Administrador'|| RolAd=='Moderador'){
+            //Cadena de sql para Guardar 
+            let sql = `call SavePerson(?,?,?,?,?,?,?,?)`
+            // Cadena Sql para verificar la CC no este repetida
+            let sqlId = `call GetIdValidacionUser(?)`
+            //Ejecucion de la cadena de verificacion de CC con la constante Cedula
+            conexion.query(sqlId,[Cedula],(err,rows,fields)=>{
+                // Guardando el resultado de la ejecucion de la cadena
+                const idTemp = rows[0]
+                const Id = idTemp[0]
+                // si hay un error se cancela el procedimiento
+                if(err)  res.status(400).json({message:err});
+                //
+                let SqlEmailToken = `insert into EmailToken(email) values ('${Email}')`
+                conexion.query(SqlEmailToken,(err,rows,fields)=>{
                     if(err) throw err;
                     // Verificacion si no existe ninguna CC 
                     if(Id==undefined){
@@ -97,6 +168,7 @@ async function SignUp(req,res,next){
                     else if(Id.id == Cedula) res.status(400).json({message:"Cedula actualmente registrada"})
                 })
             })
+            }
         }
         else if(rows[0].email=Email){
         //si existe un Email ya existente,se le manda un error 400 
@@ -283,17 +355,21 @@ async function SignIn(req,res,next){
     // Se guarda en una constante el email pasado por el usuario    
     const email = req.body.email
     // cadena Sql para encontrar los roles del usuario(Puede ser un usuario normal o un profesor)
-    let sqlRol = `select Rol,RolAd from Person where email = '${email}'`
+    let sqlRol = `select Rol,RolAd from Person where Email = '${email}'`
+    let sqlId = `Select Id from Person where Email = ?`
     // Ejecucion de la cadena para encontrar los roles del usuario
     conexion.query(sqlRol,(err,rows,fields)=>{
         // si hay un error se cancela el procedimiento 
         if(err)  res.status(401).json({message:err});
         // Se guarda el rol Administrativo del usuario (Puede ser un moderador o un administrador)
         const RolAd = rows[0].RolAd;
+        const Rol = rows[0].Rol;
         // Cadena para encontrar el nombre y la CC por medio del email ingresado
-        let sql = 'select Name, id from Person where email =  ?'
+        let sql = 'select Name, id from Person where Email =  ?'
         // Cadena para encontrar la contraseña por medio del email
-        let sqlP = 'select Password from Person where email =  ?'
+        let sqlP = 'select Password from Person where Email =  ?'
+        conexion.query(sqlId,[email],(err,rows,fields)=>{
+        const IdTeacherSearch = rows[0].Id;
         // Ejecucion de la cadena para encontrar el nombre y la CC por el medio del parametro email
         conexion.query(sql,[email],(err, rows,fields) => {
             // si hay un error se cancela el procedimiento 
@@ -318,15 +394,19 @@ async function SignIn(req,res,next){
                             const TokenRol = Jwt.sign({RolAd},process.env.SecretJWT,{
                                 expiresIn:3600
                             })
-                            // Si el rol Administrativo es Administrativo pasa por aca y se le manda en un json el siguiente mensaje con el token
+                            const TokenTeacher= Jwt.sign({Rol:Rol,IdTeacher:IdTeacherSearch},process.env.SecretJWT,{
+                                expiresIn:3600
+                            })
+                            // Si el rol Administrativo es Administrador pasa por aca y se le manda en un json el siguiente mensaje con el token
                             if(RolAd=='Administrador'){
-                                next()
-                                return res.status(201).json({message:"Sign in successful Administrador",Token:TokenRol})
+                                return res.status(200).json({message:"Sign in successful Administrador",Token:TokenRol})
                             }
                             // Si el rol Administrativo es Moderador pasa por aca y se le manda en un json el siguiente mensaje con el token
                             if(RolAd=='Moderator'){
-                                next()
-                                return res.status(201).json({message:"Sign in successful Moderator",Token:TokenRol})
+                                return res.status(200).json({message:"Sign in successful Moderator",Token:TokenRol})
+                            }
+                            if(Rol=='Profesor'){
+                                return res.status(200).json({message:"Sign in successful Profesor",Token:TokenTeacher})
                             }
                             // Si no tiene ningun rol Administrativo el usuario pasa por aca y se le pasa el token normal 
                             else{
@@ -345,7 +425,7 @@ async function SignIn(req,res,next){
             }
         })
     })
-    //Si hay un error del servidor se manda el mensaje 500
+})//Si hay un error del servidor se manda el mensaje 500
 } catch (error) {
             return res.status(500).json({error})
     }

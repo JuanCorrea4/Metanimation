@@ -13,7 +13,7 @@ conexion.connect((err)=>{
         console.log('Ha ocurrido un error' + err)
     }
     else{
-        console.log('La base de datos se conecto')
+        console.log('La base de datos mysql se conecto')
     }
 });
 

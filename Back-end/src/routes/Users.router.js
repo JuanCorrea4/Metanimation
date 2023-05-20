@@ -2,7 +2,7 @@ const router = require('express').Router()
 const ProCtrl=require ('../controllers/Users.controller')
 const { verifyTokenEmail, verifyTokenPassword, verifyTokenAdministrador } = require('../middlewares/Users.auth')
 const { SignUpValidate, SigninValidate, ModifyUserValidate, ModifyPasswordValidate } = require('../validators/Users.validators')
-const UserCtrl = require('../controllers/User.controller')
+const UserCtrl = require('../controllers/Email.controller')
 
 router.get('/',ProCtrl.GetAll)
 router.get('/:id',ProCtrl.Get)
@@ -15,5 +15,7 @@ router.post('/SignIn',SigninValidate,ProCtrl.SignIn)
 
 //Example
 router.post('/Email/SolicitarCodigo',UserCtrl.PostEmailToken)
+router.put('/Email/Cambio',UserCtrl.ChangePasswordToken)
+
 
 module.exports = router;

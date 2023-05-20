@@ -1,4 +1,4 @@
-const conexion = require('../config/conexion')
+const conexion = require('../config/mysql.config')
 
 const GetCategoryAll = (req,res)=>{
     try {
@@ -38,7 +38,7 @@ const AddCategory = (req,res) =>{
             console.log(rows);
             if(err)throw err;
             else{
-                res.status(200).json(rows)
+                res.status(200).json({message:"Categoria Creada"})
             }
         })
 

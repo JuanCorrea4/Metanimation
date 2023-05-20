@@ -1,6 +1,6 @@
-const conexion = require('../config/conexion')
+const conexion = require('../config/mysql.config')
 const nodemailer = require('nodemailer')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 require('dotenv').config()
 
 
@@ -21,7 +21,7 @@ const PostEmailToken = async(req,res)=>{
         let identificadorTiempoDeEspera;
 
         function temporizadorDeRetraso() {
-            identificadorTiempoDeEspera = setTimeout(TimeValidateToken, 20000);
+            identificadorTiempoDeEspera = setTimeout(TimeValidateToken, 900000);
         }
         const TimeValidateToken=(Token)=>{
             let sqlTokenTime= `call EmailTokenElminated('${email}')`
@@ -42,36 +42,18 @@ const PostEmailToken = async(req,res)=>{
             conexion.query(sqlTokenSave,async(err,rows,fields)=>{
                 
                 if(err) throw err;
-                /* 
-                const transporter = nodemailer.createTransport({
-                    host: 'smtp.ethereal.email',
-                    port: 587,
-                    auth: {
-                        user: 'westley.schmidt84@ethereal.email',
-                        pass: 'vsgcz2CdVDjs2nX5NT'
-                    }
-                }); */
-
-                /* const transporter = nodemailer.createTransport({
-                    host: 'smtp-mail.outlook.com',
-                    port: 587,
-                    auth: {
-                        user: 'gian-5634@hotmail.com',
-                        pass: 'bgecpmojxrpvkobo'
-                    }
-                }); */
 
                 const transporter = nodemailer.createTransport({
                     host: 'smtp-mail.outlook.com',
                     port: 587,
                     auth: {
-                        user: 'MetAnimtaion@hotmail.com',
-                        pass: 'uwbjsoqthlntichl'
+                        user: 'MetAnimation@hotmail.com',
+                        pass: 'bdfikmwwopfqilqk'
                     }
                 });
 
                 let info = await transporter.sendMail({
-                    from:"gian-5634@hotmail.com",
+                    from:"metanimation@hotmail.com",
                     to:email,
                     subject:"Recuperar Contraseña de tu cuenta de MetAnimation",
                     text:"Has solicitado para recuperar tu contraseña de tu cuenta de MetAnimation",
@@ -80,8 +62,7 @@ const PostEmailToken = async(req,res)=>{
                         <p>Hola ${resultName}</p>
                         <p>El token para restaurar tu contraseña es ${Token}</p>
                         <p>Recuerda que tienes una hora para poder cambiar tu contraseña</p>
-                        <p>Att: Administracion de MetAnimation</p>
-                        <p>si no eres el destinatario de este correo ignoralo</p>
+                        <p>Tienes 15 minutos para recuperar la contraseña</p>
                     </div>`
                 })
                 console.log("Message sent: %s", info.messageId);
@@ -92,10 +73,42 @@ const PostEmailToken = async(req,res)=>{
             })
         })
   } catch (err) {
-        res.status(500).json({err})
+        res.status(500).json(err)
+    }
+}
+
+const ChangePasswordToken=(req,res)=>{
+    try {
+        const {email,token}=req.body;
+        let SearchTokenEmailSQL = `select Token from EmailToken where Email='${email}' `
+        let SearchEmailTokenSql = `select Email from EmailToken where Token=${token}`
+        conexion.query(SearchTokenEmailSQL,(err,rows,fields)=>{
+            console.log(rows[0].Token)
+            if(token==rows[0].Token){
+                conexion.query(SearchEmailTokenSql,async (err,rows,fields)=>{
+                    const{NewPassword,ConfirmPassword}= req.body
+                    if(NewPassword==ConfirmPassword){
+                        let EmailConfirm = rows[0].Email;
+                        const NewPasswordBcrypt = await bcrypt.hash(NewPassword,10)
+                        let ChangePassword=`update Person set Password = '${NewPasswordBcrypt}' where Email='${EmailConfirm}'`
+                        conexion.query(ChangePassword,(err,rows,fields)=>{
+                            if(err) throw err;
+                            res.status(200).json(rows[0])
+                        })
+                    }else{
+                        res.status(400).json({message:"password different"})
+                    }
+                })
+        }else{
+            res.status(401).json({message:"Token invalido"})
+        }
+    })
+    } catch (error) {
+        res.status(400).json({error})
     }
 }
 
 module.exports={
-    PostEmailToken
+    PostEmailToken,
+    ChangePasswordToken
 }

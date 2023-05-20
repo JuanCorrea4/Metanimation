@@ -18,7 +18,6 @@ const SignUpValidate=async(req,res,next)=>{
   } catch (error) {
     return res.status(422).json({error})
   } 
-  
 }
 
 const SigninValidate=async(req,res,next)=>{

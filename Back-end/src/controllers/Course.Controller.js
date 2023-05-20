@@ -1,4 +1,4 @@
-const conexion = require('../config/conexion')
+const conexion = require('../config/mysql.config')
 
 
 const GetCourseAll = (req,res) =>{
@@ -18,9 +18,7 @@ const GetCourseAll = (req,res) =>{
 
 const GetCourseElement = (req,res)=>{
     try {
-
         const {id} = req.params.id
-
         let sql = `call GetCourseElement(?);`
         conexion.query(sql,[id], (err, rows, fields) => {
             if (err)
@@ -36,21 +34,38 @@ const GetCourseElement = (req,res)=>{
 
 const AddCourse=(req,res)=>{
     try {
-        const {idCurso,DescriptionCurso,Duration,IdTeacher,IdCategory,Lenguaje,Url} =req.body
-        let sql = `call CreateCourse('${idCurso}','${DescriptionCurso}','${Duration}','${IdTeacher}','${IdCategory}','${Lenguaje}','${Url}')`
+        const {NameCourse,DescriptionCurso,Duration,IdTeacher,Lenguaje,Url,NameCategory} =req.body
+        let sql = `call CreateCourse('${NameCourse}','${DescriptionCurso}','${Duration}','${IdTeacher}','${Lenguaje}','${Url}','${NameCategory}')`
         conexion.query(sql,(err,rows,fields)=>{
           if(err) throw err
           else{
-            return res.status(200).json(rows[0])
+            return res.status(200).json({message:"Curso creado perfectamente"})
           }
         })
     } catch (error) {
-        
+        return res.status(500).json({error});
     }
+}
+
+const UpdateCourse=(req,res)=>{
+  try {
+    const {id} = req.params
+    const {NameCourse,DescriptionCurso,Duration,IdTeacher,Lenguaje,Url,NameCategory} =req.body
+    let SearchCourseId=`select * from  AllCourse where Id=${id}`
+    conexion.query(SearchCourseId,(err,rows,fields)=>{
+      if(err)throw err;
+      else{
+        res.status(200).json(rows[0])
+      }
+    })
+  } catch (error) {
+    
+  }
 }
 
 module.exports ={
     GetCourseAll,
     GetCourseElement,
-    AddCourse
+    AddCourse,
+    UpdateCourse
 }

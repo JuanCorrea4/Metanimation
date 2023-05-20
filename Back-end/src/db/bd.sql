@@ -33,14 +33,17 @@ CREATE TABLE Company (
 
 CREATE TABLE Departament (
     Id_Departament INT PRIMARY KEY AUTO_INCREMENT,
+    fk_id_departament int,
     NamePlace CHAR(100) NOT NULL DEFAULT '',
-    CONSTRAINT Fk_Departament_Company FOREIGN KEY (Id_Departament)
+    CONSTRAINT Fk_Departament_Company FOREIGN KEY (fk_id_departament)
         REFERENCES Company (Id_Company)
 );
+
  CREATE TABLE Cities (
     Id_Cities INT PRIMARY KEY AUTO_INCREMENT,
+    fk_id_Cities int,
     NameCities CHAR(100) NOT NULL DEFAULT '',
-    FOREIGN KEY (Id_Cities)
+    FOREIGN KEY (fk_id_Cities)
         REFERENCES Company (Id_Company)
 );
 
@@ -52,31 +55,29 @@ CREATE TABLE Country (
     CONSTRAINT Fk_CountryCode_Person FOREIGN KEY (CountryPerson)
         REFERENCES Person (Id)
 );
+
 /*----------------------------Cursos-----------------------------------*/
 
 create table AllCourse(
  Id int primary key auto_increment,
- IdCourse int,
+ NameCourse varchar(255),
  DescriptionCourse char(255),
  durationCourse char(10),
  IdTeacher int,
- IdCate int,
  Lenguaje char(50),
-  Url char not null
-);
-
-CREATE TABLE course (
-    id_Course INT PRIMARY KEY
+ Url Varchar(200) not null,
+ Categoria VARCHAR(255) not null
 );
 
 CREATE TABLE Category (
     Id_Category INT PRIMARY KEY AUTO_INCREMENT,
-    NameCategory CHAR(255) NOT NULL,
+    NameCategory VARCHAR(255) NOT NULL,
     DescriptionCategory CHAR(255) NOT NULL,
     Status BOOLEAN DEFAULT TRUE,
     Date DATETIME DEFAULT NOW(),
+    TotalCategoria int default 0,
     CONSTRAINT FK_Category_Course FOREIGN KEY (Id_Category)
-        REFERENCES Course (id_Course)
+        REFERENCES AllCourse(Id)
 );
 
 CREATE TABLE ContentCourse (
@@ -86,9 +87,10 @@ CREATE TABLE ContentCourse (
     Language char(50) not null,
     Url char not null,
     Status BOOLEAN DEFAULT TRUE,
-    Id_course INT,
-    CONSTRAINT FK_Contentcourse_Course FOREIGN KEY (Id_course)
-        REFERENCES Course (id_Course)
+    IdTeacher INT,
+    Categoria VARCHAR(255),
+    CONSTRAINT FK_Contentcourse_Course FOREIGN KEY (IdTeacher)
+        REFERENCES AllCourse(Id)
 );
 
 CREATE TABLE Teacher (
@@ -96,9 +98,7 @@ CREATE TABLE Teacher (
     Experience CHAR(50) NOT NULL,
     Study CHAR(255) NOT NULL,
     Status BOOLEAN DEFAULT TRUE,
-    Id_Course int ,
-    CONSTRAINT FK_Teacher_Course FOREIGN KEY (Id_Course)
-        REFERENCES course (id_Course),
+    CursosTotales int default 0,
     CONSTRAINT FK_Teacher_Person FOREIGN KEY (Id_Teacher)
         REFERENCES Person (Id)
 );
@@ -107,7 +107,7 @@ CREATE TABLE Teacher (
 /*Noticias*/
 
 CREATE TABLE Noticies (
-    Id INT PRIMARY KEY,
+    Id INT PRIMARY KEY AUTO_INCREMENT,
     Content CHAR(255),
     Fountain CHAR(255),
     Date DATETIME default Now()
@@ -145,7 +145,7 @@ CREATE TABLE StudentCourse (
     CONSTRAINT FK_StudentCourse_Person FOREIGN KEY (Id_Student)
         REFERENCES Person (Id),
     CONSTRAINT FK_StudentCourse_Course FOREIGN KEY (Id_Course)
-        REFERENCES course (id_Course)
+        REFERENCES AllCourse(Id)
 );
 /*Portafolio*/
 
@@ -197,11 +197,11 @@ insert into Type values (1,'Free'),(2,'Advanced'),(3,'Premium');
 
 CREATE TABLE qualification (
     Id INT PRIMARY KEY,
-    IdCourse INT,
     Comment CHAR(255),
+    IdCourse INT,
     qualification DOUBLE DEFAULT 5.0,
-    FOREIGN KEY (IdCourse)
-        REFERENCES course(id_Course)
+    CONSTRAINT Fk_Qualifi_course FOREIGN KEY (IdCourse)
+        REFERENCES AllCourse(Id)
 );
 
 
@@ -326,19 +326,20 @@ end $$
 delimiter ;
 
 Delimiter $$
-create procedure CreateCourse(in IdCourse int,in DescriptionCourse char(255),in durationCourse char(10),in IdTeacher int,in IdCate int,in Lenguaje char(50),in Url char)
+create procedure CreateCourse(in NameCourse varchar(255),in DescriptionCourse char(255),in durationCourse char(10),in IdTeacher int,in Lenguaje char(50),in Url varchar(2000), NameCategory varchar(255))
 begin
 	SET FOREIGN_KEY_CHECKS=0;
-    update Teacher set Id_Course=IdCourse where Id_Teacher=IdTeacher;
-    insert into course values (IdCourse);
-    insert into AllCourse(IdCourse,DescriptionCourse,durationCourse,IdTeacher,IdCate,Lenguaje,Url) values  (IdCourse,DescriptionCourse,durationCourse,IdTeacher,IdCate,Lenguaje,Url);
+    insert into AllCourse(NameCourse,DescriptionCourse,durationCourse,IdTeacher,Lenguaje,Url,Categoria) values (NameCourse,DescriptionCourse,durationCourse,IdTeacher,Lenguaje,Url,Categoria);
+	insert into ContentCourse(Description,Duration,Url,IdTeacher,Categoria) values (DescriptionCourse,durationCourse,Url,IdTeacher,Categoria);
+    update Teacher set CursosTotales=CursosTotales+1 where Id_Teacher=IdTeacher;
+    update Category set TotalCategoria=TotalCategoria+1 where NameCategory=NameCategory;
 end $$
 delimiter ;
 
 Delimiter $$
 create procedure CreateCategory(NameCat char(255),in DescriptionCate char(255))
 begin
-	SET FOREIGN_KEY_CHECKS=0; 
+	SET FOREIGN_KEY_CHECKS=0;
 	insert into Category (NameCategory,DescriptionCategory) values (NameCat,DescriptionCate);
 end $$
 delimiter ;

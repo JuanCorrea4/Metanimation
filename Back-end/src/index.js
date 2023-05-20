@@ -1,5 +1,6 @@
 const morgan = require('morgan')
 const express = require('express');
+const db = require('./config/mongodb.config')
 const cors = require('cors');
 require('dotenv').config()
 
@@ -25,6 +26,7 @@ app.use('/api/Noticie',require('./routes/Noticies.router'))
 app.use('/api/Course',require('./routes/Course.router'))
 app.use('/api/Category',require('./routes/Category.router'))
 app.use('/api/Teacher',require('./routes/teacher.router'))
+app.use('/api/PodCast',require('./routes/podcast.router'))
 
 //Iniciar express
 app.listen(app.get('port'),(error)=>{
