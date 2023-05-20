@@ -1,0 +1,121 @@
+main{
+  margin-top: 7rem;
+  display: flex;
+}
+.leftPart{
+  width: 25%;
+}
+
+.profile{
+  position: relative;
+  border: 1px solid #656565;
+  background-color: #272727;
+  border-radius: 2rem;
+  width: 330px;
+  margin: 20px;
+  padding: 30px;
+}
+
+.profile img{
+  border-radius: 50%;
+  width: 120px;
+}
+
+.nameUser{
+  border-top: 1px solid #656565;
+  padding-top: 20px;
+  width: 60%;
+}
+
+.rolUser{
+  font-size: 22pt;
+  border-bottom: 1px solid #656565;
+  padding-bottom: 20px;
+}
+
+.editProfile{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 1rem;
+  border: 1px solid #656565;
+  background-color: #272727;
+  font-size: 22pt;
+  color: #656565;
+  cursor: pointer;
+}
+
+.editProfile i:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.favThemes{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px;
+}
+
+.themes{
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  color: #d9d9d9;
+}
+
+.theme{
+  border-radius: 0.5rem;
+  background-color: #3e4041;
+  height: 40px;
+  margin: 20px 0;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addTheme{
+  width: 50px;
+  color: #656565;
+  cursor: pointer;
+}
+
+.addTheme i:hover{
+  transform: scale(1.3);
+  transition: 0.3s;
+}
+
+.theme p{
+  margin: 2.5px 10px;
+  color: #e3e3e3;
+}
+
+.circule{
+  border-radius: 50%;
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px;
+}
+
+.centerPart{
+  width: 35%;
+  border: 1px solid #656565;
+  background-color: #272727;
+  border-radius: 1rem;
+}
+
+.sectionTitle i{
+  color: linear-gradient(20deg, rgba(36,178,156,1) 7%, rgba(96,175,100,1) 78%);
+}
+
+.lastNew{
+  margin: 20px;
+  background-image: url(../../../assets/detailsNews/valorant-background.png);
+  height: 220px;
+  border-radius: 1rem;
+}

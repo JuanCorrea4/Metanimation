@@ -15,6 +15,8 @@ import { DetailsCourseComponent } from './components/details-course/details-cour
 import { DetailsBriefcaseComponent } from './components/details-briefcase/details-briefcase.component';
 import { BriefcaseProjectComponent } from './components/briefcase-project/briefcase-project.component';
 import { DetailsNewsComponent } from './components/details-news/details-news.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: "/home", pathMatch: "full"},
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path: 'briefcase-project', component: BriefcaseProjectComponent},
   { path: 'membership', component: MembershipComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'details-news', component: DetailsNewsComponent}
+  { path: 'details-news', component: DetailsNewsComponent},
+  { path: 'dashboard', component: DashboardComponent}
+
 
 ];
 
