@@ -71,7 +71,7 @@ create table AllCourse(
 
 CREATE TABLE Category (
     Id_Category INT PRIMARY KEY AUTO_INCREMENT,
-    NameCategory VARCHAR(255) NOT NULL,
+    NameCategory VARCHAR(255) NOT NULL unique,
     DescriptionCategory CHAR(255) NOT NULL,
     Status BOOLEAN DEFAULT TRUE,
     Date DATETIME DEFAULT NOW(),
