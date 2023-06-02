@@ -42,48 +42,45 @@ function Get(req,res){
 
 // Agregar Usuario
 async function SignUp(req,res,next){
-  try {
+    try {
+        const {NameCompany, PhoneCompany, EmailCompany , Addres,PasswordCompany,RankMem} = req.body
+        let sqlEmail = `select Id_Company ,NameCompany,EmailCompany from Company where EmailCompany = ?`;
+        let sqlType = `select Id from Type where Descripction= ?` 
 
-    const {NameCompany, PhoneCompany, EmailCompany , Addres,PasswordCompany,RankMem} = req.body
+        conexion.query(sqlType,[RankMem],(err,rows,fields)=>{
+        
+            const Id_Membreys= rows[0].Id;
 
-    let sqlEmail = `select Id_Company ,NameCompany,EmailCompany from Company where EmailCompany = ?`;
-    let sqlType = `select Id from Type where Descripction= ?` 
-
-    conexion.query(sqlType,[RankMem],(err,rows,fields)=>{
-       
-        const Id_Membreys= rows[0].Id;
-
-        if(rows[0]==undefined){
-            res.status(400).json({message:"Rank of Membreys is Unvalid"})
-        }
-        else{  
-            conexion.query(sqlEmail,EmailCompany, async(err,rows,fields)=>{
-            
-                if(err) throw err;
-                if(rows[0]=== undefined){
-                  const BcryptPassword = await bcrypt.hash(PasswordCompany,10)
-                      
-                  let sql = `insert into Company (NameCompany, PhoneCompany, EmailCompany,Addres,PasswordCompany,Id_Membreys ) values ('${NameCompany}','${PhoneCompany}', '${EmailCompany}', '${Addres}','${BcryptPassword}','${Id_Membreys}')`
-                 
-                  conexion.query(sql,(err,rows,fiels)=>{
-                   
+            if(rows[0]==undefined){
+                res.status(400).json({message:"Rank of Membreys is Unvalid"})
+            }
+            else{  
+                conexion.query(sqlEmail,EmailCompany, async(err,rows,fields)=>{
+                
                     if(err) throw err;
+                    if(rows[0]=== undefined){
+                    const BcryptPassword = await bcrypt.hash(PasswordCompany,10)
+                    let sql = `insert into Company (NameCompany, PhoneCompany, EmailCompany,Addres,PasswordCompany,Id_Membreys ) values ('${NameCompany}','${PhoneCompany}', '${EmailCompany}', '${Addres}','${BcryptPassword}','${Id_Membreys}')`
+                    
+                    conexion.query(sql,(err,rows,fiels)=>{
+                    
+                        if(err) throw err;
 
-                    else{
-                        res.status(200).json({message:'Compañia Agregada'})
-                        
+                        else{
+                            res.status(200).json({message:'Compañia Agregada'})
+                            
+                        }
+                    })
                     }
-                  })
-                }
-                else if(rows[0].email=EmailCompany){
-                  res.status(400).json({Mesage: 'Company/email registered'});
-                }
-            })   
-        }    
-  })
- } catch (error) {
-    return res.status(400).json({error})
-  } 
+                    else if(rows[0].email=EmailCompany){
+                    res.status(400).json({Mesage: 'Company/email registered'});
+                    }
+                })   
+            }    
+    })
+    } catch (error) {
+        return res.status(400).json({error})
+    } 
 };
 
 // Eliminar Usuario

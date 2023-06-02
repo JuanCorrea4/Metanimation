@@ -61,12 +61,21 @@ const AddCategory = (req,res) =>{
                     })
                 }
                 else if(FoundCategory[i].NameCategory==Name){
-                    return res.status(409).json({message:'Category already exists'})
+                    return res.status(409).json({message:'Esta categoria ya se existe'})
                 }
             }
         })
     } catch (error) {
         return res.status(500).json({error})
+    }
+}
+
+const updateCategory = (req,res)=>{
+    try {
+        const {id} = req.params;
+        const {}= req.body;
+    } catch (error) {
+        return res.status(500).json(error)
     }
 }
 
