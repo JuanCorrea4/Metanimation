@@ -42,6 +42,16 @@ const DeleteNoticie =async (req,res)=>{
         res.status(500).json(error)
     }
 }
+
+const GetNoticieID =async (req,res)=>{
+    try {
+        const NoticieFound = await Noticie.findById(req.params.id)
+        return res.status(200).json(NoticieFound)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
 const UpdateNoticie=(req,res)=>{
     try {
         const {id} = req.params
@@ -71,5 +81,6 @@ module.exports = {
     GetNoticie,
     AddNoticie,
     DeleteNoticie,
-    UpdateNoticie
+    UpdateNoticie,
+    GetNoticieID
 }
