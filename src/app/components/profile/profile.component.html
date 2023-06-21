@@ -39,7 +39,8 @@
           </label>
           --> 
           <label>
-            <li *ngFor="let tool of tools">{{ tool }}</li>
+            <li *ngFor="let tool of tools"> 
+              <input type="text" [(ngModel)]="tool"></li>
           </label>
         </div>
       </section>
