@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -15,11 +15,17 @@ export class UsersService {
     const url = `${this.apiUrl}/users/details/${userId}`;
     return this.http.get<any[]>(url);
   }
-  insertdetailsUsers(id: string, token: string , details: any) {
-    console.log('Datos enviados al servidor:', details); // Imprimir los datos antes de enviarlos
+  
+  insertdetailsUsers(id: string, details: any, token: string) {
+    console.log('Datos enviados al servidor:', details);
 
-    const url = `${this.apiUrl}/users/UpdateDetailsUser/${id}`;
-    return this.http.put(url, details )
+    const url = `${this.apiUrl}/users/InsertDetails/${id}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': token
+    });
+
+    return this.http.post(url, details, { headers })
       .toPromise()
       .then(response => {
         console.log('Detalles del usuario modificados con éxito:', response);
@@ -30,5 +36,4 @@ export class UsersService {
         throw error;
       });
   }
-  
 }

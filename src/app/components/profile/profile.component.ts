@@ -25,17 +25,17 @@ export class ProfileComponent implements OnInit {
   tools: string[] = [];
 
 
-  constructor(private authService: AuthService , private usuario: UsersService) { }
+  constructor(private authService: AuthService , private usuario: UsersService ) { }
 
 
   /*variables*/
-  cantProjects: number = 0 
-  likes:number = 0
-  followers:number = 0 // Seguidores
-  followed: number = 0 // seguidos
-  nameUsers:string= 'Antonio J prueba'
-  description:string = ''
-  city:string=''
+  cantProjects:  any
+  likes: any = 0
+  followers: any = 0 // Seguidores
+  followed:  any  = 0// seguidos
+  nameUsers: any
+  description: any
+  city: any
 
     /*MANEJO BOTON FAVORITOS*/
     counters= [0,0,0,0,0,0,0,0,0,0,0,0];
@@ -78,16 +78,14 @@ export class ProfileComponent implements OnInit {
   }
   
   sendDetailsToServer(): void {
-    if (this.userId && this.token && this.city && !isNaN(parseInt(this.city))) {
-      let ubicationValue: number | null = parseInt(this.city);
-    
+    if (this.userId && this.token) {
       const userDetails = {
-        id: parseInt(this.userId), // Convertir a entero
+        id: this.userId, // No es necesario convertirlo a entero
         token: this.token,
         DescriptionPerson: this.description,
         Ocupation: this.ocupacion,
         telefono: this.telefono,
-        Ubication: ubicationValue,
+        Ubication: this.city, // Permitir que "city" sea un texto
         Facebook: this.facebook,
         Instagram: this.instagram,
         Youtube: this.youtube,
@@ -95,8 +93,8 @@ export class ProfileComponent implements OnInit {
         Followers: this.followers,
         Followed: this.followed
       };
-      console.log('Condiciones cumplidas. Enviando detalles al servidor:', userDetails);
-      this.usuario.insertdetailsUsers(this.userId!, this.token, userDetails)
+      console.log('Enviando detalles al servidor:', userDetails);
+      this.usuario.insertdetailsUsers(this.userId, userDetails, this.token)
         .then(() => {
           // Manejar la respuesta del servidor si es necesario
           // Realizar acciones adicionales después de enviar los datos
@@ -107,9 +105,9 @@ export class ProfileComponent implements OnInit {
     } else {
       console.log('No se cumplen las condiciones necesarias para enviar los detalles al servidor.');
       console.log('this.userId:', this.userId);
-      console.log('this.city:', this.city);
     }
   }
+  
   
   
   obtenerDetailsPerson(userId: string) {
@@ -155,5 +153,25 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-  
+  /*
+  obtenerNamePerson(userId: string) {
+    this.usuario.obtenernamePerson(userId).subscribe(
+      (response) => {
+        this.usuarioName = response.map(({ Id, IdPerson, Name, LastName, Email }) => ({
+          Id: Id,
+          IdPerson: IdPerson,
+          PersonName: Name,
+          PersonLastName: LastName,
+          Email: Email,
+        }));
+        console.log(this.usuarioName);
+        this.PersonName = this.usuarioName[0].PersonName;
+        this.PersonLastName = this.usuarioName[0].PersonLastName;
+        this.email = this.usuarioName[0].Email;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }*/
 }
