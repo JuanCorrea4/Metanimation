@@ -36,4 +36,8 @@ export class UsersService {
         throw error;
       });
   }
+  obtenernamePerson(userId: string): Observable<any[]> {
+    const url = `${this.apiUrl}/users/${userId}`;
+    return this.http.get<any[]>(url);
+  }
 }

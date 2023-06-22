@@ -3,17 +3,21 @@
   <div class="info-profile">
     <div class="people">
 
-      <img [src]="'../../../assets/profile/' + imgPerfil ">
+      <div>
+        <img [src]="imgPerfil ? '../../../assets/profile/' + imgPerfil : ''" alt="Foto de perfil" />
+        <input id="fileInput" type="file" (change)="onFileSelected($event)" style="display: none" accept="image/*" />
+        <button (click)="uploadImage()">Cargar imagen</button>
+      </div>
       <hr>
       <button (click)="habilitarEdicion()">Editar</button>
       <button  (click)="sendDetailsToServer()" *ngIf="mostrarBotonGuardar" >Guardar</button>
-      <h5><input type="text" [(ngModel)]="nameUsers" [disabled]="!campoHabilitado"></h5>
-      <h3><input type="text" [(ngModel)]="ocupacion" [disabled]="!campoHabilitado"></h3>
+      <h5>{{PersonName}} {{PersonLastName}}</h5>
+      <h3><input type="text" [(ngModel)]="ocupacion" [disabled]="!campoHabilitado" placeholder="Ingresa tu Ocupación"></h3>
       <p>Yo soy:</p>
       <textarea [(ngModel)]="description" [disabled]="!campoHabilitado" placeholder="Ingresa la información de tu perfil profesional"></textarea>
       <label>
         <img src="../../../assets/portafolio/ubicacion.png">
-        <input type="text" [(ngModel)]="city" [disabled]="!campoHabilitado" placeholder="Ingresa tu ubicación">
+        <input type="text" [(ngModel)]="ubicacion" [disabled]="!campoHabilitado" placeholder="Ingresa tu ubicación">
       </label>
       <!--<section>
         <button>Arte digital <img src="../../../assets/portafolio/rojo.png"></button>
@@ -31,17 +35,9 @@
       <section>
         <div class="tools" *ngIf="mostrarComponente[0]">
           <h6>Software y herramientas utilizadas:</h6>
-         <!--<label>
-            <p><img src="../../../assets/portafolio/adobe.png">Adobe xd</p>
-            <p><img src="../../../assets/portafolio/photoshop.png">Photoshop</p>
-            <p><img src="">Blender</p>
-            <p><img src="">Zbrush</p>
-          </label>
-          --> 
           <label>
-            <li *ngFor="let tool of tools"> 
-             {{tools}}</li>
-          </label>
+              <textarea [(ngModel)]="tools" [disabled]="!campoHabilitado" placeholder="Ingresa la información de tu perfil profesional"></textarea>
+            </label>
         </div>
       </section>
     </div>
@@ -64,24 +60,24 @@
     <section class="form" >
       <p>
         <img src="../../../assets/profile/llamada.png">
-        <input type="number" [(ngModel)]="telefono">
+        <input type="number" [(ngModel)]="telefono" [disabled]="!campoHabilitado" placeholder="Ingresa tu télefono">
       </p>
       <p>
         <img src="../../../assets/profile/mensaje.png">
-        <input type="email" [(ngModel)]="email">
+        <input type="email" [(ngModel)]="correo" [disabled]="true">
       </p>
       <h6>Redes:</h6>
       <p>
         <img src="../../../assets/profile/facebook.png">
-        <input type="text" [(ngModel)]="facebook">
+        <input type="text" [(ngModel)]="facebook" [disabled]="!campoHabilitado" placeholder="Ingresa tu dirección de Facebook">
       </p>
       <p>
         <img src="../../../assets/profile/instagram.png">
-        <input type="text" [(ngModel)]="instagram">
+        <input type="text" [(ngModel)]="instagram" [disabled]="!campoHabilitado" placeholder="Ingresa tu dirección de Instagram">
       </p>
       <p>
         <img src="../../../assets/profile/youtube.png">
-        <input type="text" [(ngModel)]="youtube">
+        <input type="text" [(ngModel)]="youtube" [disabled]="!campoHabilitado" placeholder="Ingresa tu dirección de Youtube">
       </p>
     </section>  
   </section>
