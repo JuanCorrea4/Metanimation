@@ -8,37 +8,15 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  selectedImage: any;
-
+  selectedImage: File | undefined; nameTools: any; detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; ImgProject: any; ProjectCount: any; Likes:any; }[] | undefined;NameProject: any; DescriptionProject: any; Likes: any;ImgProject: any; ProjectCount: any;
+  campoHabilitado: boolean | undefined; mostrarBotonGuardar: boolean | undefined;  campoTexto: any; token: string | null | undefined; userId: string | null | undefined;
+  usuarioDetails: { Id: any; IdPerson: any; DescriptionPerson: any; Ocupation: any; telefono: any; Facebook: any; Instagram: any; Youtube: any; Likes: any; Followers: any; Followed: any; Ubication: any;
+  PersonFullName: any; ImgPerfil: any; Email: any; Tools: any }[] | undefined; youtube: any; instagram: any; facebook: any; telefono: any; ocupacion: any; ImgPerfil: any; email: any; tools: string[] = []; ubicacion: any; usuarioName: { Id: any; IdPerson: any; PersonName: any; PersonLastName: any; Email: any; }[] | undefined; PersonName: any; PersonLastName: any; correo: any; cantProjects: any; likes: any = 0; followers: any = 0;  followed: any = 0; nameUsers: any; description: any; city: any;
+  
+  
   constructor(private authService: AuthService, private usuario: UsersService) { }
 
-  campoHabilitado: boolean | undefined;
-  mostrarBotonGuardar: boolean | undefined;
-  campoTexto: any;
-  token: string | null | undefined;
-  userId: string | null | undefined;
-  usuarioDetails: { Id: any; IdPerson: any; DescriptionPerson: any; Ocupation: any; telefono: any; Facebook: any; Instagram: any; Youtube: any; Likes: any; Followers: any; Followed: any; Ubication: any;
-    PersonFullName: any; NameCities: any; ImgPerfil: any; Email: any; Tools: any }[] | undefined;
-  youtube: any;
-  instagram: any;
-  facebook: any;
-  telefono: any;
-  ocupacion: any;
-  imgPerfil: any;
-  email: any;
-  tools: string[] = [];
-  ubicacion: any;
-  usuarioName: { Id: any; IdPerson: any; PersonName: any; PersonLastName: any; Email: any; }[] | undefined;
-  PersonName: any;
-  PersonLastName: any;
-  correo: any;
-  cantProjects: any;
-  likes: any = 0;
-  followers: any = 0; // Seguidores
-  followed: any = 0; // seguidos
-  nameUsers: any;
-  description: any;
-  city: any;
+
   /*MANEJO BOTON FAVORITOS*/
   counters = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   favoriteCount = 0;
@@ -51,28 +29,29 @@ export class ProfileComponent implements OnInit {
     // Se llaman los métodos para cargar la información al momento de cargar la página
     this.obtenerDetailsPerson(this.userId);
     this.obtenerNamePerson(this.userId);
+    this.obtenerDetailsProject(this.userId);
   }
 
   sendDetailsToServer(): void {
     if (this.userId && this.token) {
       const userDetails = {
-        id: this.userId, // No es necesario convertirlo a entero
+        id: this.userId,
         token: this.token,
         DescriptionPerson: this.description,
         Ocupation: this.ocupacion,
         telefono: this.telefono,
-        Ubication: this.city, // Permitir que "city" sea un texto
+        Ubication: this.ubicacion,
         Facebook: this.facebook,
         Instagram: this.instagram,
         Youtube: this.youtube,
         Likes: this.likes,
         Followers: this.followers,
         Followed: this.followed,
-        imgPerfil: this.selectedImage.name // Usar this.selectedImage.name en lugar de this.imgPerfil
+        ImgPerfil: this.selectedImage ? this.selectedImage.name : this.ImgPerfil // Verificar si this.selectedImage está definido
       };
-
+  
       console.log('Enviando detalles al servidor:', userDetails);
-
+  
       this.usuario.insertdetailsUsers(this.userId, userDetails, this.token)
         .then(() => {
           // Manejar la respuesta del servidor si es necesario
@@ -82,6 +61,32 @@ export class ProfileComponent implements OnInit {
           // Manejar el error si ocurriera
         });
     } else {
+      console.log('No se cumplen las condiciones necesarias para enviar los detalles al servidor.');
+      console.log('this.userId:', this.userId);
+    }
+  }
+  
+
+  sendToolsToServer(): void {
+    if (this.userId && this.token) {
+      const userTools= {
+        id: this.userId, // No es necesario convertirlo a entero
+        token: this.token,
+        nameTools: this.tools
+      };
+
+      console.log('Enviando detalles al servidor:', userTools);
+
+      this.usuario.insertToolsUsers(this.userId, userTools, this.token)
+        .then(() => {
+          // Manejar la respuesta del servidor si es necesario
+          // Realizar acciones adicionales después de enviar los datos
+        })
+        .catch(error => {
+          // Manejar el error si ocurriera
+        });
+    } 
+    else {
       console.log('No se cumplen las condiciones necesarias para enviar los detalles al servidor.');
       console.log('this.userId:', this.userId);
     }
@@ -125,7 +130,6 @@ export class ProfileComponent implements OnInit {
         console.log(this.usuarioDetails);
 
         this.description = this.usuarioDetails[0].DescriptionPerson;
-        this.city = this.usuarioDetails[0].NameCities;
         this.likes = this.usuarioDetails[0].Likes;
         this.followers = this.usuarioDetails[0].Followers;
         this.followed = this.usuarioDetails[0].Followed;
@@ -135,8 +139,7 @@ export class ProfileComponent implements OnInit {
         this.facebook = this.usuarioDetails[0].Facebook;
         this.instagram = this.usuarioDetails[0].Instagram;
         this.youtube = this.usuarioDetails[0].Youtube;
-        this.imgPerfil = this.usuarioDetails[0].ImgPerfil;
-        //this.email = this.usuarioDetails[0].Email;
+        this.ImgPerfil = this.usuarioDetails[0].ImgPerfil;
         this.ubicacion = this.usuarioDetails[0].Ubication;
         this.tools = this.usuarioDetails[0].Tools;
       },
@@ -167,21 +170,70 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  getProfileImage() {
-    this.obtenerDetailsPerson(this.imgPerfil);
+  obtenerDetailsProject(userId: string) {
+    this.usuario.obtenerDetailsProyecto(userId).subscribe(
+      (response) => {
+        console.log('Holaaa', response);
+        this.detailsProject = response.map(({ IdProject, NameProject, DescriptionProject, Likes, ImgProject, ProjectCount }) => ({
+          IdProject: IdProject,
+          NameProject: NameProject,
+          DescriptionProject: DescriptionProject,
+          Likes: Likes,
+          ImgProject: ImgProject,
+          ProjectCount: ProjectCount,
+        }));
+        this.ProjectCount = this.detailsProject[0].ProjectCount;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
+  
 
-  uploadImage() {
+  getProfileImage(): void {
+    this.obtenerDetailsPerson(this.ImgPerfil);
+  }
+  
+  uploadImage(): void {
     // Simular el clic en el input de tipo archivo para que el usuario pueda seleccionar una nueva imagen
     const fileInput = document.getElementById('fileInput') as HTMLInputElement;
-    fileInput.click();
+    fileInput?.click(); // Agrega el operador de encadenamiento opcional
   }
-
-  onFileSelected(event: any) {
+  
+  onFileSelected(event: any): void {
     // Obtener el archivo de imagen seleccionado por el usuario
     this.selectedImage = event.target.files[0];
     console.log('Imagen seleccionada:', this.selectedImage);
   }
+  
+  onFilesDropped(event: DragEvent): void {
+    const files = event?.dataTransfer?.files;
+    if (files && files.length > 0) {
+      const file: File = files[0];
+      const reader: FileReader = new FileReader();
+  
+      reader.onload = (event: any) => {
+        const imageBase64: string = event.target.result;
+      
+        // Guardar la imagen en la carpeta 'assets/profile'
+        const imgPath: string = '/assets/profile/' + file.name;
+        localStorage.setItem(imgPath, imageBase64);
+      
+        console.log('Imagen guardada:', imgPath);
+      };
+      
+  
+      reader.readAsDataURL(file);
+    }
+  }
+  
+  
+  preventDefault(event: DragEvent): void {
+    event.preventDefault();
+  }
+  
+  
        /*MANEJO BOTON FAVORITOS*/  
       toggleFavorite(index: number) {
         if (this.counters[index] === 0) {

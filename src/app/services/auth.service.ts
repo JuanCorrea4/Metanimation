@@ -56,8 +56,9 @@ export class AuthService {
     if (!token) {
       return Promise.reject('No se encontró ningún token');
     }
-  
-    return this.http.post<any>('http://localhost:5000/api/Users/getUserRole', { token })
+
+    // http://localhost:5000/api/Users/getUserRole
+    return this.http.post<any>('https://metanimation-back.onrender.com/Api/Users/getUserRole', { token })
       .toPromise()
       .then(response => response.role)
       .catch(error => {
@@ -124,10 +125,9 @@ export class AuthService {
     return this.admin.asObservable();
   }
   
-
   getUserId(userId: string): Observable<string | null> {
-    if (userId) {
-      const url = `http://localhost:5000/api/Users/${userId}`; // Modificar la URL para incluir el parámetro de ID
+    if (userId) { // http://localhost:5000/api
+      const url = `https://metanimation-back.onrender.com/Api/Users/${userId}`; // Modificar la URL para incluir el parámetro de ID
       return this.http.get<any>(url)
         .pipe(
           map(response => response.userId),

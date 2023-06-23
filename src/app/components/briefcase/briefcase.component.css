@@ -216,7 +216,7 @@ section > hr{
 }
 .professional-profile >section > h6 {
   font-size: 15px;
-  margin: -15% 0 0 5%;
+  margin: -25% 0 0 5%;
 }
 .professional-profile >section > h4{
   margin: 0 0 5% 5%;
@@ -234,13 +234,14 @@ section > hr{
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
+  width: 100%;
 }
 .professional-profile >section >label> div {
   display: inline-block;
   height: 40%;
-  width: 60%;
-  margin: 20% 0 0 10%;
+  width: 80%;
+  margin: 20% 0 0 20%;
   background-color: #1a1a1a;
   color: white;
   border-radius: 10px;

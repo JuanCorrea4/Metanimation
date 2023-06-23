@@ -12,7 +12,7 @@ main{
 }
 
 .people > div > img{
-object-fit: contain;
+object-fit: cover;
 border-radius: 50%;
 width: 15%;
 margin: 5% 0 0 10%;
@@ -68,12 +68,35 @@ margin: 5% 0 0 10%;
   border-bottom: 1px solid #575755;
   outline: none;
   color: white;
+  overflow-x: hidden; /* Mostrar scroll horizontal */
+  overflow-y: auto; /* Ocultar scroll vertical */
+  background-color: transparent;
 }
-.people > button{
-  margin: 0 0 2% 80%;
+
+textarea::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 5px;
+  margin: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent; /* Color del track del scrollbar */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+  border-radius: 4px; /* Bordes redondeados del thumb */
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el mouse */
+}
+.people > label > button{
+  margin: 0 0 2% 29%;
   background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
   border-radius: 10px;
-  width: 13%;
+  border: none;
+  width: 20%;
   height: 5%;
   color: white;
 }
@@ -278,6 +301,8 @@ color: white;
   margin: 2% 0 0 5%;
   width: 80%;
 }
+
+
 .professional-profile >section{
   border-radius: 15px;
   width: 85%;
@@ -288,14 +313,18 @@ color: white;
   width: 100%;
   height: 100%;
   border-radius: 15px;
+  background-image: linear-gradient(to top, #030303af 50%, #000000cb 40%)
 }
 .professional-profile >section > h6 {
   font-size: 15px;
-  margin: -15% 0 0 5%;
+  margin: -30% 0 0 5%;
 }
-.professional-profile >section > h4{
-  margin: 0 0 5% 5%;
-  display: inline;
+.professional-profile >section > p{
+  margin: 1% 0 5% 5%;
+}
+.professional-profile > section > h3{
+  margin: -15% 0 0 0;
+  text-align: center;
 }
 .professional-profile >section >label{
   display: grid;

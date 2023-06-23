@@ -3,10 +3,10 @@
   <div class="firstPart">
     <section class="leftPart">
       <div class="profile">
-        <img src="../../../assets/profile/Perfil.jpg" alt="">
-        <p class="nameUser">Antonio J. Manzanedo</p>
-        <p class="rolUser">ARTISTA <br> FREELANCE</p>
-        <button class="editProfile"><i class="fa-solid fa-gear"></i></button>
+        <img [src]="'../../../assets/profile/' + ImgPerfil " alt="Imagen de perfil">
+        <p class="nameUser">{{nameUsers}}</p>
+        <p class="rolUser">ARTISTA <br> {{ocupacion}}</p>
+        <button routerLink="/profile" class="editProfile"><i class="fa-solid fa-gear"></i></button>
       </div>
       <div class="favThemes">
         <p class="text">Tus temas favortios</p>

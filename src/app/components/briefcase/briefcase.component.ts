@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DetailsBriefcaseComponent } from '../details-briefcase/details-briefcase.component';
+import { BriefcaseService } from 'src/app/services/briefcase.service'; 
 import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
@@ -8,15 +8,17 @@ import { CoursesService } from 'src/app/services/courses.service';
   styleUrls: ['./briefcase.component.css']
 })
 export class BriefcaseComponent implements OnInit {
-  categorias: { id: any; nombre: any; }[] | undefined;
-  nombreCategoria: any;
-  idCategoriaSeleccionada: any;
+
+  categorias: { id: any; nombre: any; }[] | undefined; nombreCategoria: any; idCategoriaSeleccionada: any; detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; Likes: any; ImgProject: any; }[] | undefined;   idProject: any; likes: any; nameProject: any; descriptionProject: any; imgProject: any; nameuser: any; ocupation: any;
+  allProject: any;
+
 
   ngOnInit(): void {
     this.obtenerCategorias();
+    this.obtenerDetailsProject();
   }
 
-  constructor(private cursosService: CoursesService,) { }
+  constructor(private cursosService: CoursesService, private project: BriefcaseService) { }
 
 
   obtenerCategorias() {
@@ -40,6 +42,32 @@ export class BriefcaseComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+
+  obtenerDetailsProject() {
+    this.project.obtenerAllPortafolios().subscribe(
+      (response) => {
+        console.log('Holaaa', response);
+  
+        // Verificar si la respuesta es un arreglo con al menos un elemento
+        if (response && response.length > 0) {
+          // Acceder al primer elemento de la respuesta
+          const firstProject = response[0];
+          // Asignar los valores a las propiedades del componente
+          this.allProject = response;
+          this.nameProject = firstProject.NameProject;
+          this.descriptionProject = firstProject.DescriptionProject;
+          this.likes = firstProject.Likes;
+          this.imgProject = firstProject.ImgProject;
+          this.nameuser = firstProject.PersonFullName;
+          this.ocupation = firstProject.Ocupation;
+        }
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  
     /*MANEJO BOTON FAVORITOS*/
     counters= [0,0,0,0,0,0,0,0,0,0,0,0];
     favoriteCount = 0;

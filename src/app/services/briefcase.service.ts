@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BriefcaseService {
-
-  private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+    private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
+//  private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class BriefcaseService {
     return this.http.get<any[]>(url);
   }
   obtenerAllPortafolios(): Observable<any[]> {
-    const url = `${this.apiUrl}/course`;
+    const url = `${this.apiUrl}/project`;
     return this.http.get<any[]>(url);
   }
   obtenerProfesor(idProfesor: string): Observable<any[]> {

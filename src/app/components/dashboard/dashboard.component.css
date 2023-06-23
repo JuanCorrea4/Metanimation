@@ -25,6 +25,9 @@ main{
   border-radius: 50%;
   width: 120px;
 }
+.profile p{
+  text-transform: uppercase;
+}
 
 .nameUser{
   border-top: 1px solid #656565;
