@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClientsService {
- ApiPerson = 'https://metanimation-back.onrender.com/Api/'; 
+ ApiPerson = 'https://metanimation-back.onrender.com/Api'; 
 //   ApiPerson='http://localhost:5000/api/Users/'
 
   constructor(private http: HttpClient) {}
 
 
   CreatePerson(Person:Person):Observable<any>{
-    return this.http.post<Person>(this.ApiPerson+'SignUp',Person)
+    return this.http.post<Person>(this.ApiPerson+'/SignUp',Person)
   }
   login(login: Login): Observable<any> {
     return this.http.post<Login>(this.ApiPerson + 'SignIn', login);
