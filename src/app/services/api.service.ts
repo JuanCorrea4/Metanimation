@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class ApiService {
 
-   private urlNew = 'http://localhost:5000/api/Noticie';
+   private urlNew = 'https://metanimation-back.onrender.com/api/Noticie';
 
   constructor(private http: HttpClient) { }
 
