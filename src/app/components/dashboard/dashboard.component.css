@@ -281,9 +281,15 @@ main{
 
 .infoAndMore p{
   font-size: 15pt;
-  margin: 0;
+  margin: 0 ;
   margin-bottom: 10px;
 }
+.infoAndMore h3{
+  font-size: 35pt;
+  margin: 0 0 0 -40%;
+  margin-bottom: 10px;
+}
+
 
 
 .proyectBy{
@@ -303,11 +309,30 @@ main{
 
 .proyectsTarget{
   max-height: 250px;
-  overflow-y: auto;
+  overflow-x: auto; /* Mostrar scroll horizontal */
+  overflow-y: hidden; /* Ocultar scroll vertical */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   flex-wrap: 20px;
+}
+.proyectsTarget::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 5px;
+  margin: 5px;
+}
+
+.proyectsTarget::-webkit-scrollbar-track {
+  background: transparent; /* Color del track del scrollbar */
+}
+
+.proyectsTarget::-webkit-scrollbar-thumb {
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+  border-radius: 4px; /* Bordes redondeados del thumb */
+}
+
+.proyectsTarget::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el mouse */
 }
 
 .target{

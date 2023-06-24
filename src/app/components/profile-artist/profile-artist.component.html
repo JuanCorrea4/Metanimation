@@ -7,7 +7,7 @@
         <img [src]="ImgPerfil ? '../../../assets/profile/' + ImgPerfil : ''" alt="Foto de perfil" />
         <input id="fileInput" type="file" style="display: none" (change)="onFileSelected($event)">
         <button (click)="uploadImage()" *ngIf="mostrarBotonGuardar">Cargar imagen</button>
-        <button (click)="habilitarEdicion()">Editar perfil </button>
+        <!--<button (click)="habilitarEdicion()">Editar perfil </button>-->
       </div>
       <hr>
       <h5>{{PersonName}} {{PersonLastName}}</h5>
@@ -87,24 +87,6 @@
   </div>
 </div>
 <div class="professional-profile">
-  <section (click)="showModal = true">
-    <img src="https://cdn.pixabay.com/photo/2017/04/20/07/07/add-2244771_640.png">
-    <h3>Agregar proyecto</h3>
-  </section>  
-  <div class="modal" *ngIf="showModal">
-    <button class="close-button" (click)="showModal = false">&times;</button>
-    <h2>Agregar proyecto</h2>
-    <input [(ngModel)]="nombreProyecto" type="text" placeholder="Nombre del proyecto">
-    <textarea [(ngModel)]="descripcionPoyecto" placeholder="Descripción del proyecto"></textarea>   
-    <label>Cargar imagen principal del proyecto</label>
-    <input id="Img1" type="file" style="border-radius:15px" (change)="handleImage1Change($event)">
-    <label>Cargar imagenes del proyecto</label>
-    <p>en ese espacio podras cargar las imegens que muestran tu proyecto</p>
-    <input id="Img2" type="file" style="border-radius:15px" (change)="handleImage2Change($event)">
-    <input id="Img3" type="file" style="border-radius:15px" (change)="handleImage3Change($event)">
-    <input id="Img4" type="file" style="border-radius:15px" (change)="handleImage4Change($event)">    
-    <button class="guardar" (click)="sendProjectServer()">Guardar</button> 
-  </div>
   <section *ngFor="let project of detailsProject">
     <img [src]="project.ImgProject" alt="Imagen del proyecto">
     <h6>{{ project.NameProject }}</h6>

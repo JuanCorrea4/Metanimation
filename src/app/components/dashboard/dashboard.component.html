@@ -5,7 +5,7 @@
       <div class="profile">
         <img [src]="'../../../assets/profile/' + ImgPerfil " alt="Imagen de perfil">
         <p class="nameUser">{{nameUsers}}</p>
-        <p class="rolUser">ARTISTA <br> {{ocupacion}}</p>
+        <p class="rolUser"> <a>Soy:</a> <br> {{ocupacion}}</p>
         <button routerLink="/profile" class="editProfile"><i class="fa-solid fa-gear"></i></button>
       </div>
       <div class="favThemes">
@@ -104,59 +104,26 @@
         <div class="navBriefcase">
           <i class="fa-solid fa-diamond"></i>
           <p><b>Portafolio</b></p>
-          <hr> <button><i class="fa-solid fa-user"></i> Ver mi portafolio</button>
+          <hr> <button routerLink="/profile"><i class="fa-solid fa-user"></i> Ver mi portafolio</button>
         </div>
         <div class="proyects">
           <div class="infoAndMore">
-            <img src="../../../assets/Dashboard/50.png" alt="">
+            <h3>{{ProjectCount}}</h3>
             <p>Proyectos creados</p>
-            <p class="proyectBy">por Antonio J. Manzanedo</p>
-            <button>Explorar proyectos</button>
+            <p class="proyectBy">Por:  {{nameUsers}}</p>
+            <button routerLink="/briefcase">Explorar proyectos</button>
           </div>
           <div class="proyectsTarget">
-            <div class="target">
-              <img class="targetImgProyect" src="../../../assets/Dashboard/proyect1.jpg" alt="">
+            <div class="target" *ngFor="let project of detailsProject">
+              <img class="targetImgProyect" [src]="project.ImgProject" alt="Imagen del proyecto">
               <div class="infoProyect">
-                <img src="../../../assets/profile/Perfil.jpg" alt="">
-                <p>Agyness Deyn</p>
+                <img [src]="'../../../assets/profile/' + ImgPerfil " alt="Imagen de perfil">
+                <p>{{nameUsers}}</p>
                 <div class="buttons">
                   <button class="follow"><i class="fa-solid fa-plus"></i> Seguir</button>
                   <button class="like"><i class="fa-regular fa-heart"></i> 30</button>
                 </div>
             </div>
-            </div>
-            <div class="target">
-              <img class="targetImgProyect" src="../../../assets/Dashboard/proyect2.jpg" alt="">
-              <div class="infoProyect">
-                <img src="../../../assets/profile/Perfil.jpg" alt="">
-                <p>Agyness Deyn</p>
-                <div class="buttons">
-                  <button class="follow"><i class="fa-solid fa-plus"></i> Seguir</button>
-                  <button class="like"><i class="fa-regular fa-heart"></i> 30</button>
-                </div>
-              </div>
-            </div>
-            <div class="target">
-              <img class="targetImgProyect" src="../../../assets/Dashboard/proyect1.jpg" alt="">
-              <div class="infoProyect">
-                <img src="../../../assets/profile/Perfil.jpg" alt="">
-                <p>Agyness Deyn</p>
-                <div class="buttons">
-                  <button class="follow"><i class="fa-solid fa-plus"></i> Seguir</button>
-                  <button class="like"><i class="fa-regular fa-heart"></i> 30</button>
-                </div>
-              </div>
-            </div>
-            <div class="target">
-              <img class="targetImgProyect" src="../../../assets/Dashboard/proyect2.jpg" alt="">
-              <div class="infoProyect">
-                <img src="../../../assets/profile/Perfil.jpg" alt="">
-                <p>Agyness Deyn</p>
-                <div class="buttons">
-                  <button class="follow"><i class="fa-solid fa-plus"></i> Seguir</button>
-                  <button class="like"><i class="fa-regular fa-heart"></i> 30</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -48,8 +48,9 @@ main{
   border-radius: 20px;
   width: 30%;
   height: 15%;
-  margin: 2% 0 0 38%;
+  margin: 2% 0 0 35%;
   color: white;
+  text-align: center;
 }
 .professional-search > input::placeholder{
   color: white;
@@ -119,8 +120,7 @@ main{
   margin: 0;
 }
 #filt{
-  border:1px  white solid;
-  border-radius: 15px;
+
   margin: 0 0 0 20%;
 }
 .option-prof > button:hover{
@@ -216,10 +216,32 @@ section > hr{
 }
 .professional-profile >section > h6 {
   font-size: 15px;
-  margin: -25% 0 0 5%;
+  margin: -30% 0 0 5%;
 }
-.professional-profile >section > h4{
-  margin: 0 0 5% 5%;
+.professional-profile >section > p{
+  margin: 2% 0 5% 5%;
+  height: 20%;
+  overflow-x: hidden; /* Mostrar scroll horizontal */
+  overflow-y: auto; /* Ocultar scroll vertical */
+}
+
+.description::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 5px;
+  margin: 5px;
+}
+
+.description::-webkit-scrollbar-track {
+  background: transparent; /* Color del track del scrollbar */
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+  border-radius: 4px; /* Bordes redondeados del thumb */
+}
+
+.description::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el mouse */
 }
 .professional-profile >section >label{
   display: grid;
@@ -259,7 +281,7 @@ section > hr{
   cursor: pointer;
 }
 .professional-profile >section >label > div > img{
-  object-fit: contain;
+  object-fit: cover;
   width: 25%;
   vertical-align: bottom;
   margin: 0 0 0 15%;
@@ -274,10 +296,12 @@ section > hr{
 
 .professional-profile >section >label > h3{
   font-size: 15px;
+  text-transform: capitalize;
+  margin-left: 5%;
 }
 .professional-profile >section >label >img{
   object-fit: cover;
-  width: 60%;
+  width: 80%;
   height: 70%;
   border-radius: 90%;
   margin: 10% 0 0 15%;

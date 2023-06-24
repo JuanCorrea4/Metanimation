@@ -25,8 +25,9 @@ width: 90%;
 height: 30%;
 }
 .profile >  section > label > img{
-  object-fit: contain;
-  height: 50%;
+  object-fit: cover;
+
+  width: 100%;
   border-radius: 50%;
   margin: 40% 0 0 45%;
 }
@@ -51,27 +52,29 @@ height: 30%;
   margin: 10% 0 0 20%;
 }
 .profile >  section  > h4{
-  margin: 2% 0 2% 20%;
+  margin: 5% 0 2% 20%;
+  font-size: 20px;
+  width: 90%;
 }
 
 
 .profile >  section  > button{
   width: 30%;
-  height: 4%;
+  height: 10%;
   background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
   border-radius: 10px;
   border: none;
-  margin: 0 -20% 0 20%;
+  margin: 3% -20% 0 20%;
   color: white;
 }
 
 .profile >  section  > div {
   width: 20%;
-  height: 4%;
+  height: 10%;
   background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
   border-radius: 10px;
   border: none;
-  margin: 0 -20% 0 25%;
+  margin: 3% -20% 0 25%;
   color: white;
   display: inline-block;
 }
@@ -102,10 +105,9 @@ height: 30%;
   display: grid;
   grid-template-columns: 50% 50%;
   width: 83.5%;
-  height: 29%;
+  height: 100%;
   background-color: #464646;
 }
-
 
 .person{
   margin: 20% 0 0 0;
@@ -136,12 +138,15 @@ height: 30%;
   .person > label > h5{
       font-size: 15px;
       margin: 2% 0 0 -10%;
+      text-transform: uppercase;
   }
   
   .person > label > h3{
-      margin: 0 0 0 -10%;
-      width: 50%;
+      margin: 3% 0 0 -10%;
+      width: 90%;
       font-size: 15px;
+      text-transform: capitalize;
+
   }
   .person > label > hr{
       width: 60% ;
@@ -189,7 +194,7 @@ height: 30%;
   }
   .details-brice > section > hr{
     width: 40%;
-    margin: 5% 0 0 5%;
+    margin: 0 0 0 5%;
     border-color:#464646;
   }
   .details-brice > section > p{
@@ -199,7 +204,7 @@ height: 30%;
 
   .details-brice > section > h5{
     width: 50%;
-    margin: 5% 0 0 5%;
+    margin: 2% 0 0 5%;
   }
 
   .details-brice > section > u{
@@ -222,12 +227,12 @@ height: 30%;
 .software-us >  label  > hr{
   transform: rotate(90deg);
   width: 8%;
-  margin: -5% 0 0 85%;
+  margin: -5% 0 0 65%;
   border-color: #1a1a1a;
 }
 .software-us >  label > p {
-  width: 80%;
-  margin: 10% 0 0 10%;
+  width: 90%;
+  margin: 10% 0 15px 10%;
 }
 .btn > button {
   background-color: #464646;

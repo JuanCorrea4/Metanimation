@@ -7,47 +7,50 @@
     <input type="text" placeholder="¿Que quieres buscar?">
   </div>
   <section class="option-prof">
+    <!--
   <div class="option" *ngFor="let categoria of categorias" (click)="obtenerCategorias()">
     <button>{{categoria.nombre}}<img src="../../../assets/portafolio/rojo.png"></button>
   </div>
+  -->
     <!--<img src="../../../assets/new/ArrowR.png">-->
   </section>
 <!--OPCIONES Y FILTRO DE PROFESIONALES-->
+
   <div class="filter-professional">
-    <button (click)="toggleButton(8)" [ngClass]="{'continue': isActive[8]}">
-      <img *ngIf="!isActive[8]" src="../../../assets/portafolio/seguidor.png">
-      {{isActive[8] ? 'Siguiendo!' : 'Seguir'}}
-  </button>
-    <hr>
     <button>Reciente</button>
-    <hr>
-    <button>Popular</button>
+    <button (click)="toggleButton(8)" [ngClass]="{'continue': isActive[8]}">
+      <img *ngIf="!isActive[8]" src="">
+      {{isActive[8] ? 'Siguiendo!' : ''}}
+  </button>
+    <hr>    <hr>
+    <button></button>
     <p></p>
     <a routerLink='/briefcase'><button>Proyectos</button></a>
     <a routerLink='/briefcase-project'><button id="btns">Artistas</button></a>
-    <button id="filt"><img src="../../../assets/portafolio/filtro.png">Filtro</button>
+    <button id="filt"></button>
   </div>
   <section><hr></section>
   <!--PERFIL PROFESIONALES -->
   <div class="professional-profile">
     <section *ngFor="let project of allProject">
-      <img routerLink="/detailsBriefcase" [src]="project.ImgProject" alt="Imagen del proyecto">
-      <h6 routerLink="/detailsBriefcase">{{nameProject}}</h6>
-      <h4>{{descriptionProject}}</h4>
+      <img routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}" [src]="project.ImgProject" alt="Imagen del proyecto">
+      <h6 routerLink="/detailsBriefcase">{{project.NameProject}}</h6>
+      <p class="description">{{project.DescriptionProject}}</p>
       <label>
-        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
-        <h3>{{nameuser}}</h3>
-        <button (click)="toggleButton(0)" [ngClass]="{'continue': isActive[0]}">
+        <img [src]="'../../../assets/profile/' + project.ImgPerfil" alt="Imagen de perfil">
+        <h3 routerLink='/profile-artist' [queryParams]="{id: idusers}">{{project.PersonFullName}}</h3>
+        <button [ngClass]="{'continue': isActive[0]}">
           <img *ngIf="!isActive[0]" src="../../../assets/portafolio/Seguir.png">
           {{isActive[0] ? 'Siguiendo!' : 'Seguir'}}
-      </button>
-      <div>
-        <img *ngIf="counters[0] > 0" src="../../../assets/portafolio/Heart-follow.png">
-        <img *ngIf="counters[0] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
-        <button (click)="toggleFavorite(0)"> {{counters[0]}} </button>
-    </div>
+        </button>
+        <div>
+          <img *ngIf="counters[0] > 0" src="../../../assets/portafolio/Heart-follow.png">
+          <img *ngIf="counters[0] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+          <button> {{counters[0]}} </button>
+        </div>
       </label>
     </section>
+    
   </div>
 </main>
 <app-footer></app-footer>

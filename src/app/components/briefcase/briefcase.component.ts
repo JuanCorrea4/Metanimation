@@ -11,6 +11,8 @@ export class BriefcaseComponent implements OnInit {
 
   categorias: { id: any; nombre: any; }[] | undefined; nombreCategoria: any; idCategoriaSeleccionada: any; detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; Likes: any; ImgProject: any; }[] | undefined;   idProject: any; likes: any; nameProject: any; descriptionProject: any; imgProject: any; nameuser: any; ocupation: any;
   allProject: any;
+  imgPerfil: any;
+  idusers: any;
 
 
   ngOnInit(): void {
@@ -54,12 +56,15 @@ export class BriefcaseComponent implements OnInit {
           const firstProject = response[0];
           // Asignar los valores a las propiedades del componente
           this.allProject = response;
+          this.idProject = firstProject.IdProject;
+          this.idusers = firstProject.IdPerson;
           this.nameProject = firstProject.NameProject;
           this.descriptionProject = firstProject.DescriptionProject;
           this.likes = firstProject.Likes;
           this.imgProject = firstProject.ImgProject;
           this.nameuser = firstProject.PersonFullName;
           this.ocupation = firstProject.Ocupation;
+          this.imgPerfil = firstProject.ImgPerfil ;
         }
       },
       (error) => {

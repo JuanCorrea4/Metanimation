@@ -33,6 +33,7 @@ import { DetailsNewsComponent } from './components/details-news/details-news.com
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoadCourseComponent } from './components/load-course/load-course.component';
 import { FilterDashboardComponent } from './components/filter-dashboard/filter-dashboard.component';
+import { ProfileArtistComponent } from './components/profile-artist/profile-artist.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { FilterDashboardComponent } from './components/filter-dashboard/filter-d
     DetailsNewsComponent,
     DashboardComponent,
     LoadCourseComponent,
-    FilterDashboardComponent
+    FilterDashboardComponent,
+    ProfileArtistComponent
   ],
   imports: [
     BrowserModule,

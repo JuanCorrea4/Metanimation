@@ -16,6 +16,7 @@ import { BriefcaseProjectComponent } from './components/briefcase-project/briefc
 import { DetailsNewsComponent } from './components/details-news/details-news.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GuardGuard } from './guards/guard.guard';
+import { ProfileArtistComponent } from './components/profile-artist/profile-artist.component';
 
 
 
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'news', component: NewsComponent},
   { path: 'favorite-news', component: FavoriteNewsComponent},
-  { path: 'profile', component: ProfileComponent /*,canActivate: [GuardGuard]*/},
+  { path: 'profile', component: ProfileComponent ,canActivate: [GuardGuard]},
+  { path: 'profile-artist', component: ProfileArtistComponent, canActivate: [GuardGuard] },
   { path: 'membership', component: MembershipComponent},
   { path: 'suscription', component: SuscriptionComponent},
   { path: 'detailsCourse/:idCurso', component: DetailsCourseComponent ,canActivate: [GuardGuard]},
@@ -40,6 +42,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: '', component: NewsComponent },
   { path: 'details-news/:id', component: DetailsNewsComponent, canActivate: [GuardGuard] }
+
 ];
 
 @NgModule({

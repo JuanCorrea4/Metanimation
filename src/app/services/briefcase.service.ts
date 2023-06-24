@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BriefcaseService {
     private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
-//  private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+// private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
@@ -23,5 +23,56 @@ export class BriefcaseService {
   obtenerProfesor(idProfesor: string): Observable<any[]> {
     const url = `${this.apiUrl}/teacher/${idProfesor}`;
     return this.http.get<any[]>(url);
+  }
+  obtenerAllArtist(): Observable<any[]> {
+    const url = `${this.apiUrl}/project/artist`;
+    return this.http.get<any[]>(url);
+  }
+  obtenerProyecto(projectId: string): Observable<any[]> {
+    const url = `${this.apiUrl}/project/${projectId}`;
+    return this.http.get<any[]>(url);
+  }
+
+  insertProjectUsers(id: string, details: any, token: string) {
+    console.log('Datos enviados al servidor:', details);
+
+    const url = `${this.apiUrl}/project/Insertproject/${id}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': token
+    });
+
+    return this.http.post(url, details, { headers })
+      .toPromise()
+      .then(response => {
+        console.log('Detalles del usuario modificados con éxito:', response);
+        window.location.reload();
+        return response;
+      })
+      .catch(error => {
+        console.error('Error al modificar los detalles del usuario:', error);
+        throw error;
+      });
+  }
+  insertRecourseProject(id: string, details: any, token: string) {
+    console.log('Datos enviados al servidor:', details);
+
+    const url = `${this.apiUrl}/project/Insertproject/${id}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': token
+    });
+
+    return this.http.post(url, details, { headers })
+      .toPromise()
+      .then(response => {
+        console.log('Detalles del usuario modificados con éxito:', response);
+        window.location.reload();
+        return response;
+      })
+      .catch(error => {
+        console.error('Error al modificar los detalles del usuario:', error);
+        throw error;
+      });
   }
 }

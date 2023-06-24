@@ -11,19 +11,19 @@
 }
 
 .professional-search>h3 {
-  width: 25%;
+  width: 45%;
   color: white;
   font-size: 25px;
   font-family: 'Outer Limits Solid', sans-serif;
   font-weight: 300;
   text-align: center;
-  margin: 0 0 0 40%;
+  margin: 0 0 0 25%;
   padding-top: 7%;
 
 }
 
 .professional-search>p {
-  margin: 0 0 0 38%;
+  margin: 0 0 0 26%;
   color: white;
   font-size: 15px;
 }
@@ -33,7 +33,7 @@
   border-radius: 20px;
   width: 30%;
   height: 15%;
-  margin: 2% 0 0 38%;
+  margin: 2% 0 0 30%;
   color: white;
 }
 
@@ -41,6 +41,7 @@
   color: white;
   font-size: 15px;
   padding: 5%;
+  text-align: center;
 }
 
 /* OPCIONES Y FILTRO PROFESIONAL*/
@@ -83,13 +84,13 @@
   border-radius: 0 15px 15px 0;
   padding: 5%;
   width: 90%;
-  height: 90%;
+  height: 95%;
   margin: 0;
 }
 
 #filt {
-  border: 1px white solid;
-  border-radius: 15px;
+  /*border: 1px white solid;
+  border-radius: 15px;*/
   margin: 0 0 0 20%;
 }
 
@@ -169,7 +170,7 @@ a>hr {
 section>hr {
   width: 95%;
   border-color: #1a1a1a;
-  margin: 5% 0 0 5%;
+  margin: 15% 0 0 5%;
 }
 
 .conteiner {
@@ -183,7 +184,7 @@ section>hr {
 .profile-conteiner {
   display: grid;
   width: 90%;
-  height: 50%;
+  height: 70%;
   grid-template-columns: 60% 2% 40%;
   background-color: #383838;
   border-radius: 15px;
@@ -231,12 +232,16 @@ section>hr {
   font-size: 15px;
   margin: 2% 0 0 -15%;
   cursor: pointer;
+  text-transform: uppercase;
+
 }
 
 .person>label>h3 {
-  margin: 0 0 0 -15%;
-  width: 50%;
+  margin: 2% 0 0 -15%;
+  width: 120%;
   font-size: 15px;
+  text-transform: capitalize;
+
 }
 
 .person>label>hr {
@@ -271,17 +276,39 @@ section>hr {
   margin: 0 0 0 5%;
 }
 
-.profile-conteiner>section>p {
-  margin: 3% 0 0 5%;
-  width: 80%;
+.profile-conteiner>section > p{
+  margin: 5% 0 0 5%;
+  width: 95%;
+  height: 20%;
+  overflow-x: hidden; /* Mostrar scroll horizontal */
+  overflow-y: auto; /* Ocultar scroll vertical */
+}
+
+.description::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 5px;
+  margin: 10px;
+}
+
+.description::-webkit-scrollbar-track {
+  background: transparent; /* Color del track del scrollbar */
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+  border-radius: 4px; /* Bordes redondeados del thumb */
+}
+
+.description::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el mouse */
 }
 
 .galery {
   display: grid;
   width: 90%;
-  height: 50%;
+  height: 65%;
   margin: 0;
-  grid-template-rows: 33% 33% 33%;
+  grid-template-rows: 35% 35% 35%;
 }
 
 .galery>img {

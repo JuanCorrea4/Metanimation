@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 import { BriefcaseService } from 'src/app/services/briefcase.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-profile-artist',
+  templateUrl: './profile-artist.component.html',
+  styleUrls: ['./profile-artist.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileArtistComponent implements OnInit {
   selectedImage: File | undefined; nameTools: any; detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; ImgProject: any; ProjectCount: any; Likes:any; }[] | undefined;NameProject: any; DescriptionProject: any; Likes: any;ImgProject: any; ProjectCount: any;
   campoHabilitado: boolean | undefined; mostrarBotonGuardar: boolean | undefined;  campoTexto: any; token: string | null | undefined; userId: string | null | undefined;
   usuarioDetails: { Id: any; IdPerson: any; DescriptionPerson: any; Ocupation: any; telefono: any; Facebook: any; Instagram: any; Youtube: any; Likes: any; Followers: any; Followed: any; Ubication: any;
@@ -18,7 +20,7 @@ export class ProfileComponent implements OnInit {
   descripcionPoyecto: any;
 
   
-  constructor(private authService: AuthService, private usuario: UsersService, private portafolio: BriefcaseService) { }
+  constructor(private authService: AuthService, private usuario: UsersService, private portafolio: BriefcaseService, private route: ActivatedRoute) { }
 
 
   /*MANEJO BOTON FAVORITOS*/
@@ -26,15 +28,15 @@ export class ProfileComponent implements OnInit {
   favoriteCount = 0;
 
   ngOnInit() {
-    // Obtener el token del almacenamiento local
-    this.token = localStorage.getItem('token');
-    // Obtener el ID del usuario del almacenamiento local
-    this.userId = localStorage.getItem('userId') ?? '';
-    // Se llaman los métodos para cargar la información al momento de cargar la página
-    this.obtenerDetailsPerson(this.userId);
-    this.obtenerNamePerson(this.userId);
-    this.obtenerDetailsProject(this.userId);
+    const id = this.route.snapshot.queryParams['id'];
+    console.log('ID del proyecto:', id);
+    
+    // Resto del código aquí
+    this.obtenerDetailsPerson(id);
+    this.obtenerNamePerson(id);
+    this.obtenerDetailsProject(id);
   }
+  
 
   sendDetailsToServer(): void {
     if (this.userId && this.token) {
@@ -191,8 +193,8 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  obtenerNamePerson(userId: string) {
-    this.usuario.obtenernamePerson(userId).subscribe(
+  obtenerNamePerson(id: string) {
+    this.usuario.obtenernamePerson(id).subscribe(
       (response) => {
         this.usuarioName = response.map(({ Id, IdPerson, Name, LastName, Email }) => ({
           Id: Id,
@@ -212,8 +214,8 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  obtenerDetailsProject(userId: string) {
-    this.usuario.obtenerDetailsProyecto(userId).subscribe(
+  obtenerDetailsProject(id: string) {
+    this.usuario.obtenerDetailsProyecto(id).subscribe(
       (response) => {
         console.log('Holaaa', response);
         this.detailsProject = response.map(({ IdProject, NameProject, DescriptionProject, Likes, ImgProject, ProjectCount }) => ({
