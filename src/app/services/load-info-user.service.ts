@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class LoadInfoUserService {
 
-  private url = "http://localhost:5000/api/Users"
+  private url = "https://metanimation-back.onrender.com/api/Users"
 
   constructor(private http : HttpClient) { }
 
