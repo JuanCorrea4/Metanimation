@@ -15,6 +15,7 @@ export class ClientsService {
 
 
   CreatePerson(Person:Person):Observable<any>{
+    console.log(this.ApiPerson+'/SignUp');
     return this.http.post<Person>(this.ApiPerson+'/SignUp',Person)
   }
   login(login: Login): Observable<any> {
