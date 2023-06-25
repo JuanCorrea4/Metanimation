@@ -424,8 +424,8 @@ border-color: #575755;
   top: 0;
   left: 0;
   width: 50%;
-  height: 70%;
-  background: linear-gradient(167deg, rgba(28, 178, 163, 0.82) 0%, rgba(0, 0, 0, 0.763) 100%);
+  height: 75%;
+  background: linear-gradient(167deg, rgba(64, 64, 64, 0.987) 0%, rgba(0, 0, 0, 0.905) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -433,8 +433,13 @@ border-color: #575755;
   z-index: 9999;
   padding: 20px;
   color: #fff;
-  margin: 8% 0 0 25%;
+  margin: 3% 0 0 25%;
   border-radius: 15px;
+}
+.modal > div{
+  height: 100%;
+  width: 80%;
+  margin: 0 0 0 5%;
 }
 
 .modal h2 {
@@ -460,7 +465,7 @@ textarea {
   color: white;
   font-size: 15px;
   width: 40%;
-  height: 30%;
+  height: 20%;
   outline: none;
 }
 textarea::placeholder{
@@ -489,17 +494,21 @@ margin-bottom: 10px;
   margin: 0 0 2% 5%;
   border-radius: 10px;
   border: none;
-  width: 20%;
-  height: 5%;
+  width: 25%;
+  height: 15%;
   color: white;
   display: inline;
 }
 .guardar{
-  margin: 0 0 2% 0;
+  margin: 0 0 2% 2%;
   background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgb(89, 154, 85) 100%);
   border-radius: 10px;
   border: none;
   width: 20%;
   color: white;
   text-align: center;
+}
+
+.modal > div > button{
+  margin: 0 0 0 35%;
 }

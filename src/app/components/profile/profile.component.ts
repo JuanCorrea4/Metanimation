@@ -16,6 +16,8 @@ export class ProfileComponent implements OnInit {
   public showModal: boolean = false;
   nombreProyecto: any;
   descripcionPoyecto: any;
+  mostrarImagenes: boolean = false;
+  Url: any;
 
   
   constructor(private authService: AuthService, private usuario: UsersService, private portafolio: BriefcaseService) { }
@@ -103,14 +105,41 @@ export class ProfileComponent implements OnInit {
         token: this.token,
         DescripcionPoyecto: this.descripcionPoyecto,
         NombreProyecto: this.nombreProyecto,
-        Img1: this.selectedImage ? this.selectedImage.name : this.ImgPerfil,
+        Img1: this.selectedImage ? this.selectedImage.name : this.ImgProject,
       };
       
   
-      console.log('Enviando datos al servidor:', userProject);
+      console.log('Enviando datos al servidor proyecto:', userProject);
   
       this.portafolio.insertProjectUsers(this.userId, userProject, this.token)
         .then(() => {
+        })
+        .catch(error => {
+          // Manejar el error si ocurriera
+          this.mostrarImagenes = true;
+
+        });
+    } else {
+      console.log('No se cumplen las condiciones necesarias para enviar los detalles al servidor.');
+      console.log('this.userId:', this.userId);
+    }
+  }
+  
+  sendRecousesServer(idProject: number): void {
+    if (this.userId && this.token) {
+      const resouceProject = {
+        id: this.userId,
+        token: this.token,
+        idProject: idProject,
+        Img2: this.selectedImages['Img2'] ? this.selectedImages['Img2'].name : this.Url,
+        Img3: this.selectedImages['Img3'] ? this.selectedImages['Img3'].name : this.Url,
+        Img4: this.selectedImages['Img4'] ? this.selectedImages['Img4'].name : this.Url,
+      };   
+      console.log('Enviando datos al servidor recursos:', resouceProject);
+  
+      this.portafolio.insertRecourse(this.userId, resouceProject, this.token)
+        .then(() => {
+          // Aquí puedes realizar cualquier acción adicional después de enviar los recursos
         })
         .catch(error => {
           // Manejar el error si ocurriera
@@ -120,22 +149,15 @@ export class ProfileComponent implements OnInit {
       console.log('this.userId:', this.userId);
     }
   }
-  /*
-  insertRecourse(projectId: number, imageUrl: string): void {
-    const resource = {
-      projectId: projectId,
-      imgUrl: imageUrl
-    };
-  
-    this.portafolio.insertRecourseProject()
-      .then(() => {
-        // Recurso insertado correctamente
-      })
-      .catch(error => {
-        // Manejar el error si ocurriera
-      });
+  selectedImages: { [key: string]: File } = {};
+  handleImageChange(event: any, fieldName: string): void {
+    const fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      this.selectedImages[fieldName] = fileList[0];
+    }
   }
-  */
+  
+  
   habilitarEdicion() {
     this.campoHabilitado = true;
     this.mostrarBotonGuardar = true;

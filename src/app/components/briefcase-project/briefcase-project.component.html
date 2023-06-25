@@ -58,11 +58,8 @@
         <p class="description">{{descriptionP}}</p>
       </section>
       <hr id="galery-hr">
-      <section class="galery">
-        <img
-          *ngFor="let img of imgProject"
-          [src]="'../../../assets/profile/' + img"
-          alt="Imagen del proyecto">
+      <section class="galery"  >
+        <img *ngFor="let img of imgProject" [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
       </section>
     </div>
   </div>

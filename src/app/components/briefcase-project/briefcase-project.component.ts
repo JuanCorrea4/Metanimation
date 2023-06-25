@@ -36,9 +36,10 @@ export class BriefcaseProjectComponent implements OnInit {
           this.descriptionP = artist.DescriptionPerson;
           this.imgPerfil = artist.ImgPerfil;
           // Parsear la cadena JSON de ImgsProject y obtener un array de URLs
-          const imgProjectArray = JSON.parse(artist.ImgsProject);
-          // Asignar el array de URLs a la propiedad imgProject
-          this.imgProject = imgProjectArray;
+  
+          const imgUrls = JSON.parse(artist.ImgsProject);
+          this.imgProject = imgUrls.map((img: string) => img.replace(/\\/g, '').replace(/"/g, ''));
+          console.log('imgProject:', this.imgProject);
         }
       },
       (error) => {

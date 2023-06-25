@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BriefcaseService {
-    private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
-// private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+  //  private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
+private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
@@ -54,25 +55,22 @@ export class BriefcaseService {
         throw error;
       });
   }
-  insertRecourseProject(id: string, details: any, token: string) {
-    console.log('Datos enviados al servidor:', details);
-
-    const url = `${this.apiUrl}/project/Insertproject/${id}`;
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'x-access-token': token
-    });
-
-    return this.http.post(url, details, { headers })
+  insertRecourse(projectId: string, resouceProject: any , token:string) {
+    const url = `${this.apiUrl}/project/Insertproject/${projectId}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const payload = { resouceProject };
+  
+    return this.http.post(url, payload, { headers })
       .toPromise()
       .then(response => {
-        console.log('Detalles del usuario modificados con éxito:', response);
-        window.location.reload();
+        console.log('Recursos insertados correctamente:', response);
         return response;
       })
       .catch(error => {
-        console.error('Error al modificar los detalles del usuario:', error);
+        console.error('Error al insertar los recursos:', error);
         throw error;
       });
   }
+  
+  
 }

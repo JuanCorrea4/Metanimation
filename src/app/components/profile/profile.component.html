@@ -98,12 +98,15 @@
     <textarea [(ngModel)]="descripcionPoyecto" placeholder="Descripción del proyecto"></textarea>   
     <label>Cargar imagen principal del proyecto</label>
     <input id="Img1" type="file" style="border-radius:15px" (change)="handleImage1Change($event)">
+    <button type="submit"  class="guardar" (click)="sendProjectServer()">Siguiente</button> 
+    <div>
     <label>Cargar imagenes del proyecto</label>
     <p>en ese espacio podras cargar las imegens que muestran tu proyecto</p>
-    <input id="Img2" type="file" style="border-radius:15px" (change)="handleImage2Change($event)">
-    <input id="Img3" type="file" style="border-radius:15px" (change)="handleImage3Change($event)">
-    <input id="Img4" type="file" style="border-radius:15px" (change)="handleImage4Change($event)">    
-    <button class="guardar" (click)="sendProjectServer()">Guardar</button> 
+    <input id="Img2" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img2')">
+    <input id="Img3" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img3')">
+    <input id="Img4" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img4')">
+    <button type="submit" class="guardar" (click)="sendRecousesServer(ImgProject)">Guardar</button>
+  </div>
   </div>
   <section *ngFor="let project of detailsProject">
     <img [src]="project.ImgProject" alt="Imagen del proyecto">

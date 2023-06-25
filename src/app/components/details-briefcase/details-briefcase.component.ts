@@ -19,15 +19,14 @@ export class DetailsBriefcaseComponent implements OnInit {
   constructor(private projects: BriefcaseService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.obtenerDetailsProject();
     this.route.queryParams.subscribe(params => {
       this.projectId = params['id'];
       console.log('ID del proyecto:', this.projectId);
-      // Resto del código aquí
+      this.obtenerDetailsProject();
       this.ObtenerDetalleProyectotId(this.projectId);
     });
-  
   }
+  
   
   obtenerDetailsProject() {
     this.projects.obtenerAllPortafolios().subscribe(
@@ -59,8 +58,6 @@ export class DetailsBriefcaseComponent implements OnInit {
   
         // Verificar si la respuesta es un arreglo con al menos un elemento
         if (response && response.length > 0) {
-          // Asignar una copia del arreglo de respuesta a this.project
-          this.projectDetailsId = [...response];
           // Acceder al primer elemento de la respuesta
           const idProject = response[0];
           // Asignar los valores a las propiedades del componente
@@ -73,13 +70,10 @@ export class DetailsBriefcaseComponent implements OnInit {
           this.ubication = idProject.Ubication;
           console.log('nameTools:', idProject.nameTools);
           this.toolNames = idProject.nameTools.replace(/[\[\]\"]+/g, '').split(",");
-          console.log('toolNames:', this.toolNames);
-        
-
+  
           const imgUrls = JSON.parse(idProject.ImgsProject);
-          this.imgProject = imgUrls.map((url: string) => url.replace(/\\/g, ''));
-          console.log('img', this.projectImageUrls);
-
+          this.imgProject = imgUrls.map((img: string) => img.replace(/\\/g, '').replace(/"/g, ''));
+          console.log('imgProject:', this.imgProject);
         }
       },
       (error) => {
@@ -88,8 +82,6 @@ export class DetailsBriefcaseComponent implements OnInit {
     );
   }
   
-  
-
     /*MANEJO BOTON FAVORITOS*/
     counters= [0,0,0,0];
     favoriteCount = 0;

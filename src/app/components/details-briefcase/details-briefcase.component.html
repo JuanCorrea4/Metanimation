@@ -6,7 +6,6 @@
           <img [src]="'../../../assets/profile/' + imgPerfil " alt="Imagen de perfil">
           <!--<img id="guardar" src="../../../assets/portafolio/guardar.png">-->
         </label>
-        <hr>
       </section>
       <section>
         <h6></h6>
@@ -41,7 +40,7 @@
     <div>
       <div class="details-brice">
         <section>
-          <img src="https://s1.eestatic.com/2021/07/05/series/594201257_194257893_1706x960.jpg">
+          <img [src]="'../../../assets/portafolio/pj/' + imgProject[0]" alt="Imagen de proyecto">
         </section>
         <section>
           <button><img src="../../../assets/portafolio/Heart-follow.png"></button>
@@ -70,11 +69,11 @@
         </section>
       </div>
     </div>
-    <div class="img-project">
-      <ng-container *ngFor="let img of imgProject">
-        <img  [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
-      </ng-container>
-      </div>
+    <div class="img-project" *ngFor="let img of imgProject.slice(1)">
+      <img [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
+    </div>
+    
+    
       <div class="project-similar">
         <section>
           <img src="">

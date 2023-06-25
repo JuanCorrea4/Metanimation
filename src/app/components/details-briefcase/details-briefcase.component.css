@@ -254,7 +254,7 @@ height: 30%;
 }
 
 .img-project > img{
-  object-fit: contain;
+  object-fit: cover;
   width: 63%;
 }
 
