@@ -56,9 +56,9 @@ export class AuthService {
     if (!token) {
       return Promise.reject('No se encontró ningún token');
     }
-
+//https://metanimation-back.onrender.com/Api/Users/getUserRole
     // http://localhost:5000/api/Users/getUserRole
-    return this.http.post<any>('https://metanimation-back.onrender.com/Api/Users/getUserRole', { token })
+    return this.http.post<any>('http://localhost:5000/api/Users/getUserRole', { token })
       .toPromise()
       .then(response => response.role)
       .catch(error => {

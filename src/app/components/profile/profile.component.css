@@ -311,6 +311,7 @@ color: white;
   width: 85%;
   height: 80%;
   cursor: pointer;
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
 }
 .professional-profile >section > img{
   object-fit: cover;

@@ -33,8 +33,9 @@
   <!--PERFIL PROFESIONALES -->
   <div class="professional-profile">
     <section *ngFor="let project of allProject">
-      <img routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}" [src]="project.ImgProject" alt="Imagen del proyecto">
-      <h6 routerLink="/detailsBriefcase">{{project.NameProject}}</h6>
+      <img routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}" [src]="'../../../assets/portafolio/pj/' + project.ImgProject" alt="Imagen del proyecto">
+
+      <h6 routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}">{{project.NameProject}}</h6>
       <p class="description">{{project.DescriptionProject}}</p>
       <label>
         <img [src]="'../../../assets/profile/' + project.ImgPerfil" alt="Imagen de perfil">

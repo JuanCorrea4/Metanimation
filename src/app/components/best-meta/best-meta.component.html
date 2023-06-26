@@ -3,6 +3,7 @@
         <h2>LO MEJOR DE METANIMATION</h2>
         <h4>Proyectos presentados hoy por nuestros Profesionales</h4>
         <div class="filter">
+            <!--
             <div class="carrete-conteiner">
             <button (click)="slideContainerLeft()"> <img src="../../../assets/new/Arrow_L.png"> </button>
             <div class="filter-carrete">
@@ -12,11 +13,12 @@
             </div>
             <button (click)="slideContainerRight()"> <img src="../../../assets/new/ArrowR.png"> </button>
             </div>
+                    -->
         </div>
         <div class="best-container">
             <div class="best-container1">
-                <h4> nameUser</h4>
-                <h3>Directora Creativa en Bunker3022</h3>
+                <h4>Andres Mora</h4>
+                <h3>Diseñador</h3>
                 <button (click)="toggleButton(0)" [ngClass]="{'continue': isActive[0]}">
                     <img *ngIf="!isActive[0]" src="../../../assets/portafolio/Seguir.png">
                     {{isActive[0] ? 'Siguiendo!' : 'Seguir'}}
@@ -27,15 +29,15 @@
                     <button (click)="toggleFavorite(0)"> {{counters[0]}} </button>
                 </div>
                 <section routerLink="/briefcase">
-                    <p>Rate-Proyecto</p>
+                    <p>MetaVerseLife</p>
                     <h6>1°</h6>
-                    <h5>Desing Thinkig</h5>
+                    <h5>Más allá de la realidad</h5>
                 </section>
             </div>
             <section class="bst">
                 <div class="best-container2" >
-                    <h4> nameUser</h4>
-                    <h3>Directora Creativa en Bunker3022</h3>
+                    <h4>Carlos restrepo</h4>
+                    <h3>Diseñador 3D</h3>
                     <button (click)="toggleButton(1)" [ngClass]="{'continue': isActive[1]}">
                         <img *ngIf="!isActive[1]" src="../../../assets/portafolio/Seguir.png">
                         {{isActive[1] ? 'Siguiendo!' : 'Seguir'}}
@@ -46,22 +48,22 @@
                         <button (click)="toggleFavorite(1)"> {{counters[1]}} </button>
                     </div>
                     <section routerLink="/briefcase">
-                        <p>Rate-Proyecto</p>
-                        <h5>Desing Thinkig</h5>
+                        <p>Explorando el mundo tridimensional</p>
+                        <h5>Del boceto a la realidad virtual</h5>
                         <h6>2°</h6>
                     </section>
                 </div>
                 <section class="bst-conteiner">
                     <div class="best-container3">
-                        <h4> nameUser</h4>
-                        <h3>Directora Creativa en Bunker3022</h3>
+                        <h4> Valentina Giraldo</h4>
+                        <h3>Animador 3D</h3>
                         <section routerLink="/briefcase">
                             <h6>3°</h6>
                         </section>
                     </div>
                     <div class="best-container4" >
-                        <h4> nameUser</h4>
-                        <h3>Directora Creativa en Bunker3022</h3>
+                        <h4> Sebastian Cabrera</h4>
+                        <h3>Programador</h3>
                         <section routerLink="/briefcase">
                             <h6>4°</h6>
                         </section>
@@ -92,8 +94,8 @@
                 </section>
                 <img  routerLink="/briefcase"
                     src="https://mir-s3-cdn-cf.behance.net/projects/202/6f03db76812287.Y3JvcCwxNjAwLDEyNTEsMCwxMzA.jpg">
-                <p>Rate-Proyecto</p>
-                <h4>desing Thinking</h4>
+                <p>Anim3D Studio</p>
+                <h4>Explorando la creatividad en la animación 3D</h4>
             </div>
             <div class="tem">
                 <section>
@@ -112,8 +114,8 @@
                 </section>
                 <img  routerLink="/briefcase"
                     src="https://mir-s3-cdn-cf.behance.net/projects/404/c3a113137237387.Y3JvcCw1NTk0LDQzNzYsNTgxLDA.jpg">
-                <p>Rate-Proyecto</p>
-                <h4>desing Thinking</h4>
+                <p>Metaverso</p>
+                <h4>Más allá de la realidad</h4>
             </div>
             <div class="tem">
                 <section>
@@ -131,8 +133,8 @@
                 </section>
                 <img  routerLink="/briefcase"
                     src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/6e8866137189947.620682e1dbe43.png">
-                <p>Rate-Proyecto</p>
-                <h4>desing Thinking</h4>
+                <p> Construyendo conexiones</p>
+                <h4>Un nuevo horizonte digital emergente</h4>
             </div>
             <div class="tem">
                 <section>
@@ -151,8 +153,8 @@
                 </section>
                 <img  routerLink="/briefcase"
                     src="https://st2.depositphotos.com/2739581/9521/i/600/depositphotos_95217974-stock-photo-simple-magenta-waves-abstract-background.jpg">
-                <p>Rate-Proyecto</p>
-                <h4>desing Thinking</h4>
+                <p>Plataforma interactiva</p>
+                <h4>Aprende y practicar diseño 3D</h4>
             </div>
         </div>
     </div>

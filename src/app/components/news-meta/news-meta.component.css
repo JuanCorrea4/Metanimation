@@ -86,10 +86,10 @@ p{
 }
 
 .category{
-    background-color: rgba(58, 53, 53, 0.477);
+    background-color: rgba(28, 26, 26, 0.544);
     border-radius: 20px;
-    width: 300px;
-    height: 100px;
+    width: 70%;
+    height: 120px;
     margin-left: 83px;
 }
 
@@ -109,6 +109,9 @@ img{
     width: 140px;
     height: 100px;
     margin: 0px;
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
 
 }
 .category p{

@@ -10,8 +10,8 @@ export class CoursesService {
   obtenerDetalles(idCurso: string) {
     throw new Error('Method not implemented.');
   }
-  private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
-  // private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+ // private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
+   private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
