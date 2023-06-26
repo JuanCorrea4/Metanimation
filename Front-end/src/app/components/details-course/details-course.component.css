@@ -1,0 +1,807 @@
+*{
+    font-family: 'Product Sans', sans-serif;
+}
+.course{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 10% 0 0 5%;
+}
+
+.courses {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    width: 80%;
+    height: 35%;
+    margin: 0 0 0 10%;
+    border: 1px rgb(141, 141, 141) solid;
+    overflow-x: auto; /* Mostrar scroll horizontal */
+    overflow-y: hidden; /* Ocultar scroll vertical */
+}
+
+.courses::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+    height: 5px;
+    margin: 10px;
+  }
+  
+  .courses::-webkit-scrollbar-track {
+    background: transparent; /* Color del track del scrollbar */
+  }
+  
+  .courses::-webkit-scrollbar-thumb {
+    background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+    border-radius: 4px; /* Bordes redondeados del thumb */
+  }
+  
+  .courses::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb al pasar el mouse */
+  }
+.courses > h3 {
+    font-family: 'Outer Limits Solid', sans-serif;
+    font-weight: 300;
+    margin: 5% 0 2% 5%;
+}
+.courses > p {
+    text-align: justify;
+    margin:  0 0 0 5%;
+    width: 90%;
+    }
+
+.module{
+    background-color: #1a1a1a;
+    border-radius: 15px;   
+    border: 1px rgb(141, 141, 141) solid;
+    height: 65%;
+    width: 80%;
+    margin: 4% 0 0 10%;
+    overflow: scroll;
+}
+
+.module > section > h4 {
+    border-radius: 10px 10px 0 0;
+    display: inline-block;
+    margin: 0 0 0 20%;
+    
+}
+
+.module > section > img {
+    object-fit: contain;
+    width: 8%;
+    vertical-align: middle ;
+    margin: 1% 0 0 10%;
+}
+.module > section  {
+background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+border-radius: 15px 15px 0 0;
+height: 15%;
+}
+iframe{
+    border-radius: 15px;
+    height: 55vh;
+    width: 90%;
+}
+
+.option-courses{
+    display: grid;
+    grid-template-columns: 25% 13% 10% 10% 15% 20%;
+    margin: 2% 0 0 5%;
+}
+.attachments{
+    display: grid;
+    grid-template-columns: 15% 80%;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    border: 1px rgb(141, 141, 141) solid;
+    margin: 5% 0 0 10%;
+
+}
+.attachments:hover{
+    background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+}
+
+.attachments > img{
+    width: 70%;
+    background-color:rgba(194, 194, 194, 0.63) ;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20% 0 0 10%;
+}
+.attachments > label > u{
+    margin: 5% 0 0 5%;
+    cursor: pointer;
+}
+.attachments > label >p{
+    margin: 0 0 0 5%;
+}
+
+.play{
+    display: grid;
+    grid-template-columns: 20% 20% 50%;
+    background-color:#1a1a1a;
+    border: 1px rgb(141, 141, 141) solid;
+    border-radius: 15px;
+    height: 77%;
+    margin: 8% 0 0 5%;
+}
+
+.play > button {
+    height: 0%;
+    background-color: transparent;
+    border: none;
+    margin: 60% 0 0 5%;
+
+}
+.play > button > img {
+    width: 40%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+.galery{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color:#1a1a1a;
+    border: 1px rgb(141, 141, 141) solid;
+    border-radius: 15px;
+    margin: 9% 0 0 5%;
+    height: 77%;
+    width: 80%;
+}
+.galery:hover{
+    background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+    cursor: pointer;
+}
+
+.galery > img{
+    width: 50%;
+    object-fit: contain;
+    margin: 30% 0 0 15%;
+}
+
+.option-courses > button >img {
+    width: 50%;
+    object-fit: contain;
+}
+.option-courses > button{
+    background-color:#1a1a1a;
+    border: 1px rgb(141, 141, 141) solid;
+    border-radius: 15px;
+    height: 77%;
+    width: 40%;
+    margin: 8% 0 0 60%;
+}
+.option-courses> button:hover{
+    background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+    cursor: pointer;
+}
+.like{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color:#1a1a1a;
+    border: 1px rgb(141, 141, 141) solid;
+    border-radius: 15px;   
+    margin: 5% 0 0 5%; 
+    width: 90%;
+    height: 77%;
+}
+.like > button > img{
+    width: 20%;
+    object-fit: contain;
+    cursor: pointer;
+}
+.like > button {
+    background-color: transparent;
+    border: none;
+}
+.comments{
+    display: grid;
+    grid-template-columns: 20% 70%;
+    background-color:#1a1a1a;
+    border: 1px rgb(141, 141, 141) solid;
+    border-radius: 15px;   
+    margin: 3% 0 0 0; 
+    width: 100%;
+    height: 77%;
+}
+.comments > img{
+    width: 40%;
+    object-fit: contain;
+    vertical-align: middle;
+    margin: 25% 0 0 20%;
+}
+.comments:hover{
+    background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+    cursor: pointer;
+}
+.details-course{
+    display: grid;
+    grid-template-columns: 25% 45% 30%;
+    margin: 5% 0 0 2%;
+}
+
+.description-comments{
+display: grid;
+grid-template-rows: 15% 50% 25%;
+background-color:#1a1a1a;
+border: 1px rgb(141, 141, 141) solid;
+border-radius: 15px;   
+width: 97%;
+}
+
+.description-comments > label >section> img{
+    width: 20%;
+    object-fit: contain;
+    vertical-align: middle;
+    margin: 2% 0 0 5%;
+    padding: 5px;
+}
+.description-comments > label >section{
+    display: inline-block;
+    background-color: rgba(153, 153, 153, 0.664);
+    width: 10%;
+    height: 30%;
+    border-radius: 10px;
+    margin: 0 0 2% 5%;
+}  
+.description-comments > label > img{
+    width: 2%;
+    object-fit: contain;
+    vertical-align: middle;
+    margin: 0 0 0 30%;
+    background-color: rgba(153, 153, 153, 0.664);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.description-comments > label >section > p{
+    display: inline-block;
+    margin: 5% 0 0 1%;
+}
+.description-comments > label > h3{
+    display: inline-block;
+    margin: 5% 5% 0 5%;
+    font-family: 'Outer Limits Solid', sans-serif;
+    font-weight: 300;
+
+}
+.description-comments > label > hr{
+    width: 90%;
+}
+.description-comments > label > p{
+    width: 80%;
+    text-align: justify;
+    margin: 0 0 0 5%;
+}
+.description-comments > label > div{
+    width: 80%;
+    text-align: justify;
+    margin: 0 0 0 5%;
+}
+
+.price > div > h4{
+    font-size: 30px;
+
+    margin: -10% 0 3% 5%;
+}
+
+.price > div > h5{
+    font-size: 15px;
+    margin: 0 0 3% 5%;
+}
+.description-comments del{
+    
+    margin: 0 0 0 2%;
+}
+
+.price > div > hr{
+    transform: rotate(90deg);
+    width: 20%;
+    margin: 24% 0 3% -10%;
+}
+
+.description-comments  > label > button{
+    margin: 3% 0 3% 5%;
+    height: 10%;
+    width: 30%;
+    background-color: transparent;
+    border-radius: 15px;
+    color: white;
+    border: 1px white solid;
+}
+
+.description-comments  > label > button:hover{
+    border: 2px rgba(28,178,162,1 )solid;
+    cursor: pointer;
+}
+.info-course{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 1px white solid;
+    width: 90%;
+    height: 100%;
+    margin: 0 0 0 5%;
+    padding: 0 0 5% 0;
+}
+
+.person{
+    margin: 20% 0 0 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    }
+    .person-perfil{
+        width: 80%;
+        margin: 0 0 0 10%;
+    }
+    .person-perfil > img{
+        object-fit: contain;
+        width: 40%;
+        border-radius: 50%;
+        margin: 0 0 0 6%;
+    }
+
+    .person-perfil > hr{
+        width: 30%;
+        margin: 5% 0 2% 15%;
+        
+    }
+    .person-perfil > p{
+        margin: 0 0 0 10%;
+        font-size: 13px;
+    }
+    .person > label > h5{
+        font-size: 15px;
+        margin: 2% 0 0 -35%;
+        display: inline-block;
+
+    }
+    
+    .person > label > h3{
+        display: inline-block;
+        margin: -6% 0 0 -35%;
+        width: 95%;
+        font-size: 15px;
+    }
+
+    .person > label{
+        display: grid;
+        grid-template-rows: 25% 25% 25% 25%;
+    }
+    .person > label > hr{
+        width: 60% ;
+        height: 0.01px;
+        margin: 15px;
+        margin: 0 0 0 -33%;
+    }
+
+    .qualification{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        width: 60%;
+        margin-top: -19%;
+        margin-left: -35%;
+    }
+
+    .qualification > img{
+        object-fit: contain;
+        width: 80%;
+        height: 40%;
+        cursor: pointer;
+    }
+
+    .details-info-curso{
+        display: grid;
+        grid-template-rows: 33% 33% 33%;
+    }
+    .details-info-curso > label > img{
+        width: 5%;
+        object-fit: cover;
+        padding: 10px;
+        background-color:rgba(28,178,162,1) ;
+        border-radius: 50%;
+        margin: 6% 0 0 10%;
+    }
+
+    .details-info-curso > label > h5{
+        display: inline-block;
+        vertical-align: text-top;
+        margin: -5% 0 0 5%;
+    }
+    .details-info-curso > label > p{
+        margin: -5% 0 0 27%;
+        font-size: 13px;
+        
+    }
+
+    .write-comments{
+        width: 80%;
+        background-color:#1a1a1a;
+        border: 1px rgb(141, 141, 141) solid;
+        border-radius: 15px;   
+    }
+    .write-comments > input {
+        width: 60%;
+        height: 8%;
+        margin: 5% 0 3% 10%;
+        background-color: rgba(153, 153, 153, 0.664);
+        border-radius: 10px 0 0 10px;
+        border: 3px rgb(150, 149, 149) solid;
+        display: inline-block;
+    }
+    .write-comments > input::placeholder {
+        color: white;
+    }
+    .write-comments > button{
+        width: 5.5%;
+        height: 8.8%;
+        background-color: rgba(153, 153, 153, 0.664);
+        border-radius: 0 10px 10px 0;
+        border: 3px rgb(150, 149, 149) solid;
+        display: inline;
+        position: relative;
+    }
+    .write-comments > button >img {
+        object-fit: contain;
+        width: 90%;
+        margin: 90% 0 0 30%;
+    }
+    .write-comments > button:hover{
+        cursor: pointer;
+        background-color: rgba(87, 87, 87, 0.664);
+
+    }
+    .write-comments > hr{
+        width: 90%;
+        margin-top: 5%;
+    }
+    .write-comments > label > h4{
+        width: 90%;
+        margin: 5% 0 0 5%
+    }
+    .write-comments > label > p{
+        width: 90%;
+        margin: 5% 0 0 5%
+    }
+
+    .write-comments > label > a{
+        width: 90%;
+        margin: 5% 0 0 5%;
+        font-size: 13px;
+    }
+
+    .write-comments > label > hr{
+        width: 1px;
+        height: 5%;
+        margin: 5% 0 0 5%;
+        font-size: 13px;
+        display: inline-block;
+    }
+    .write-comments > label > a > img{
+    width: 4%;
+    object-fit: contain;
+    margin: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+    .write-comments > label > div > img{
+    width: 15%;
+    object-fit: contain;
+    margin: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+    .write-comments > label > div {
+        display: inline-block;
+        margin: 0 0 0 20%;
+    }
+    .write-comments > label > div > button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-left: -7px;
+    }
+
+    .write-comments > label > input{
+        margin: 2% 0 0 5%;
+        width: 80%;
+        height: 30px;
+        background-color: #313131;
+        border-radius: 10px;
+        color: white;
+    }
+    
+    .write-comments > label > input::placeholder{
+        color: white;
+        padding: 5px;
+    }
+/* ARCHIVOS Y ENLACES*/
+
+    .conteiner-links{
+        width: 95%;
+        height: 100%;
+        background-color:#1a1a1a;
+        border: 1px rgb(141, 141, 141) solid;
+        border-radius: 15px;   
+    }
+
+
+    .links{
+        display: grid;
+        grid-template-rows: 33% 33% 33%;
+        background-color: rgba(87, 87, 87, 0.664);
+        border-radius: 15px;
+        width: 90%;
+        height: 40%;
+        margin: 5% 0 0 5%;
+    }
+
+    .links > section > label {
+        display: grid;
+        grid-template-columns:80% 20%;
+    }
+    .links > section > img{
+        object-fit: contain;
+        width: 5%;
+        margin: 5% 0 0 5%;
+    }
+    .links > section > a >hr{
+        display: inline-block;
+        transform: rotate(90deg);
+        width: 10%;
+        margin: 0 0 0 2% ;
+    }
+
+    .links > section >p{
+        display: inline-block;
+        text-align: start;
+        width: 35%;
+        margin: 5% 0 0 0;
+    }
+
+    .links > section > label > article > u {
+        margin: 0 0 0 5%;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .links > section > label > article > h6{
+        margin: 0 0 0 5%;
+        color:rgba(28,178,162,1) ;
+        cursor: pointer;
+    }
+    .links > section > label > article > h6:hover{
+        color: aliceblue;
+    }
+    .links > section > label > a > img{
+        object-fit: contain;
+        width: 20%;
+        margin: 0;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 10%;
+    }
+    .links > section > label > img:hover{
+        background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+        cursor: pointer;
+    }
+    .links > section > hr{
+        width: 85%;
+        margin: 5% 0 10% 5%;
+        border-color: #313131;
+    }
+
+    .files{
+        display: grid;
+        grid-template-rows: 25% 25% 25% 25%;
+        background-color: rgba(87, 87, 87, 0.664);
+        border-radius: 15px;
+        width: 90%;
+        height: 50%;
+        margin: 5% 0 5% 5%;
+    }
+
+    .files > section > img{
+        object-fit: contain;
+        width: 10%;
+        margin: 5% 0 0 5%;
+        vertical-align: bottom;
+    }
+    .files > section > p{
+        width: 25%;
+        margin-top: 5%;
+    }
+    .files > section > a >hr{
+        display: inline-block;
+        transform: rotate(90deg);
+        width: 10%;
+        margin: 0 0 0 2% ;   
+    }
+    .files > section > p{
+         display: inline-block;
+
+    }
+    .files > section > label {
+        display: grid;
+        grid-template-columns:80% 20%;
+        margin: 6% 0 0 0;
+    }
+    .files > section > label > img{
+        object-fit: contain;
+        width: 20%;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        padding: 10%;
+        display: inline-block;
+        margin: 3% 0 0 0;
+    }
+    .files > section > label > img:hover{
+        background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+        cursor: pointer;
+    }
+
+    .files > section > label > article > h6{
+        color:rgba(28,178,162,1);
+        margin: 1% 0 0 5%; 
+        cursor: pointer;  
+    }
+    .files > section > label > article > h6:hover{
+        color: aliceblue;
+    }
+    .files > section > hr{
+        width: 85%;
+        margin: 5% 0 20% 5%;
+        border-color: #313131;
+    }
+    .files > section > label > article > a{
+        margin: 10% 0 0 5%;
+        cursor: pointer;
+        color: white;
+    }
+    .galery-details{
+        background-color:#1a1a1a;
+        border: 1px rgb(141, 141, 141) solid;
+        border-radius: 15px; 
+        width: 92%;
+        height: 10%;
+        margin: 2% 0 0 2%;
+    }
+    .galery-details > section >label:hover{
+        background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+        cursor: pointer;
+    }
+    .galery-details > section{
+        display: grid;
+        grid-template-columns: 10% 14% 60% 8% 3% 3%;
+    }
+    .galery-details > section >label >img{
+        object-fit: contain;
+        vertical-align: middle;
+        width: 20%;
+        margin: 5% 0 0 10%;
+    }
+    .galery-details > section >label >h5{
+        display: inline;
+        margin: 0 0 0 10%;
+    }
+    .galery-details > section >label{
+        background-color: rgba(129, 129, 129, 0.507);
+        border-radius: 10px;
+        border: none;
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+    .galery-details > section > article > p {
+        display: inline-block;
+        font-size: 15px;
+        margin: 12% 0 0 5%;
+    }
+    .galery-details > section > hr{
+        width: 100%;
+        height: 0.1px;
+        margin: 4% 0 0 0;
+    }
+    .galery-details > section > p{
+        margin: 20% 0 0 60%;
+    }
+    .galery-details > section > button{
+        background-color: rgba(129, 129, 129, 0.507);
+        border-radius: 10px;
+        border: none;
+        margin: 40% 0 0 0;
+        width: 100%;
+        height: 60%;
+    }
+    .galery-details > section > button >img{
+    width: 20%;
+    object-fit: contain;
+    }
+    .galery-details > section > button:hover{
+        cursor: pointer;
+        background-color: rgba(83, 83, 83, 0.664);
+
+    }
+    .photo-galery{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    .photo-galery > section > img {
+        object-fit: cover;
+        width: 90%;
+        height: 50%;
+        border-radius: 15px;
+        margin: 10% 0 0 5%;
+        cursor: pointer;
+    }
+    .photo-galery > section > label > p{
+        margin: 5% 0 0 10%;
+        display: inline-block;
+        width: 70%;
+    }
+    .photo-galery > section > label > img{
+        margin:  0 0 0 5%;
+        object-fit: contain;
+        width: 5%;
+        cursor: pointer;
+    }
+    /* MODULOS*/
+
+    .section-modules{
+      display: grid;
+      grid-template-rows: 33% 33% 33%;
+    }
+    .module::-webkit-scrollbar {
+        width: 8px; /* Ancho del scrollbar */
+        height: 5px;
+        margin: 10px;
+      }
+      
+      .module::-webkit-scrollbar-track {
+        background: transparent; /* Color del track del scrollbar */
+      }
+      
+      .module::-webkit-scrollbar-thumb {
+        background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+        border-radius: 4px; /* Bordes redondeados del thumb */
+      }
+      
+      .module::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Color del thumb al pasar el mouse */
+      }
+    .section-modules > section {
+      display: grid;
+      grid-template-columns: 20% 40% 20%;
+      background-color:#313131;
+      width: 90%;
+      border-radius: 15px;
+      margin: 5% 0 0 5%;
+    }
+
+    .section-modules > section > label > h4{
+      font-size: 15px;
+      margin: 0 0 10% 0;
+    }
+
+    .section-modules > section > label > h3{
+      
+      margin: 10% 0 0 0;
+    }
+
+    .section-modules > section > img{
+        margin: 50% 0 0 100%;
+    }
+
+    .section-modules > div > p {
+        margin: 2%  0 0 5%;
+        background-color:#313131;
+        border-radius: 15px;
+        width: 82%;
+        height: 20px;
+        padding: 10px;
+    }
+    .section-modules > div {
+        height: 5px;
+        display: inline-block;
+        cursor: pointer;
+    }

@@ -1,0 +1,223 @@
+.sumergete > hr{
+    height:20vh;
+    width:.1vw;
+    border-width:0;
+    background-color:#ffffff;
+    margin: -5% 0 0 45%;
+   } 
+
+   .logoB{
+    width: 30px;
+    margin: 5% 43% 5%;
+    
+}
+.sumergete-img{
+    width: 60%;
+    margin: 0 0 0 15%;
+}
+
+main{
+    margin-left: 7%;
+}
+
+*{
+    font-family: 'Product Sans', sans-serif;
+
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 30% 1% 69%;
+    grid-template-rows: none;
+    width: 90%;
+    margin-top: -5%;
+    align-content: end;
+    }
+
+
+
+    .conteiner-1{
+        margin-left: 10px;
+        margin-top: 50px;
+        width: 45%;
+        position: relative;
+        display: grid;
+        grid-template-rows: 50% 50%;
+    }
+
+    .conteiner-2{
+        display: flex; /* Cambiar a flexbox */
+        width: 80%;
+        height: 15%;
+        margin: 5% 0 0 10px;
+        border-radius: 20px;
+        overflow-x: auto; /* Mostrar scroll horizontal */
+        overflow-y: hidden; /* Ocultar scroll vertical */
+    }
+
+    .conteiner-2::-webkit-scrollbar {
+        width: 8px; /* Ancho del scrollbar */
+        height: 5px;
+        margin: 10px;
+      }
+      
+      .conteiner-2::-webkit-scrollbar-track {
+        background: transparent; /* Color del track del scrollbar */
+      }
+      
+      .conteiner-2::-webkit-scrollbar-thumb {
+        background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+        border-radius: 4px; /* Bordes redondeados del thumb */
+      }
+      
+      .conteiner-2::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Color del thumb al pasar el mouse */
+      }
+    
+    .conteiner-3{
+        width: 90vh;
+        height: 200px ;
+        display: flex;
+        position: relative;
+        margin: -105% 0 0 110%;
+    }
+
+
+.principal{
+        background-image: url("../../../assets/cursos/fondocursos.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 10%;
+        width: 150%;
+        height: 100%;
+        margin-bottom: 5%;
+        }
+        .principal >p {
+            font-size: 20px;
+            margin-bottom: 60%;
+        }
+
+        .principal > h4 {
+            font-family: 'Outer Limits Solid', sans-serif;
+            font-weight: 200;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+
+        
+        .principal > img {
+            margin: 10% 0 0 0;
+            width: 10%;
+            object-fit: contain;
+}
+
+.person{
+        margin: 20% 0 0 15%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 150%;
+        }
+
+        .person-perfil > img{
+            object-fit: contain;
+            width: 70%;
+            border-radius: 50%;
+        }
+
+        .person-perfil > hr{
+            width: 30%;
+            margin: -20% 0 0 20%;
+        }
+        .person-perfil > p{
+            margin: 20% 0 0 -40px;
+            text-align: center;
+        }
+        .person > label > h5{
+            font-size: 15px;
+            display: inline-block;
+            margin-top: 55%;
+
+        }
+        
+        .person > label > h3{
+            display: inline-block;
+            margin: 20% 0 0 0;
+            width: 100%;
+        }
+
+        .person > label{
+            display: grid;
+            grid-template-rows: 25% 25% 25% 25%;
+        }
+        .person > label > hr{
+            width: 100%;
+            height: 0.1px;
+            margin: 0px;
+        }
+
+        .qualification{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            margin-top: -50%;
+        }
+        .qualification > button{
+            background-color: transparent;
+            border: none;
+            height: 30%;
+            width: 90%;
+        }
+        .qualification > button >img{
+            object-fit: contain;
+            width: 100%;
+            height: 40%;
+        }
+
+    main > h2{
+        display: inline-block;
+        font-family: 'Outer Limits Solid', sans-serif;
+        font-size: 50px;
+        font-weight: 300;
+       }
+    main > h4{
+        display: inline-block;
+        margin: 10px;
+        font-size: 25px;
+        font-weight: 300;
+       }
+
+       .category{
+        background-color: #1a1a1a;
+        border-radius: 20px;
+        flex: 0 0 20%; 
+        display: flex; 
+        padding: 10px;
+        box-sizing: border-box;
+        margin: 0 0 10px 10px;
+       }
+        .category  > img {
+        object-fit: contain;
+        width: 20px;
+        margin: -25% 0 0 0;
+        }
+       .conteiner > hr {
+        height: 80%;
+        margin-top: 10vh;
+       }
+
+       .category > p {
+        text-align: center;
+        margin: 20px 0 0 10px;
+        }
+
+        .conteiner-2 :hover{
+        background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+        cursor: pointer;
+        cursor: pointer;border-radius: 20px;
+        }
+        
+
+        iframe{
+            width: 100%;
+            border-radius: 15px;
+            margin-top: -10%;
+        }

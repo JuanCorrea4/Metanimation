@@ -1,0 +1,290 @@
+
+/*   background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+     font-family: 'Outer Limits Solid', sans-serif;
+     border: 2px rgba(28,178,162,1 )solid;
+     background-color: #1a1a1a;
+
+*/
+*{
+  font-family: 'Product Sans', sans-serif;
+}
+main{
+  margin-top: 5%;
+}
+
+/*BUSQUEDA DE PROFESIONAL */
+.professional-search{
+  background-image:  linear-gradient(to top, #0303036e 25%, #3f3e3e80 40%), url(https://besthqwallpapers.com/Uploads/21-1-2021/153029/colorful-abstract-background-4k-geometric-shapes-artwork-circles.jpg);
+  background-size:100% 160%;
+  background-repeat: no-repeat;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 95%;
+  margin: 7% 0 0 2%;
+
+}
+
+.professional-search > h3 {
+  width: 35%;
+  color: white;
+  font-size: 25px;
+  font-family: 'Outer Limits Solid', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 0 0 35% ; 
+  padding-top: 7%;
+
+}
+
+.professional-search > p{
+  margin: 0 0 0 32% ; 
+  color: white;
+  font-size: 15px;
+}
+
+.professional-search > input{
+  background-color:#1a1a1a;
+  border-radius: 20px;
+  width: 30%;
+  height: 15%;
+  margin: 2% 0 0 38%;
+  color: white;
+}
+.professional-search > input::placeholder{
+  color: white;
+  font-size: 15px;
+  padding: 5%;
+}
+/* OPCIONES Y FILTRO PROFESIONAL*/
+.option-prof{
+  display: flex;
+  width: 45%;
+  margin: 3% 0 0 28%;
+  overflow-x: auto; /* Mostrar scroll horizontal */
+  overflow-y: hidden; /* Ocultar scroll vertical */
+  cursor: pointer;
+}
+
+.option-prof::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+  height: 5px;
+  margin: 10px;
+}
+
+.option-prof::-webkit-scrollbar-track {
+  background: transparent; /* Color del track del scrollbar */
+}
+
+.option-prof::-webkit-scrollbar-thumb {
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+  border-radius: 4px; /* Bordes redondeados del thumb */
+}
+
+.option-prof::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el mouse */
+}
+.option-prof > div > button{
+  width: 95%;
+  height: 50px;
+  background-color: #383838;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  margin: 0 0 10px 50px;
+  text-align: start;
+}
+.option-prof > a > button{
+  width: 95%;
+  background-color: #383838;
+  color: white;
+  border-radius: 8px;
+  padding: 5%;
+  border: none;
+  text-decoration: none;
+}
+
+.option-prof> div > button > img{
+  object-fit: contain;
+  width: 10%;
+  margin: 0 0 0 5px;
+}
+
+#btns{
+  background-color: #383838;
+  border-radius: 0 15px 15px 0;
+  padding: 5%;
+  width: 90%;
+  height: 95%;
+  margin: 0;
+}
+#filt{
+  border:1px  white solid;
+  border-radius: 15px;
+  margin: 0 0 0 20%;
+}
+.option-prof > button:hover{
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  cursor: pointer;
+}
+.filter-professional {
+  display: grid;
+  grid-template-columns: 15% 1% 5% 1% 5% 45% 10% 5% 10%;
+  margin: 2% 0 0 5%;
+}
+.filter-professional > button{
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-professional > a > button{
+  width: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #383838;
+  border-radius: 15px 0 0 15px;
+  margin: 0 0 0 50%;
+  padding: 5%;
+}
+
+.filter-professional > hr{
+  border-color: #1a1a1a;
+}
+
+.filter-professional > button:hover{
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  cursor: pointer;
+}
+.filter-professional > a > button:hover{
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  cursor: pointer;
+}
+.filter-professional > button:hover{
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  width: 80%;
+  border-radius: 10px;
+}
+
+.filter-professional> button.continue {
+  width: 40%;
+  height: 70%;
+  border-radius: 10px;
+  background-color: rgba(36, 146, 135, 0.87);
+  color: white;
+}
+
+.filter-professional >button > img{
+  object-fit: contain;
+  width: 15%;
+  vertical-align: middle;
+  margin-right: 8%;
+}
+.option-prof >button > img{
+object-fit: contain;
+width: 15%;
+}
+.option-prof > a > button > img{
+  object-fit: contain;
+  width: 15%;
+  }
+section > hr{
+  width: 90%;
+  border-color: #1a1a1a;
+}
+
+.professional-profile{
+  display: grid;
+  grid-template-columns: 30% 30% 30% 30%;
+  margin: 2% 0 0 5%;
+  width: 80%;
+}
+.professional-profile >section{
+  background-color:#383838;
+  border-radius: 15px;
+  width: 85%;
+  height: 80%;
+}
+.professional-profile >section > img{
+  object-fit: cover;
+  width: 100%;
+  height: 70%;
+  border-radius: 15px;
+}
+.professional-profile >section > h6 {
+  font-size: 15px;
+  margin: -15% 0 0 5%;
+}
+.professional-profile >section > h4{
+  margin: 0 0 5% 5%;
+}
+.professional-profile >section >label{
+  display: grid;
+  grid-template-columns: 20% 30% 25% 25%;
+  width: 95%;
+}
+.professional-profile >section >label > button{
+  height: 40%;
+  margin: 20% 0 0 3%;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.professional-profile >section >label> div {
+  display: inline-block;
+  height: 40%;
+  width: 60%;
+  margin: 20% 0 0 10%;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.professional-profile >section > label > div > button{
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.professional-profile >section >label > button:hover{
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  cursor: pointer;
+}
+.professional-profile >section >label > div > img{
+  object-fit: contain;
+  width: 25%;
+  vertical-align: bottom;
+  margin: 0 0 0 15%;
+}
+.professional-profile >section > label > button.continue {
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+  background-color: rgba(36, 146, 135, 0.87);
+  color: white;
+}
+
+.professional-profile >section >label > h3{
+  font-size: 15px;
+}
+.professional-profile >section >label >img{
+  object-fit: cover;
+  width: 60%;
+  height: 70%;
+  border-radius: 90%;
+  margin: 10% 0 0 15%;
+  vertical-align: middle;
+}
+
+.professional-profile >section >label > button >img{
+  object-fit: contain;
+  width: 15%;
+  margin: 0 10% 0 3%;
+}

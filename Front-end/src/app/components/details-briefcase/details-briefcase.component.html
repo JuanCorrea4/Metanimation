@@ -1,0 +1,159 @@
+<app-nav></app-nav>
+<main>
+    <div class="profile">
+      <section>
+        <label>
+        <img src="https://img.freepik.com/iconos-gratis/avatar_318-158392.jpg?w=2000">
+        <img id="guardar" src="../../../assets/portafolio/guardar.png">
+        </label>
+        <hr>
+      </section>
+      <section>
+        <h6>Rate-Proyecto</h6>
+        <h4>Mini Frogy Collection</h4>
+        <button (click)="toggleButton(0)" [ngClass]="{'continue': isActive[0]}">
+          <img *ngIf="!isActive[0]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[0] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div class="follow">
+        <img *ngIf="counters[0] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[0] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(0)"> {{counters[0]}} </button>
+    </div>
+      </section>
+      <p>Publicado el 04/2023</p>
+      <div class="info-person">
+        <div class="person">
+          <div class="person-perfil">
+            <img src="https://img.freepik.com/iconos-gratis/avatar_318-158392.jpg?w=2000">
+            <hr>
+            <p>03/2023</p>
+          </div>
+          <label>
+            <h5>Antonio J. Mazanedo</h5>
+            <h3>Artista Freelance</h3>
+            <hr>
+            <p><img src="../../../assets/portafolio/ubicacion.png">Medellin, Colombia</p>   
+          </label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="details-brice">
+        <section>
+          <img src="https://s1.eestatic.com/2021/07/05/series/594201257_194257893_1706x960.jpg">
+        </section>
+        <section>
+          <button><img src="../../../assets/portafolio/Heart-follow.png"></button>
+          <button><img src="../../../assets/portafolio/Heart-nofollow.png"></button>
+          <button><img src="../../../assets/cursos/fleca.png"></button>
+          <hr>
+          <h5>Descripcion del proyecto:</h5>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt enim laboriosam iure itaque labore assumenda aliquam unde, commodi cupiditate animi dicta obcaecati a quas consectetur quisquam officiis reiciendis asperiores adipisci?</p>
+          <u>Leer más</u>
+          <hr>
+          <h5>Software Usados</h5>
+          <div class="software-us">
+            <label>
+            <p><img src="../../../assets/portafolio/adobe.png">Adobe</p>
+            <hr>
+            </label>
+            <label>
+            <p><img src="data:image/png;base64,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">Zbrush</p>
+
+            </label>
+            <label>
+            <p><img src="../../../assets/portafolio/photoshop.png">Adobe photoshop</p>
+            <hr>
+            </label>
+            <label>
+            <p><img src="data:image/png;base64,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">Blender</p>
+            </label>
+          </div>
+          <hr>
+          <div class="btn-course">
+            <button>Diseño<img src="../../../assets/portafolio/azul.png"></button>
+            <button>3d artista<img src="../../../assets/portafolio/morado.png"></button>
+            <button>Arte digital<img src="../../../assets/portafolio/rojo.png"></button>
+            <button>Programador<img src="../../../assets/portafolio/azul.png"></button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="img-project">
+        <img src="https://ksr-ugc.imgix.net/assets/038/888/936/f1fe4fad1f781a841daf00dc4f4510e9_original.png?ixlib=rb-4.0.2&crop=faces&w=1552&h=873&fit=crop&v=1665612118&auto=format&frame=1&q=92&s=4f639f6d6dfef944b1445871793e1edc">
+        <img src="https://as2.ftcdn.net/v2/jpg/04/97/27/23/1000_F_497272364_ApuRyJNkduOKLIjmepBieXF5bEGuZpQn.jpg">
+        <img src="https://ksr-ugc.imgix.net/assets/034/849/960/e6f5790055f09febfab967746216ee80_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1552&h=873&fit=crop&v=1631474108&auto=format&frame=1&q=92&s=4736d3e5383462661f49c43993232532">
+      </div>
+      <div class="project-similar">
+        <section>
+          <img src="">
+          <p>Proyectos similares</p>
+          <hr>
+        </section>
+        <section class="option-prof">
+          <button>Arte digital <img src="../../../assets/portafolio/rojo.png"></button>
+          <button>Arte digital <img src="../../../assets/portafolio/azul.png"></button>
+          <button>3d artista <img src="../../../assets/portafolio/rojo.png"></button>
+          <button>Arte digital <img src="../../../assets/portafolio/morado.png"></button>
+          <button>Programador<img src="../../../assets/portafolio/azul.png"></button>
+        </section>
+        <div class="project-profile">
+        <section class="profile-project">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/202/6f03db76812287.Y3JvcCwxNjAwLDEyNTEsMCwxMzA.jpg">
+          <h6>Rate- Proyecto</h6>
+          <h4>Desing Thinking</h4>
+          <label>
+            <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+            <h3>David ferchs</h3>
+            <button (click)="toggleButton(1)" [ngClass]="{'continue': isActive[1]}">
+              <img *ngIf="!isActive[1]" src="../../../assets/portafolio/Seguir.png">
+              {{isActive[1] ? 'Siguiendo!' : 'Seguir'}}
+          </button>
+          <div class="follow">
+            <img *ngIf="counters[1] > 0" src="../../../assets/portafolio/Heart-follow.png">
+            <img *ngIf="counters[1] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+            <button (click)="toggleFavorite(1)"> {{counters[1]}} </button>
+        </div>
+          </label>
+        </section>
+        <section class="profile-project" >
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/f8b59f137237387.62078a32f064f.jpg">
+          <h6>Rate- Proyecto</h6>
+          <h4>Desing Thinking</h4>
+          <label>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+            <h3>David ferchs</h3>
+            <button (click)="toggleButton(2)" [ngClass]="{'continue': isActive[2]}">
+              <img *ngIf="!isActive[2]" src="../../../assets/portafolio/Seguir.png">
+              {{isActive[2] ? 'Siguiendo!' : 'Seguir'}}
+          </button>
+          <div class="follow">
+            <img *ngIf="counters[2] > 0" src="../../../assets/portafolio/Heart-follow.png">
+            <img *ngIf="counters[2] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+            <button (click)="toggleFavorite(2)"> {{counters[2]}} </button>
+        </div>
+          </label>
+        </section>
+        <section class="profile-project">
+          <img src="https://wallpapers.com/images/hd/spike-from-brawl-stars-4k5hytj0bkts6e04.jpg">
+          <h6>Rate- Proyecto</h6>
+          <h4>Desing Thinking</h4>
+          <label>
+            <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+            <h3>David ferchs</h3>
+            <button (click)="toggleButton(3)" [ngClass]="{'continue': isActive[3]}">
+              <img *ngIf="!isActive[3]" src="../../../assets/portafolio/Seguir.png">
+              {{isActive[3] ? 'Siguiendo!' : 'Seguir'}}
+          </button>
+          <div class="follow">
+            <img *ngIf="counters[3] > 0" src="../../../assets/portafolio/Heart-follow.png">
+            <img *ngIf="counters[3] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+            <button (click)="toggleFavorite(3)"> {{counters[3]}} </button>
+        </div>
+          </label>
+        </section>
+      </div>
+      </div>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,298 @@
+.professional-search {
+  background-image: linear-gradient(to top, #0303036e 25%, #3f3e3e80 40%), url(https://besthqwallpapers.com/Uploads/21-1-2021/153029/colorful-abstract-background-4k-geometric-shapes-artwork-circles.jpg);
+  background-size: 100% 160%;
+  background-repeat: no-repeat;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 95%;
+  margin: 7% 0 0 2%;
+
+}
+
+.professional-search>h3 {
+  width: 25%;
+  color: white;
+  font-size: 25px;
+  font-family: 'Outer Limits Solid', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 0 0 40%;
+  padding-top: 7%;
+
+}
+
+.professional-search>p {
+  margin: 0 0 0 38%;
+  color: white;
+  font-size: 15px;
+}
+
+.professional-search>input {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  width: 30%;
+  height: 15%;
+  margin: 2% 0 0 38%;
+  color: white;
+}
+
+.professional-search>input::placeholder {
+  color: white;
+  font-size: 15px;
+  padding: 5%;
+}
+
+/* OPCIONES Y FILTRO PROFESIONAL*/
+.option-prof {
+  display: grid;
+  grid-template-columns: 13% 13% 13% 13% 15% 3%;
+  width: 50%;
+  height: 45%;
+  margin: 5% 0 0 35%;
+}
+
+.option-prof>button {
+  width: 95%;
+  background-color: #383838;
+  color: white;
+  border-radius: 8px;
+  padding: 5%;
+  border: none;
+}
+
+.option-prof>a>button {
+  width: 95%;
+  background-color: #383838;
+  color: white;
+  border-radius: 8px;
+  padding: 5%;
+  border: none;
+  text-decoration: none;
+}
+
+.option-prof>img {
+  object-fit: contain;
+  width: 30%;
+  margin: 40% 0 0 15%;
+  cursor: pointer;
+}
+
+#btns {
+  background-color: #383838;
+  border-radius: 0 15px 15px 0;
+  padding: 5%;
+  width: 90%;
+  height: 90%;
+  margin: 0;
+}
+
+#filt {
+  border: 1px white solid;
+  border-radius: 15px;
+  margin: 0 0 0 20%;
+}
+
+.option-prof>button:hover {
+  background: linear-gradient(167deg, rgba(28, 178, 162, 1) 0%, rgba(104, 184, 100, 1) 100%);
+  cursor: pointer;
+}
+
+.filter-professional {
+  display: grid;
+  grid-template-columns: 10% 1% 5% 1% 5% 45% 10% 5% 10%;
+  margin: 2% 0 0 5%;
+}
+
+.filter-professional>button {
+  width: 60%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-professional>a>button {
+  width: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #383838;
+  border-radius: 15px 0 0 15px;
+  margin: 0 0 0 50%;
+  padding: 5%;
+}
+
+.filter-professional>hr {
+  border-color: #1a1a1a;
+}
+
+a>hr {
+  width: 85%;
+  border-color: #1a1a1a;
+  margin: 1% 0 0 5%;
+}
+
+.filter-professional>button:hover {
+  background: linear-gradient(167deg, rgba(28, 178, 162, 1) 0%, rgba(104, 184, 100, 1) 100%);
+  cursor: pointer;
+}
+
+.filter-professional>a>button:hover {
+  background: linear-gradient(167deg, rgba(28, 178, 162, 1) 0%, rgba(104, 184, 100, 1) 100%);
+  cursor: pointer;
+}
+
+.filter-professional>button:hover {
+  background: linear-gradient(167deg, rgba(28, 178, 162, 1) 0%, rgba(104, 184, 100, 1) 100%);
+  width: 90%;
+  border-radius: 10px;
+}
+
+.filter-professional>button>img {
+  object-fit: contain;
+  width: 20%;
+  vertical-align: middle;
+  margin-right: 8%;
+}
+
+.option-prof>button>img {
+  object-fit: contain;
+  width: 15%;
+}
+
+.option-prof>a>button>img {
+  object-fit: contain;
+  width: 15%;
+}
+
+section>hr {
+  width: 95%;
+  border-color: #1a1a1a;
+  margin: 5% 0 0 5%;
+}
+
+.conteiner {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 2% 0 0 5%;
+  width: 85%;
+  height: 50vh;
+}
+
+.profile-conteiner {
+  display: grid;
+  width: 90%;
+  height: 50%;
+  grid-template-columns: 60% 2% 40%;
+  background-color: #383838;
+  border-radius: 15px;
+  border: 2px #555555 solid;
+}
+
+.info-person {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 83.5%;
+  height: 20%;
+}
+
+.person {
+  margin: 20% 0 0 0;
+  display: grid;
+  grid-template-columns: 50% 80%;
+  width: 150%;
+}
+
+.person-perfil {
+  width: 90%;
+  margin: 0 0 0 10%;
+}
+
+.person-perfil>img {
+  object-fit: contain;
+  width: 40%;
+  border-radius: 50%;
+  margin: 0 0 0 6%;
+}
+
+.person-perfil>hr {
+  width: 30%;
+  margin: 5% 0 2% 15%;
+
+}
+
+.person-perfil>p {
+  margin: 0 0 0 10%;
+  font-size: 13px;
+}
+
+.person>label>h5 {
+  font-size: 15px;
+  margin: 2% 0 0 -15%;
+  cursor: pointer;
+}
+
+.person>label>h3 {
+  margin: 0 0 0 -15%;
+  width: 50%;
+  font-size: 15px;
+}
+
+.person>label>hr {
+  width: 60%;
+  height: 0.01px;
+  margin: 15px;
+  margin: 5% 0 0 -15%;
+}
+
+.person>label>p>img {
+  object-fit: contain;
+  vertical-align: middle;
+  width: 10%;
+  margin: 0 0 0 -35%;
+}
+.person>label>p {
+  width: 100%;
+  margin: 2% 0 0 17%;
+}
+.profile-conteiner>section>label>button {
+  background-color: #555555;
+  margin: 0 0 0 5%;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.profile-conteiner>section>label>button>img {
+  object-fit: contain;
+  width: 15%;
+  margin: 0 0 0 5%;
+}
+
+.profile-conteiner>section>p {
+  margin: 3% 0 0 5%;
+  width: 80%;
+}
+
+.galery {
+  display: grid;
+  width: 90%;
+  height: 50%;
+  margin: 0;
+  grid-template-rows: 33% 33% 33%;
+}
+
+.galery>img {
+  object-fit: cover;
+  width: 95%;
+  height: 90%;
+  margin: 5% 0 0 2%;
+  border-radius: 15px;
+}
+
+#galery-hr {
+  height: 45%;
+  border-color: #1a1a1a;
+}

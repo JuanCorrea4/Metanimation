@@ -1,0 +1,195 @@
+*{
+  font-family: 'Product Sans', sans-serif;
+  margin: 0;
+}
+
+hr{
+  margin: 15px 0;
+}
+
+.container{
+  padding: 50px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.header > .header-rigth > p > a{
+  color: #40B584;
+  text-decoration: none;
+}
+
+.main{
+  display: flex;
+}
+
+.section-left{
+  width: 50%;
+}
+
+.backSlide{
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+  color: #646464;
+  background-color: #1A1A1A;
+  border: none;
+}
+
+
+.slide{
+  width: 80%;
+}
+
+.section-right{
+  width: 50%;
+}
+
+.section-right > form > .optionRegister{
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+ justify-content: center;
+}
+
+.section-right > form > .optionRegister > hr{
+  width: 100% !important;
+}
+
+.section-right > form > .optionRegister > span{
+  display: block;
+  white-space: nowrap;
+}
+
+.section-right > form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #1A1A1A;
+}
+
+.section-right > form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 20PX 0;
+
+}
+
+.namesAndLastNames{
+  display: flex;
+  flex-direction: row !important;
+}
+
+.namesAndLastNames > div{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.namesAndLastNames > .names > input{
+  margin-right: 20px;
+}
+
+.namesAndLastNames > .lastName > input{
+}
+
+
+.section-right > form > div > span{
+  color: #40b584;
+}
+
+.section-right > form > div > .input-large{
+
+}
+.section-right > form > button, input{
+  background: none;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 10px;
+  color: #fff;
+}
+
+.section-right > form > .optionRegister{
+  display: flex;
+}
+.section-right > form > .optionRegister > hr{
+  width: 25%;
+}
+
+.section-right > form > .optionRegister > span{
+  margin: 0 10px;
+}
+
+.section-right > form > button {
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.inputAndButtonPassword{
+  display: flex;
+  background: none;
+  border: 1px solid gray;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.inputAndButtonPassword input {
+  border: none;
+  width: 95%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.inputAndButtonPassword button {
+  border: none;
+  background: transparent;
+  border-left: 1px solid gray;
+  cursor: pointer;
+}
+
+#btnGoogle{
+  color: #fff;
+  text-decoration: none;
+  background: #1A1A1A;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btnGoogle > p{
+  margin-left: 20px;
+  font-size: 18pt;
+}
+
+.section-right > form > .namesAndLastNames > div > span{
+  color: #40B584;
+}
+
+.section-right > form > .termsAndConditions{
+  display: flex;
+  flex-direction: row;
+}
+
+.section-right > form > .termsAndConditions > input{
+  margin-right: 10px;
+}
+
+@media screen and (max-width:1180px) {
+  .section-left{
+    display: none;
+  }
+  .section-right{
+    width: 100%;
+  }
+}

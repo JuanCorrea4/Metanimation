@@ -1,0 +1,67 @@
+<main>
+    <h2>CURSOS :</h2> <h4>Selecciona el curso que necesitas</h4>
+    <div class="conteiner">
+        <div class="conteiner-1">
+            <section class="principal">
+                <img src="../../../assets/cursos/vida.png">
+                <h4>DESCRIPCIÓN DEL CURSO:</h4>
+                <p> {{descripcionCurso }}</p>
+            </section>
+            <section class="person">
+                <div class="person-perfil" *ngIf="profesores && profesores.length > 0">
+                <img src="https://xavierferras.com/wp-content/uploads/2019/02/266-Persona.jpg" routerLink='/courses'>
+                <hr>
+                <p> Experiencia: <br>{{experienciaSeleccionada}}</p>
+                </div>
+                <label>
+                <h5>{{nombreProfeSeleccionado}}</h5>
+                <h3>{{profesionSeleccionada}}</h3>
+                <hr>
+                <div class="qualification">
+                        <button >
+                        <img (click)="toggleQualification(0)" *ngIf="counters[0] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[0] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+
+
+                        <button (click)="toggleQualification(1)" > 
+                        <img *ngIf="counters[1] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[1] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+                    
+                        <button (click)="toggleQualification(2)"> 
+                        <img *ngIf="counters[2] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[2] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+
+                        <button (click)="toggleQualification(3)">
+                        <img *ngIf="counters[3] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[3] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+                        <button (click)="toggleQualification(4)">
+                        <img *ngIf="counters[4] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[4] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+                </div>
+                </label>
+            </section>
+        </div>
+    <hr>
+    <div class="conteiner-2" >
+        <div  *ngFor="let categoria of categorias"  class="category" (click)="obtenerCursos(categoria.id)">
+          <img src="../../../assets/newsMeta/infi.png">
+          <p > {{categoria.nombre }} </p>
+        </div>
+    </div> 
+    
+    <div class="conteiner-3">
+        <iframe width="880" height="415" [src]=" getSafeVideoUrl()" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    </div>
+
+        <div class="sumergete">
+            <img class="logoB" src="../../../assets/logoblanco.png">
+            <img class="sumergete-img" src="../../../assets/Grupo702.png" >
+            <hr>
+        </div>
+</main>

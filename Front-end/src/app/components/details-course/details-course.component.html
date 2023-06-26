@@ -1,0 +1,287 @@
+<app-nav></app-nav>
+<main>
+    <!--CURSO-->
+    <div class="course">
+        <section>
+            <section class="courses">
+            <h3>{{nameCurso}}</h3>
+            <p>{{descripcionCurso}}</p>
+            </section> 
+            <div class="module">
+                <section>
+                <img src="../../../assets/cursos/vidanegra.png">
+                <h4>Modulos</h4>
+                </section>
+                <div class="section-modules">
+                    <section>
+                      <img src="">
+                      <label>
+                        <h3>Antes de empezar</h3>
+                        <h4>1 clases</h4>
+                      </label>
+                      <img src="../../../assets/cursos/ionic-ios-arrow-up.png" (click)="toggleSection(1)">
+                    </section>
+                    <div *ngIf="currentSection === 1">
+                        <p>Clase 1</p> 
+                      </div>
+                    <section>
+                      <img src="">
+                      <label>
+                        <h3>Antes de empezar</h3>
+                        <h4>2 clases</h4>
+                      </label>
+                      <img src="../../../assets/cursos/ionic-ios-arrow-up.png" (click)="toggleSection(2)">
+                    </section>
+                    <div *ngIf="currentSection === 2">
+                        <p>Clase 1/2</p>
+                        <p>Clase 2/2</p>
+                      </div>
+                    <section>
+                      <img src="">
+                      <label>
+                        <h3>Antes de empezar</h3>   
+                        <h4>3 clases</h4>
+                      </label>
+                      <img src="../../../assets/cursos/ionic-ios-arrow-up.png" (click)="toggleSection(3)">
+                    </section>
+                    <div *ngIf="currentSection === 3">
+                        <p>Clase 1/3</p>
+                        <p>Clase 2/3</p>
+                        <p>Clase 3/3</p>
+                      </div>
+                  </div>
+                  
+            </div>
+        </section>
+        <section>
+            <iframe width="880" height="415" [src]=" getSafeVideoUrl()" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </div>
+    <!--OPCIONES INTERACCION DEL CURSO-->
+    <div class="option-courses">
+        <section class="attachments">
+            <img src="../../../assets/cursos/archivo.png">
+            <label>
+            <u>Descargar los adjuntos</u>
+            <p>Recursos necesarios para el curso</p>
+            </label>
+        </section>
+        <section class="play">
+        <button><img src="../../../assets/cursos/anterior.png"></button> 
+        <button><img src="../../../assets/cursos/siguiente.png"></button>
+        <h5>Siguiente clase</h5>
+        </section>
+        <section class="galery">
+            <img src="../../../assets/cursos/galeria.png">
+            <h5>Galeria</h5>
+        </section>
+        <button><img src="../../../assets/cursos/fleca.png"></button>
+        <section class="like">
+            <button><img src="../../../assets/portafolio/Heart-follow.png"></button>
+            <button><img src="../../../assets/portafolio/Heart-nofollow.png"></button>
+        </section>
+        <section class="comments">
+            <img src="../../../assets/cursos/comentarios.png">
+            <p>Ver todos los comentarios (27)</p>
+        </section>
+    </div>
+
+    <!--SECCION DETALLES INFOERMACION DEL CURSO-->
+    <div class="details-course">
+        <div class="conteiner-links">
+            <div class="links">
+            <section>
+                <img src="../../../assets/cursos/sitioweb.png">
+                <a><hr></a>
+                <p><strong>Enlaces necesarios</strong> 2 links</p>
+            </section>
+            <section>
+                <label>
+                    <article>
+                    <u>Open Ai</u>
+                    <h6>www.openai.com</h6>
+                    </article>
+                    <a href="https://openai.com/"><img src="../../../assets/cursos/enlace.png"></a>
+                </label>
+                <hr>
+            </section>
+            <section>
+                <label>
+                    <article>
+                    <u>Descargar adobe lightroom</u>
+                    <h6>www.adobe.com/co/prod.cts/photoshop</h6>
+                    </article>
+                    <a href="https://www.adobe.com/co/error-pages/404.html"><img src="../../../assets/cursos/enlace.png"></a>
+                </label>
+                <hr>
+            </section>
+            </div>
+            <div class="files">
+                <section>
+                    <img src="../../../assets/cursos/pdf.png">
+                    <a><hr> </a>
+                    <p><strong>Archivos pdf</strong> 3 archivos</p>
+                </section>
+                <section>
+                    <label>
+                        <article>
+                            <a href="../../../assets/anexos/Cursillo Tecnicatura- Introduccion a la programacion 2020.pdf" download>Introduccion a la programacion</a>
+                            <h6>.pdf</h6>
+                        </article>
+                            <img src="../../../assets/cursos/descarga.png">    
+                    </label>
+                <hr>
+                </section>
+                <section>
+                    <label>
+                        <article>
+                            <a href="../../../assets/anexos/FP.pdf" download>Fundamentos de la programacion </a>
+                            <h6>.pdf</h6>
+                        </article>
+                            <img src="../../../assets/cursos/descarga.png">    
+                    </label>
+                <hr>
+                </section>
+                <section>
+                    <label>
+                        <article>
+                            <a href="../../../assets/anexos/Lógica.pdf" download>Logica de programacion</a>
+                            <h6>.pdf</h6>
+                        </article>
+                            <img src="../../../assets/cursos/descarga.png">    
+                    </label>
+                <hr>
+                </section>
+            </div>
+        </div>
+
+        <!--DESCRIPCION DE LOS COMENTARIOS-->
+        <section class="description-comments">
+            <label>
+               <section>
+               <img src="../../../assets/cursos/Star.png"> 
+               <p>4,9</p>
+                </section>
+               <h3>{{nameCurso}}</h3>
+              <!-- <img src="../../../assets/new/Punto_verde.png"> -->
+               <hr>
+            </label>
+            <label class="price">
+                <p>{{descripcionCurso}}</p>
+                <div>
+                <hr>
+                <h4>${{valueCourses}}Cop</h4>
+                <h5>65% Dto. <del>$156.000 cop</del></h5>
+                </div>
+              <!--  <button>Obtener curso > </button>
+                <button> ► Mas informacion</button> -->
+            </label>
+            <div class="info-course">
+                <div class="person">
+                    <div class="person-perfil">
+                    <img src="https://xavierferras.com/wp-content/uploads/2019/02/266-Persona.jpg">
+                    <hr>
+                    <p>Experiencia: <br>{{experienciaSeleccionada}}</p>
+                    </div>
+                    <label>
+                    <h5>{{nombreProfeSeleccionado}}</h5>
+                    <h3>{{profesionSeleccionada}}</h3>
+                    <hr>
+                    <div class="qualification">
+                        <img src="../../../assets/cursos/Star.png">
+                        <img src="../../../assets/cursos/Star.png">
+                        <img src="../../../assets/cursos/Star.png">
+                        <img src="../../../assets/cursos/Star.png">
+                        <img src="../../../assets/cursos/Star_1.png">
+                        </div>      
+                    </label>
+                </div>
+                            
+                <section class="details-info-curso">
+                    <label>
+                        <img src="../../../assets/cursos/mundo.png">
+                        <h5>100% online</h5>
+                    </label>
+                    <label>
+                        <img src="../../../assets/cursos/tiempo.png">
+                        <h5>{{duracion}} horas de curso</h5>
+                        <p>A tu ritmo</p>
+                    </label>
+                    <label>
+                        <img src="../../../assets/cursos/idioma.png">
+                        <h5>{{lenguaje}}</h5>
+                    </label>
+                </section>
+            </div>           
+        </section>
+        <!-- SECCION PARA ESCRIBIR COMENTARIOS-->
+        <section class="write-comments">
+            <input type="text" placeholder="Escribe tu comentario">
+            <button><img src="../../../assets/cursos/enviar.png"></button>
+            <hr>
+            <label>
+                <h4>fernandopinto5:</h4>
+                <p>Que nivel.</p>
+                <hr>
+                <a (click)="setActiveSection(1)"><img src="../../../assets/cursos/comentarios.png">Responder</a>
+                <div>
+                    <img *ngIf="counters[0] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                    <img *ngIf="counters[0] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                    <button (click)="toggleFavorite(0)"> Me gusta</button>
+                </div>
+                <input type="text" placeholder="Escribe tu respuesta" *ngIf="activeSectionIndex === 1">
+            </label>
+            <label>
+                <h4>aaronpelao_:</h4>
+                <p>@fernandopinto5 puro talento mi bro.</p>
+                <hr>
+                <a (click)="setActiveSection(2)"><img src="../../../assets/cursos/comentarios.png">Responder</a>
+                <div>
+                    <img *ngIf="counters[1] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                    <img *ngIf="counters[1] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                    <button (click)="toggleFavorite(1)"> Me gusta</button>
+                </div>
+                <input type="text" placeholder="Escribe tu respuesta" *ngIf="activeSectionIndex === 2">
+            </label>
+            <label>
+                <h4>Mon Avellanede:</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sed, illum veniam magni, sit dignissimos odit doloremque temporibus nesciunt architecto alias voluptatum.</p>
+                <hr>
+                <a (click)="setActiveSection(3)"><img src="../../../assets/cursos/comentarios.png">Responder</a>
+                <div>
+                    <img *ngIf="counters[2] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                    <img *ngIf="counters[2] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                    <button (click)="toggleFavorite(2)">Me gusta</button>
+                </div>
+                <input type="text" placeholder="Escribe tu respuesta" *ngIf="activeSectionIndex === 3">
+            </label>
+        </section>
+    </div>
+    <!--SECCION DE GALERIA-->
+    <div class="galery-details">
+        <section>
+            <label>
+            <img src="../../../assets/cursos/galeria.png">
+            <h5>Galeria</h5>
+            </label>
+            <article>
+            <p>Recientes |</p>
+            <p>Popular</p>
+            </article>
+            <hr>
+            <p>02/14</p>
+            <button><img src="../../../assets/new/Arrow_L.png"></button>
+            <button><img src="../../../assets/new/ArrowR.png"></button>
+        </section>
+        <div class="photo-galery">
+        <section *ngFor="let curso of ultimosCursos">
+            <img [src]="curso.imgCourse" alt="Imagen del curso">
+            <label>
+            <p><strong>Daniel Pascal </strong>- {{curso.name}}</p>
+            <img src="../../../assets/portafolio/Heart-follow.png">
+            </label>
+        </section>
+    </div>
+    </div>
+</main>
+<app-footer></app-footer>

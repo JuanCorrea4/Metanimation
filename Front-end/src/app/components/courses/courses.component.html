@@ -1,0 +1,163 @@
+<app-nav></app-nav>
+<main>
+    <section class="curse">
+        <div class="topics">
+            <div>
+                <h3>Hola @Usuario</h3>
+                <p>Que bueno verte de nuevo </p>
+                <input type="text" placeholder="¿Que quieres aprender?"> 
+            </div>
+            <h3>Explorar temas:</h3>
+            <p>Selecciona, los temas de cursos que quieras ver</p>
+            <div class="topics-curse">
+            <div *ngFor="let categoria of categorias" (click)="obtenerCursos(categoria.id)">
+                    <a><button>+</button></a>
+                    <p>{{categoria.nombre }}</p>
+            </div>
+            </div>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="curseDC">
+        <div class="conteiner-category">
+            <div class="category" *ngFor="let curso of primerosCursos">
+                <img [src]="curso.imgCourse" alt="Imagen del curso">
+               <label>
+                <h5>{{curso.name}} </h5>
+                <p>{{curso.description}}</p>
+                </label>
+            </div>
+        </div>
+        <div class="detail-curse">
+            <iframe width="880" height="415" [src]=" getSafeVideoUrl()" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <label>
+            <h3>{{nameCurso}}</h3>
+            <hr>
+            <p>{{descripcionCurso }}</p>
+            <section>
+             <hr> 
+            <h4>$ {{valueCourses}} Cop</h4>
+          <!-- <h5>65% Dto. <del>$56.000 cop</del></h5>--> 
+            </section>
+            <button (click)="obtenerDetalleCurso(idCategoriaSeleccionada.id)" >Obtener curso > </button>
+            <button routerLink='/membership'> ► Mas informacion</button>
+         
+            <div class="info-course">
+                <div class="person">
+                    <div class="person-perfil">
+                    <img src="https://xavierferras.com/wp-content/uploads/2019/02/266-Persona.jpg">
+                    <hr>
+                    <p>Experiencia: <br>{{experienciaSeleccionada}}</p>
+                    </div>
+                    <label>
+                    <h5>{{nombreProfeSeleccionado}}</h5>
+                    <h3>{{profesionSeleccionada}}</h3>
+                    <hr>
+                    <div class="qualification">
+
+                        <button (click)="toggleQualification(0)" >
+                        <img *ngIf="counters[0] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[0] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+
+
+                        <button (click)="toggleQualification(1)" > 
+                        <img *ngIf="counters[1] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[1] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+                    
+                        <button (click)="toggleQualification(2)"> 
+                        <img *ngIf="counters[2] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[2] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+
+                        <button (click)="toggleQualification(3)">
+                        <img *ngIf="counters[3] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[3] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+                        <button (click)="toggleQualification(4)">
+                        <img *ngIf="counters[4] > 0" src="../../../assets/cursos/Star.png">
+                        <img *ngIf="counters[4] === 0" src="../../../assets/cursos/Star_1.png">
+                        </button>
+                    </div>   
+                    </label>
+                </div>
+                            
+                <section class="details-info-curso">
+                    <label>
+                        <img src="../../../assets/cursos/mundo.png">
+                        <h5>100% online</h5>
+                    </label>
+                    <label>
+                        <img src="../../../assets/cursos/tiempo.png">
+                        <h5>{{duracion}} horas de curso</h5>
+                        <p>A tu ritmo</p>
+                    </label>
+                    <label>
+                        <img src="../../../assets/cursos/idioma.png">
+                        <h5>{{lenguaje}}</h5>
+                    </label>
+                </section>
+            </div>
+        </label>
+         </div>
+        </div>
+    </section>
+    <!-- nuevos retos-->
+<div class="new-challenges">
+<label class="plan">
+    <label>
+    <h3>Actauliza Tu plan,</h3>
+    <h2>Plan Bronze</h2>
+    <img class="logoVerde" src="../../../assets/logo.png">
+    <u routerLink='/membership'>Solo pulsa aqui para informarte</u>
+</label>
+    <img>
+</label>
+<section class="section-challenge">
+ <h3>Nuevos cursos, nuevos retos</h3>
+ <div class="conteiner-new-challenge">
+    <div class="challenge-container">
+      <div class="new-challenge"  *ngFor="let curso of ultimosCursos">
+        <h5>{{curso.name}}</h5>
+        <p>{{curso.description}}</p>
+        <time><img src="../../../assets/cursos/tiempo.png">{{curso.duracion}} Horas</time>
+        <button></button>
+      </div>
+    </div>
+  </div>
+  
+</section>
+</div>
+    <label class="category-challenge">
+        <p>Nuevos cursos, nuevos retos</p>
+        <hr>
+        <p>20/14</p>
+        <label>
+          <button (click)="slideContainerLeft()"><img src="../../../assets/new/Arrow_L.png"></button>
+          <button (click)="slideContainerRight()"><img src="../../../assets/new/ArrowR.png"></button>
+        </label>
+      </label>
+  
+<!--SECCION DONDE SE VE LISTADO DE NUEVOS CURSOSO Y RETOS-->
+<div class="conteiner-challenge">
+<div class="challenge" *ngFor="let curso of cursos">
+    <img [src]="curso.imgCourse" alt="Imagen del curso">
+<label>
+<img src="../../../assets/cursos/vidaverde.png">
+<div>
+    <h3>{{curso.name}}</h3>
+   <!--<h5>Un curso de: {{nombreProfeSeleccionado}}</h5>--> 
+</div>
+    <button> 
+    <img (click)="toggleCourse(0)" *ngIf="countersCourse[0] === 0" src="../../../assets/cursos/Star_1.png">
+    <img *ngIf="countersCourse[0] > 0" src="../../../assets/cursos/Star.png">
+    </button>
+    <p>{{countersCourse[0]}}</p>
+</label>
+<p>{{curso.description}}</p>
+<button (click)="obtenerDetalleCurso(curso.id)">Obtener Curso > </button>
+</div>
+</div>
+</main>
+<app-footer></app-footer>

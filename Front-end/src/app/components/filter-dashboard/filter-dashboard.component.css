@@ -1,0 +1,8 @@
+.main{
+  position: relative;
+  border: 1px solid #656565;
+  background-color: #272727;
+  border-radius: 2rem;
+  margin: 20px;
+  padding: 30px;
+}

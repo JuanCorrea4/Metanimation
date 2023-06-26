@@ -1,0 +1,54 @@
+<app-nav></app-nav>
+<link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+<div class="container">
+  <div class="header">
+    <div class="header-left">
+      <span>Hola de nuevo</span>
+      <h2>INICIA SESION</h2>
+    </div>
+    <div class="header-rigth">
+      <p>¿Eres nuevo? <br><a routerLink="/registration">Crea una cuenta</a></p>
+    </div>
+  </div>
+  <hr />
+  <div class="main">
+    <section class="section-log">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <button id="btnGoogleLog">Iniciar sesion con Google</button>
+        <div class="optionLogin">
+          <hr/>
+          <span>O inicia con</span>
+          <hr/>
+        </div>
+        <div class="email">
+          <span>Email</span>
+          <input
+            type="text"
+            formControlName="Email"
+            id=""
+            placeholder="Ingresa tu correo"
+            class="input-large"
+          />
+        </div>
+        <div class="Password">
+          <span>Contraseña</span>
+          <div class="inputAndButtonPassword">
+            <input 
+            type="password"
+             [(ngModel)]="password" 
+             formControlName="Password"
+             name="password" 
+             [attr.type]="showPassword ? 'text' : 'password'" 
+             placeholder="Ingresa tu contraseña"
+              class="input-large"/>
+            <button (click)="togglePasswordVisibility()">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</button>
+          </div>
+          <span><a href="#">Olvide mi contraseña</a></span>
+        </div>
+        <button type="submit">Continuar</button>
+      </form>
+    </section>
+  </div>
+</div>
+<app-footer></app-footer>
+<script src="https://kit.fontawesome.com/af53cd6931.js" crossorigin="anonymous"></script>

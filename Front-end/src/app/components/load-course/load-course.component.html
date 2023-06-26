@@ -1,0 +1,163 @@
+<section class="main">
+  <div class="info">
+
+  </div>
+  <div class="form">
+    <div class="topSection">
+      
+      <div class="sectionStep">
+        <p>Continua el proceso para subir tu curso nuevo</p>
+        <div class="steps">
+          <div class="step">
+            <div class="iconHr">
+              <i [ngClass]="{'active' : colorDiamont >= 1}" class="fa-solid fa-diamond"></i>
+              <hr>
+            </div>
+            <p [ngClass]="{'activeText' : colorText >= 1}" >1 paso:<br> Personalización</p>
+          </div>
+          <div class="step">
+            <div class="iconHr">
+              <i [ngClass]="{'active' : colorDiamont >= 2}" class="fa-solid fa-diamond "></i>
+              <hr>
+            </div>
+            <p [ngClass]="{'activeText' : colorText >= 2}" >2 paso:<br> Módulos</p>
+          </div>
+          <div class="step">
+            <div class="iconHr">
+              <i [ngClass]="{'active' : colorDiamont >= 3}" class="fa-solid fa-diamond"></i>
+              <hr>
+            </div>
+            <p [ngClass]="{'activeText' : colorText >= 3}" >3 paso:<br> Archivos Adjuntos</p>
+          </div>
+          <div class="buttonNext">
+            <button (click)="previousStep()"><i class="fa-solid fa-chevron-left"></i></button>
+
+            <button (click)="nextStep()"><i class="fa-solid fa-{{textoBoton}}"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="sectionForm">
+      <div class="containerForm" id="containerForm">
+        <div class="box">
+          <div class="uploadImage" id="uploadImage">
+            <p>Nombre del curso : </p>
+            <input class="inputBox" name="courseName" placeholder="Nombre del curso" type="text">
+            <p>Subir portada : </p>
+            <label for="file-upload" class="custom-file-upload">
+              <i class="fa-solid fa-file-arrow-up"></i> Subir Imagen
+            </label>
+            <input class="inputBox" id="file-upload" type="file" (change)="onFileSelected($event)">
+          </div>
+          <div class="infoCourse">
+            <p>Categoria del curso : </p>
+            <select name="" id="">
+              <option value="" disabled selected>Selecciona una categoria</option>
+            </select>
+            <!-- <p>Nivel del curso : </p>
+            <select name="" id="">
+              <option value="" disabled selected>Selecciona una nivel</option>
+            </select> -->
+            <p>Descripción del curso : </p>
+            <textarea name="courseDescription" placeholder="Descripcion del curso" type="text"></textarea>
+            <button (click)="nextStep()">Siguiente paso <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="infoCourse">
+            <div class="modules" id="modules" >
+              <input class="inputBox" type="text" *ngFor="let modulo of arrayModulos; let i = index" value="{{i+1}} Modulo: {{modulo.nombreModulo}}" (click)="loadInfoCourse(i)" readonly>
+            </div>
+            <input class="inputBox" type="text" name="" id="nameModule" placeholder=" Ingresa el nombre del módulo">
+            <button (click)="saveModule()" >Agregar módulo</button>
+          </div>
+          <div class="infoClass" id="infoClass">
+            <div class="class">
+              <div class="oneClass" id="class">
+                <!-- <input type="text" value="" *ngFor="let clase of arrayClases; let i = index"  class="inputClase"  value="Clase: {{clase.nombreClase}} Url: {{clase.urlClase}}">                -->
+                <div class="inputClase" *ngFor="let clase of arrayClases; let i = index">
+                  <p>Clase: </p>
+                  <input type="text" name="" id="" value="{{clase.nombreClase}}"  [readonly]="!editableFields[i]">
+                  <p>Url: </p>
+                  <input type="text" name="" id="" value="{{clase.urlClase}}"  [readonly]="!editableFields[i]">
+                </div>
+              </div>
+              <div class="formClass">
+                <p>Clase: </p>
+                <input class="inputClases" type="text" name="" id="nombreClase" placeholder="Ingresa el nombre de la clase">
+                <div class="containerUrl">
+                  <p>URL: </p>
+                  <input class="inputClases" type="text" id="urlClase" placeholder="Ingresa la url">
+                </div>
+                <div class="containerButtons">
+                  <button>Cancelar</button>
+                  <button (click)="createOneClass()">Guardar</button>
+                </div>
+              </div>
+
+              <button (click)="nextStep()">Siguiente paso <i class="fa-solid fa-chevron-right"></i></button>
+
+            </div>
+            <button id="btnCreateClass" (click)="createOneClass()">Agregar una clase</button>
+
+          </div>
+        </div>
+        <div class="box">
+          <div class="inforResource" id="inforResource">
+            <div class="class">
+              <div class="oneClass" id="class">
+                <div class="inputClase" *ngFor="let clase of arrayRecursos; let i = index">
+                  <p>Recursos: </p>
+                  <input type="text" name="" id="" value="{{clase.nombreClase}}"  [readonly]="!editableFields[i]">
+                  <p>URL: </p>
+                  <input type="text" name="" id="" value="{{clase.urlClase}}"  [readonly]="!editableFields[i]">
+                </div>
+              </div>
+              <div class="formClass">
+                <p>Recursos:</p>
+                <input class="inputClases" type="text" name="" id="nombreRecurso" placeholder="Ingresa el nombre del recurso">
+                <div class="containerUrl">
+                  <p>URL:</p>
+                  <input class="inputClases" type="text" id="urlRecurso" placeholder="Ingresa la url">
+                </div>
+                <div class="containerButtons">
+                  <button>Cancelar</button>
+                  <button (click)="createOneSource()">Guardar</button>
+                </div>
+              </div>
+
+              <button (click)="nextStep()">Siguiente paso <i class="fa-solid fa-chevron-right"></i></button>
+
+            </div>
+            <button id="btnCreateClass" (click)="createOneClass()">Agregar una clase</button>
+
+          </div>
+        </div>
+        <div class="box">
+          <div class="priceCourse" id="priceCourse">
+            <div class="class">
+              <div class="formClass">
+                <p>¿Cuál es el precio?</p>
+                <input class="inputClases" type="text" name="" id="precioCurso" placeholder="Ingresa el precio del curso">
+                <div class="containerStatusCourse">
+                  <p>Estado del curso</p>
+                  <select name="" id="">
+                    <option value="">Normal</option>
+                    <option value="">Intermedio</option>
+                    <option value="">Dificil</option>
+                  </select>
+                  <select name="" id="">
+                    <option value="">Visible</option>
+                    <option value="">No visible</option>
+                  </select>
+                </div>
+              </div>
+              <button (click)="postCourse()">Publicar curso</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,331 @@
+main{
+  margin-top: 8%;
+}
+.info-profile{
+  display: grid;
+  grid-template-columns: 45% 20% 20%;
+  width: 90%;
+  margin: 0 0 0 5%;
+  background-image: url(../../../assets/profile/Grupo919.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.people > img{
+object-fit: contain;
+border-radius: 50%;
+width: 15%;
+margin: 5% 0 0 10%;
+}
+.people > hr{
+  width: 20%;
+  margin: 3% 0 0 10% ;
+  border-color: #575755;
+}
+
+.people > h5{
+margin:  3% 0 0 10%;
+}
+
+.people > h3{
+  width: 30%;
+  margin:  3% 0 0 10%;
+  font-size: 20px;
+}
+
+.people > a > hr{
+  width: 80%;
+  margin: 3% 0 0 10% ;
+  border-color: #575755;
+}
+
+.people > p {
+  width: 80%;
+  margin: 3% 0 0 10% ;
+}
+.people > label > img{
+object-fit: contain;
+vertical-align: middle;
+width: 3%;
+margin: 0 0 0 10%;
+}
+.people > label > p{
+  display: inline-block;
+  margin: 10% 0 0 2%;
+}
+
+.people > section > button > img{
+object-fit: contain;
+width: 15%;
+}
+
+.people > section > button {
+  background-color: #575755;
+  border-radius: 10px;
+  margin: 3% 0 10% 3%;
+  border: none;
+  width: 20%;
+  height: 3vh;
+  color: white;
+}
+.people > section {
+  margin: 2% 0 0 8%;
+}
+
+.project > article{
+  background-color:#2e2e2ebb;
+  border-radius: 15px;
+  border: 2px #575755 solid ;
+  border-top: none;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20%;
+}
+
+.project > article > button{
+ background-color: transparent; 
+ color: white;
+ border: none;
+ border-top: 2px #575755 solid;
+ width: 100%;
+ height: 50px;
+}
+
+.project > article > h2{
+font-size: 80px;
+text-align: center;
+margin: 0;
+}
+
+.project > article > h4{
+  text-align: center;
+  margin-top: -2%;
+}
+.project > article > h5{
+  text-align: center;
+  margin-top: -2%;
+}
+
+.project > section > h5{
+  text-align: center;
+  margin-top: -3%;
+}
+
+.tools{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.tools {
+  background-color:#2e2e2ebb;
+  border-radius: 15px;
+  border: 2px #575755 solid ;
+  border-top: none;
+  width: 100%;
+  border-radius: 10px 10px;
+}
+
+.tools > h6{
+  margin: 10% 0 0 5%;
+}
+li{
+  width: 80%;
+  list-style: none;
+  border-bottom: 1px #575755 solid;
+  margin: 0 0 5% 5%;
+  padding-bottom: 3%;
+}
+
+.tools > label > h5{
+  margin: -20% 0 8% 5%;
+}
+.tools > label > p{
+  background-color: #575755;
+  margin: 3% 0 0 5%;
+  width: 80%;
+  height: 20%;
+  border-radius: 10px;
+  padding: 3% 0 0 5%;
+}
+.tools > label > p > img{
+  object-fit: contain;
+  width: 15%;
+  vertical-align: middle;
+  margin-right: 5%;
+}
+.person-details{
+  background-color:#2e2e2ebb;
+  border-radius: 15px;
+  border: 2px #575755 solid ;
+  width: 100%;
+  margin: 20% 0 0 20%;
+}
+
+.info-person > div > h5{
+text-align: center;
+}
+.info-person > div > section {
+display: grid;
+grid-template-columns: 20% 33% 20%;
+width: 100%;
+margin: -5% 0 0 7%;
+}
+.info-person > div > section  > p{
+  font-size: 17px;
+  text-align: center;
+}
+#mensaje{
+  background-color: #575755;
+  color: white;
+  border: 2px #616160 solid;
+  border-radius: 10px;
+  height: 30px;
+  width: 30%;
+  margin: 0 0 0 5%;
+  font-size: 15px;
+  cursor: pointer;
+}
+#seguir{
+  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
+  color: white;
+  border: 1px #616160 solid;
+  border-radius: 10px;
+  height: 30px;
+  width: 40%;
+  margin: 0 0 5% 10%;
+  cursor: pointer;
+}
+
+.info-person > div > button{
+  background-color: transparent; 
+  color: white;
+  border: none;
+  border-top: 2px #575755 solid;
+  width: 100%;
+  height: 50px;
+ }
+ .info-person > section{
+  background-color:#2e2e2ebb;
+  border-radius: 15px;
+  border: 2px #575755 solid ;
+  width: 100%;
+  margin: 0 0 0 20%;
+}
+
+.info-person > div > button > img{
+  object-fit: contain;
+  width: 12%;
+  margin-left: 5%;
+}
+
+.info-person > section >  h6 {
+  margin: 5% 0 0 5%;
+}
+
+form > p > input{
+background-color: transparent;
+border: none;
+border-bottom: 1px #575755 solid;
+margin: 0 0 0 5%;
+color: white;
+}
+
+form > p > img {
+  object-fit: contain;
+  width: 5%;
+  vertical-align: middle;
+  margin-left: 10%;
+}
+
+form > h6 {
+  margin: 0 0 0 5%;
+}
+
+.professional-profile{
+  display: grid;
+  grid-template-columns: 30% 30% 30% 30%;
+  margin: 2% 0 0 5%;
+  width: 80%;
+}
+.professional-profile >section{
+  border-radius: 15px;
+  width: 85%;
+  height: 80%;
+}
+.professional-profile >section > img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.professional-profile >section > h6 {
+  font-size: 15px;
+  margin: -15% 0 0 5%;
+}
+.professional-profile >section > h4{
+  margin: 0 0 5% 5%;
+  display: inline;
+}
+.professional-profile >section >label{
+  display: grid;
+  grid-template-columns: 20% 30% 25% 25%;
+  width: 95%;
+}
+
+.professional-profile >section > div {
+  display: inline-block;
+  width: 10%;
+  margin: 0 0 0 40%;
+  background-color: #4d4d4da1;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.professional-profile >section  > div > button{
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.professional-profile >section  > div  > img{
+  object-fit: contain;
+  width: 30%;
+  margin-left: 10%;
+}
+.professional-profile >section >label > h3{
+  font-size: 15px;
+}
+
+.option > button{
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  margin: 0 0 0 5%;
+}
+
+.option > button > img {
+  object-fit: contain;
+  width: 15%;
+  vertical-align: middle;
+  margin-right: 5%;
+}
+
+.option{
+  display: grid;
+  grid-template-columns: 10% 1% 10% 1% 10% 1% 10%;
+  width: 70%;
+  margin: 0 0 0 5%;
+}
+.option > hr {
+height: 90%;
+margin-top: 0;
+border-color: #575755;
+}
+
+#filter{
+  border-radius: 10px;
+  border: 1px #575755 solid;
+}

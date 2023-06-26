@@ -1,0 +1,83 @@
+.suscription{
+    background-image: url(../../../assets/footer/Cubo.png);
+    background-size: 100% 100%;
+    height: 400px;
+    padding: 30px ;
+    margin: 50px 50px  80px;
+
+
+}
+
+.suscription > p{
+    text-align: center;
+
+}
+
+.suscription input{
+    width: 541px;
+    height: 48px;
+    border-radius: 15px;
+    border: none;
+
+} 
+
+
+.suscription input::placeholder{
+    padding: 20px;
+    color: black;
+    font-size: 15px;
+    }
+    .suscription img{
+        width: 20px;
+        height: 20px;
+        padding: 10px ;
+        margin-right: 15px;
+        vertical-align: middle;
+    
+    }
+    .data{
+        width: 600px;
+        height: 50px;
+        background-color: black;
+        border-radius: 15px;
+        padding-left: 20px;
+        margin-left: 250px;
+        border: none;
+    
+    }
+
+    
+    h2{
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 0;
+        font-family: 'Outer Limits Solid', sans-serif;
+        font-weight: 200;
+                                                    
+        
+                                                    
+    }
+    
+    .boton-input {
+        position: relative;
+      }
+      
+      .boton-input input[type="text"] {
+        padding-right: 40px; /* Dejar espacio para el botón */
+      }
+      
+      .boton-input button {
+        position: absolute;
+        top: -8px;
+        right: 20px;
+        height: 35px;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        color: white;
+        border-radius: 15px;
+        font-size: 20px;
+        width: 150px;
+        font-family: 'Outer Limits Solid', sans-serif;
+        font-weight: 400;
+      }

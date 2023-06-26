@@ -1,0 +1,163 @@
+<main>
+    <div class="container">
+        <h2>LO MEJOR DE METANIMATION</h2>
+        <h4>Proyectos presentados hoy por nuestros Profesionales</h4>
+        <div class="filter">
+            <div class="carrete-conteiner">
+            <button (click)="slideContainerLeft()"> <img src="../../../assets/new/Arrow_L.png"> </button>
+            <div class="filter-carrete">
+                <a *ngFor="let categoria of categorias" class="category" (click)="obtenerCategorias()">
+                    <li routerLink="/briefcase"> {{categoria.nombre }}</li>
+                </a>
+            </div>
+            <button (click)="slideContainerRight()"> <img src="../../../assets/new/ArrowR.png"> </button>
+            </div>
+        </div>
+        <div class="best-container">
+            <div class="best-container1">
+                <h4> nameUser</h4>
+                <h3>Directora Creativa en Bunker3022</h3>
+                <button (click)="toggleButton(0)" [ngClass]="{'continue': isActive[0]}">
+                    <img *ngIf="!isActive[0]" src="../../../assets/portafolio/Seguir.png">
+                    {{isActive[0] ? 'Siguiendo!' : 'Seguir'}}
+                </button>
+                <div class="follow">
+                    <img *ngIf="counters[0] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                    <img *ngIf="counters[0] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                    <button (click)="toggleFavorite(0)"> {{counters[0]}} </button>
+                </div>
+                <section routerLink="/briefcase">
+                    <p>Rate-Proyecto</p>
+                    <h6>1°</h6>
+                    <h5>Desing Thinkig</h5>
+                </section>
+            </div>
+            <section class="bst">
+                <div class="best-container2" >
+                    <h4> nameUser</h4>
+                    <h3>Directora Creativa en Bunker3022</h3>
+                    <button (click)="toggleButton(1)" [ngClass]="{'continue': isActive[1]}">
+                        <img *ngIf="!isActive[1]" src="../../../assets/portafolio/Seguir.png">
+                        {{isActive[1] ? 'Siguiendo!' : 'Seguir'}}
+                    </button>
+                    <div>
+                        <img *ngIf="counters[1] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                        <img *ngIf="counters[1] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                        <button (click)="toggleFavorite(1)"> {{counters[1]}} </button>
+                    </div>
+                    <section routerLink="/briefcase">
+                        <p>Rate-Proyecto</p>
+                        <h5>Desing Thinkig</h5>
+                        <h6>2°</h6>
+                    </section>
+                </div>
+                <section class="bst-conteiner">
+                    <div class="best-container3">
+                        <h4> nameUser</h4>
+                        <h3>Directora Creativa en Bunker3022</h3>
+                        <section routerLink="/briefcase">
+                            <h6>3°</h6>
+                        </section>
+                    </div>
+                    <div class="best-container4" >
+                        <h4> nameUser</h4>
+                        <h3>Directora Creativa en Bunker3022</h3>
+                        <section routerLink="/briefcase">
+                            <h6>4°</h6>
+                        </section>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <div class="tema">
+            <h3>Temas</h3>
+            <hr>
+            <button class="temaL"></button>
+            <button class="temaR"></button>
+        </div>
+        <div class="conteiner-tem"> 
+            <div class="tem">
+                <section>
+                    <img  routerLink="/detailsBriefcase" src="https://xavierferras.com/wp-content/uploads/2019/02/266-Persona.jpg">
+                    <h5>David ferchs</h5>
+                    <button (click)="toggleButton(2)" [ngClass]="{'continue': isActive[2]}">
+                        <img *ngIf="!isActive[2]" src="../../../assets/portafolio/Seguir.png">
+                        {{isActive[2] ? 'Siguiendo!' : 'Seguir'}}
+                    </button>
+                    <div class="favorite">
+                        <img *ngIf="counters[2] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                        <img *ngIf="counters[2] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                        <button (click)="toggleFavorite(2)"> {{counters[2]}} </button>
+                    </div>
+                </section>
+                <img  routerLink="/briefcase"
+                    src="https://mir-s3-cdn-cf.behance.net/projects/202/6f03db76812287.Y3JvcCwxNjAwLDEyNTEsMCwxMzA.jpg">
+                <p>Rate-Proyecto</p>
+                <h4>desing Thinking</h4>
+            </div>
+            <div class="tem">
+                <section>
+                    <img  routerLink="/detailsBriefcase"
+                        src="http://prelocomunicacao.com.br/wp-content/uploads/2021/02/Como-definir-a-minha-persona.jpg">
+                    <h5>Agyness Deyn</h5>
+                    <button (click)="toggleButton(3)" [ngClass]="{'continue': isActive[3]}">
+                        <img *ngIf="!isActive[3]" src="../../../assets/portafolio/Seguir.png">
+                        {{isActive[3] ? 'Siguiendo!' : 'Seguir'}}
+                    </button>
+                    <div class="favorite">
+                        <img *ngIf="counters[3] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                        <img *ngIf="counters[3] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                        <button (click)="toggleFavorite(3)"> {{counters[3]}} </button>
+                    </div>
+                </section>
+                <img  routerLink="/briefcase"
+                    src="https://mir-s3-cdn-cf.behance.net/projects/404/c3a113137237387.Y3JvcCw1NTk0LDQzNzYsNTgxLDA.jpg">
+                <p>Rate-Proyecto</p>
+                <h4>desing Thinking</h4>
+            </div>
+            <div class="tem">
+                <section>
+                    <img  routerLink="/detailsBriefcase" src="https://xavierferras.com/wp-content/uploads/2019/02/266-Persona.jpg">
+                    <h5 >Bella Hadid</h5>
+                    <button (click)="toggleButton(4)" [ngClass]="{'continue': isActive[4]}">
+                        <img *ngIf="!isActive[4]" src="../../../assets/portafolio/Seguir.png">
+                        {{isActive[4] ? 'Siguiendo!' : 'Seguir'}}
+                    </button>
+                    <div class="favorite">
+                        <img *ngIf="counters[4] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                        <img *ngIf="counters[4] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                        <button (click)="toggleFavorite(4)"> {{counters[4]}} </button>
+                    </div>
+                </section>
+                <img  routerLink="/briefcase"
+                    src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/6e8866137189947.620682e1dbe43.png">
+                <p>Rate-Proyecto</p>
+                <h4>desing Thinking</h4>
+            </div>
+            <div class="tem">
+                <section>
+                    <img routerLink="/detailsBriefcase" 
+                        src="http://prelocomunicacao.com.br/wp-content/uploads/2021/02/Como-definir-a-minha-persona.jpg">
+                    <h5 >Alex McQueen</h5>
+                    <button (click)="toggleButton(5)" [ngClass]="{'continue': isActive[5]}">
+                        <img *ngIf="!isActive[5]" src="../../../assets/portafolio/Seguir.png">
+                        {{isActive[5] ? 'Siguiendo!' : 'Seguir'}}
+                    </button>
+                    <div class="favorite">
+                        <img *ngIf="counters[5] > 0" src="../../../assets/portafolio/Heart-follow.png">
+                        <img *ngIf="counters[5] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+                        <button (click)="toggleFavorite(5)"> {{counters[5]}} </button>
+                    </div>
+                </section>
+                <img  routerLink="/briefcase"
+                    src="https://st2.depositphotos.com/2739581/9521/i/600/depositphotos_95217974-stock-photo-simple-magenta-waves-abstract-background.jpg">
+                <p>Rate-Proyecto</p>
+                <h4>desing Thinking</h4>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+</main>

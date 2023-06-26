@@ -1,0 +1,256 @@
+<app-nav></app-nav>
+<main>
+  <!--BUSQUEDA DE PROFESIONALES -->
+  <div class="professional-search">
+    <h3>PUBLIICDAD MODERNA CREATIVA Y EXPERIENCIA DIGITAL</h3>
+    <p>Suscribete para recibir lanzamientos, descuentos y contenido del mundo de la inmersidad</p>
+    <input type="text" placeholder="¿Que quieres buscar?">
+  </div>
+  <section class="option-prof">
+  <div class="option" *ngFor="let categoria of categorias" (click)="obtenerCategorias()">
+    <button>{{categoria.nombre}}<img src="../../../assets/portafolio/rojo.png"></button>
+  </div>
+    <!--<img src="../../../assets/new/ArrowR.png">-->
+  </section>
+<!--OPCIONES Y FILTRO DE PROFESIONALES-->
+  <div class="filter-professional">
+    <button (click)="toggleButton(8)" [ngClass]="{'continue': isActive[8]}">
+      <img *ngIf="!isActive[8]" src="../../../assets/portafolio/seguidor.png">
+      {{isActive[8] ? 'Siguiendo!' : 'Seguir'}}
+  </button>
+    <hr>
+    <button>Reciente</button>
+    <hr>
+    <button>Popular</button>
+    <p></p>
+    <a routerLink='/briefcase'><button>Proyectos</button></a>
+    <a routerLink='/briefcase-project'><button id="btns">Artistas</button></a>
+    <button id="filt"><img src="../../../assets/portafolio/filtro.png">Filtro</button>
+  </div>
+  <section><hr></section>
+  <!--PERFIL PROFESIONALES -->
+  <div class="professional-profile">
+    <section routerLink="/detailsBriefcase">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/202/6f03db76812287.Y3JvcCwxNjAwLDEyNTEsMCwxMzA.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(0)" [ngClass]="{'continue': isActive[0]}">
+          <img *ngIf="!isActive[0]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[0] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[0] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[0] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(0)"> {{counters[0]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/f8b59f137237387.62078a32f064f.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(1)" [ngClass]="{'continue': isActive[1]}">
+          <img *ngIf="!isActive[1]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[1] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[1] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[1] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(1)"> {{counters[1]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://wallpapers.com/images/hd/spike-from-brawl-stars-4k5hytj0bkts6e04.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(2)" [ngClass]="{'continue': isActive[2]}">
+          <img *ngIf="!isActive[2]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[2] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[2] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[2] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(2)"> {{counters[2]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://img.freepik.com/fotos-premium/control-remoto-estilo-minimalista-dibujos-animados-e-icono-tv-flotando-sobre-fondo-rosa-banner-conexion-medios-espacio-copia-ilustracion-representacion-3d_598821-295.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(3)" [ngClass]="{'continue': isActive[3]}">
+          <img *ngIf="!isActive[3]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[3] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[3] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[3] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(3)"> {{counters[3]}} </button>
+    </div>
+      </label>
+    </section>
+  </div>
+
+  <div class="professional-profile">
+    <section routerLink="/detailsBriefcase">
+      <img src="https://preview.redd.it/z52xeztt3qh21.jpg?auto=webp&s=adfc8d03e98d5125b4bbb85117d4cf2fc54ddb0a">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(4)" [ngClass]="{'continue': isActive[4]}">
+          <img *ngIf="!isActive[4]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[4] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[4] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[4] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(4)"> {{counters[4]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://c.wallhere.com/photos/37/16/2048x1280_px_General-535318.jpg!s">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(5)" [ngClass]="{'continue': isActive[5]}">
+          <img *ngIf="!isActive[5]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[5] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[5] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[5] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(5)"> {{counters[5]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://www.adevinta.com/app/uploads/sites/2/2022/09/metaverso-scaled.jpeg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(6)" [ngClass]="{'continue': isActive[6]}">
+          <img *ngIf="!isActive[6]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[6] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[6] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[6] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(6)"> {{counters[6]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://www.altosempresarios.com/images/Noticias_2022/que-es-el-metaverso.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(7)" [ngClass]="{'continue': isActive[7]}">
+          <img *ngIf="!isActive[7]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[7] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[7] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[7] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(7)"> {{counters[7]}} </button>
+    </div>
+      </label>
+    </section>
+  </div>
+  <div class="professional-profile">
+    <section routerLink="/detailsBriefcase">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/202/6f03db76812287.Y3JvcCwxNjAwLDEyNTEsMCwxMzA.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(8)" [ngClass]="{'continue': isActive[8]}">
+          <img *ngIf="!isActive[8]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[8] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[8] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[8] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(8)"> {{counters[8]}} </button>
+    </div>
+  </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/f8b59f137237387.62078a32f064f.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(9)" [ngClass]="{'continue': isActive[9]}">
+          <img *ngIf="!isActive[9]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[9] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[9] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[9] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(9)"> {{counters[9]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase">
+      <img src="https://wallpapers.com/images/hd/spike-from-brawl-stars-4k5hytj0bkts6e04.jpg">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://estudiantes.ucontinental.edu.pe/wp-content/uploads/2020/09/Madurez-emocional-7.jpg">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(10)" [ngClass]="{'continue': isActive[10]}">
+          <img *ngIf="!isActive[10]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[10] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[10] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[10] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(10)"> {{counters[10]}} </button>
+    </div>
+      </label>
+    </section>
+    <section routerLink="/detailsBriefcase"> 
+      <img src="https://preview.redd.it/z52xeztt3qh21.jpg?auto=webp&s=adfc8d03e98d5125b4bbb85117d4cf2fc54ddb0a">
+      <h6>Rate- Proyecto</h6>
+      <h4>Desing Thinking</h4>
+      <label>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumr-ynIsoOEzb29PmGsYo5Dfem9Yio8dC8Q&usqp=CAU">
+        <h3>David ferchs</h3>
+        <button (click)="toggleButton(11)" [ngClass]="{'continue': isActive[11]}">
+          <img *ngIf="!isActive[11]" src="../../../assets/portafolio/Seguir.png">
+          {{isActive[11] ? 'Siguiendo!' : 'Seguir'}}
+      </button>
+      <div>
+        <img *ngIf="counters[11] > 0" src="../../../assets/portafolio/Heart-follow.png">
+        <img *ngIf="counters[11] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
+        <button (click)="toggleFavorite(11)"> {{counters[11]}} </button>
+    </div>
+      </label>
+    </section>
+  </div>
+</main>
+<app-footer></app-footer>

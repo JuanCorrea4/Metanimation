@@ -1,0 +1,540 @@
+* {
+  font-family: "Product Sans", sans-serif;
+}
+.container {
+  width: 95%;
+  margin: -10% 0 10% 0;
+}
+
+.tem {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  cursor: pointer;
+}
+h2 {
+  margin: 15% 0 0 0;
+  text-align: center;
+  font-family: "Outer Limits Solid", sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+h4 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  margin: 5% 0 0 0;
+}
+
+.filter-carrete {
+  display: inline-flex;
+  list-style-type: none;
+  cursor: pointer;
+  overflow-x: auto; /* Mostrar scroll horizontal */
+  overflow-y: hidden; /* Ocultar scroll vertical */
+  width: 80%;
+}
+  
+li{
+  display: inline;
+  margin: 0 0 0 10px;
+  padding: 5px;
+}
+li:hover {
+  background: linear-gradient(
+    167deg,
+    rgba(28, 178, 162, 1) 0%,
+    rgba(104, 184, 100, 1) 100%
+  );
+  width: 95%;
+  border-radius: 15px;
+  text-align: center;
+}
+
+a > li {
+  white-space: nowrap;
+}
+
+a > li::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.a{
+  overflow-x: scroll;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.carrete-conteiner > button > img {
+  width: 10px;
+  margin: 5%;
+}
+.carrete-conteiner > button{
+  background-color: transparent;
+  border:  none;
+  margin: 0 0 0 10px;
+}
+.filter > button {
+  width: 30%;
+  height: 5vh;
+  border-radius: 15px;
+  border: 1px;
+  background: transparent;
+  color: white;
+  justify-self: center;
+}
+.filter > select {
+  width: 30%;
+  height: 5vh;
+  border-radius: 15px;
+  background: transparent;
+  color: white;
+  padding: 5px;
+  justify-self: center;
+  margin: 0 50px 0 0;
+}
+option {
+  background-color: black;
+  color: white;
+}
+option :hover {
+  color: white;
+  background-color: black;
+}
+
+.best-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: none;
+}
+
+.bst-conteiner {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+/*CONTENEDOR 1 */
+.best-container1 {
+  background-image: url("https://vigorgame.com/files/DfsR2rOJ8BeLdjFGnUYb.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  width: 70%;
+  height: 90%;
+  margin: 10% 0 0 20%;
+  cursor: pointer;
+}
+.best-container1 > section {
+  background: linear-gradient(
+    167deg,
+    rgba(28, 178, 162, 1) 0%,
+    rgba(104, 184, 100, 1) 100%
+  );
+  border-radius: 20px;
+  width: 80%;
+  height: 13%;
+  padding: 10px;
+  margin: 5% 0 0 5%;
+  display: grid;
+  grid-template-columns: 40% 70%;
+  grid-template-rows: 50% 50%;
+}
+.best-container1 > section > h5 {
+  font-size: 20px;
+  margin: 0 0 0 5%;
+  display: inline-block;
+}
+.best-container1 > section > p {
+  font-size: 20px;
+  margin: 2% 0 0 5%;
+}
+.best-container1 > section > h6 {
+  font-size: 50px;
+  margin: 0px;
+  display: inline-block;
+  text-align: center;
+}
+.best-container1 > h4 {
+  margin: 50% 0 0 -75%;
+  position: relative;
+  font-size: 15px;
+}
+
+.best-container1 > h3 {
+  margin: 0 0 5% 5%;
+  position: relative;
+  font-weight: 200;
+}
+.follow {
+  background-color: #575755;
+  display: inline-block;
+  width: 10%;
+  height: 6%;
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 0 1%;
+  color: white;
+}
+.follow > button {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  margin: 0 0 0 10%;
+  color: white;
+}
+.follow > img {
+  object-fit: contain;
+  vertical-align: bottom;
+  width: 30%;
+  margin: 10% 0 0 10%;
+}
+.best-container1 > button {
+  display: inline;
+  background-color: #575755;
+  width: 12%;
+  height: 6%;
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 0 5%;
+  color: white;
+}
+.best-container1 > button > img{
+    object-fit: contain;
+    width: 15%;
+}
+.best-container1> button.continue {
+    width: 12%;
+    height: 6%;
+    background-color: rgba(36, 146, 135, 0.87);
+    color: white;
+  }
+
+/*CONTENEDOR 2 */
+
+.best-container2 {
+  background-image: url("https://e.rpp-noticias.io/large/2022/09/06/170317_1310112.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  width: 87%;
+  height: 50%;
+  margin: 10% 0 0 -5%;
+  cursor: pointer;
+}
+.best-container2 > section {
+  background: linear-gradient(
+    167deg,
+    rgba(28, 178, 162, 1) 0%,
+    rgba(104, 184, 100, 1) 100%
+  );
+  border-radius: 20px;
+  width: 50%;
+  height: 20%;
+  padding: 10px;
+  margin: -10% 0 0 40%;
+}
+.best-container2 > section > h5 {
+  font-size: 20px;
+  margin: 0 0 0 5%;
+  display: inline-block;
+}
+.best-container2 > section > p {
+  font-size: 20px;
+  margin: 2% 0 0 5%;
+}
+.best-container2 > section > h6 {
+  font-size: 50px;
+  margin: -8% 0 0 35%;
+  display: inline-block;
+}
+.best-container2 > h3 {
+  font-size: 15px;
+  width: 150px;
+  margin: 0 0 0 5%;
+}
+.best-container2 > h4 {
+  font-size: 15px;
+  width: 150px;
+  margin: 0;
+  padding-top: 20%;
+}
+.best-container2 > div {
+  background-color: #575755;
+  display: inline-block;
+  width: 8%;
+  height: 10%;
+  border-radius: 10px;
+  border: none;
+  margin: 5% 0 0 1%;
+}
+.best-container2 > div > img {
+  object-fit: contain;
+  vertical-align: bottom;
+  width: 25%;
+  margin: 10% 0 0 10%;
+}
+.best-container2 > div > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  margin: 5% 0 0 5%;
+}
+.best-container2 > button {
+  display: inline;
+  background-color: #575755;
+  width: 10%;
+  height: 10%;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin: 0 0 0 5%;
+}
+.best-container2 > button > img {
+  object-fit: contain;
+  width: 15%;
+}
+
+.best-container2 > button.continue {
+  width: 10%;
+  height: 10%;
+  background-color: rgba(36, 146, 135, 0.87);
+  color: white;
+}
+/*CONTENEDOR 3*/
+
+.best-container3 {
+  background-image: url("https://www.grupoanton.es/ntn/wp-content/consumidor.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  width: 80%;
+  height: 100%;
+  margin: 5% 0 0 -9%;
+  cursor: pointer;
+}
+.best-container3 > section {
+  background: linear-gradient(
+    167deg,
+    rgba(28, 178, 162, 1) 0%,
+    rgba(104, 184, 100, 1) 100%
+  );
+  border-radius: 20px;
+  width: 25%;
+  height: 35%;
+  padding: 10px;
+  margin: -40% 0 0 60%;
+}
+.best-container3 > section > h6 {
+  font-size: 50px;
+  margin: 0 0 0 1.5%;
+  display: inline-block;
+}
+.best-container3 > h4 {
+  margin: 40% 0 0 -65%;
+  position: relative;
+  font-size: 15px;
+}
+
+.best-container3 > h3 {
+  margin: 0 0 10% 5%;
+  position: relative;
+  font-weight: 200;
+  width: 150px;
+}
+/*CONTENEDOR 4*/
+.best-container4 {
+  background-image: url("https://c8.alamy.com/comp/2GGJPH1/ankum-caf-am-dom-artland-osnabrcker-land-lower-saxony-germany-2GGJPH1.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  width: 80%;
+  height: 100%;
+  margin: 5% 0 0 -20%;
+  cursor: pointer;
+}
+.best-container4 > section {
+  background: linear-gradient(
+    167deg,
+    rgba(28, 178, 162, 1) 0%,
+    rgba(104, 184, 100, 1) 100%
+  );
+  border-radius: 20px;
+  width: 25%;
+  height: 35%;
+  padding: 10px;
+  margin: -40% 0 0 60%;
+}
+.best-container4 > section > h6 {
+  font-size: 50px;
+  margin: 0 0 0 1.5%;
+  display: inline-block;
+}
+.best-container4 > h4 {
+  margin: 40% 0 0 -65%;
+  position: relative;
+  font-size: 15px;
+}
+
+.best-container4 > h3 {
+  margin: 0 0 10% 5%;
+  position: relative;
+  font-weight: 200;
+  width: 150px;
+}
+
+/*TEMAS*/
+
+.tem > section {
+  display: grid;
+  grid-template-columns: 15% 30% 30% 20%;
+}
+
+.tem > section > img {
+  object-fit: contain;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline;
+  vertical-align: middle;
+  margin: 15% 0 0 15%;
+}
+
+.tem > section > h5 {
+  display: inline;
+  margin: 10% 7% 0 10px;
+}
+.tem > section > button.continue {
+  object-fit: contain;
+  width: 90%;
+  height: 60%;
+  border-radius: 10px;
+  border: 1px;
+  display: inline;
+  background-color: rgba(36, 146, 135, 0.87);
+  background-size: 10% 25%;
+  background-repeat: no-repeat;
+  background-position: 1vh;
+  color: white;
+  margin: 10% 1% 0 0;
+}
+.tem > section > button {
+  background-color: #575755;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  height: 60%;
+  margin: 10% 5% 0 10%;
+}
+.tem > section > button > img {
+  object-fit: contain;
+  width: 15%;
+}
+.favorite {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  background-color: #575755;
+  width: 90%;
+  height: 60%;
+  margin: 15% 0 0 5%;
+  border-radius: 15px;
+}
+.favorite > button {
+  background-color: #575755;
+  border: none;
+  margin: 0 5% 10% 10%;
+  color: white;
+  border-radius: 10px;
+  width: 90%;
+}
+.favorite > img {
+  margin: 20% 0 0 30%;
+  object-fit: contain;
+  width: 50%;
+}
+
+.tem {
+  display: grid;
+  grid-template-rows: 15% 85%;
+  grid-template-columns: none;
+  width: 95%;
+  background-color: #5757553b;
+  border-radius: 15px;
+}
+.tem > img {
+  border-radius: 10px;
+  margin: 0px;
+  object-fit: contain;
+  width: 100%;
+  margin: 3% 0 0 0;
+}
+.tem > p {
+  font-size: 15px;
+  margin: -20% 0 0 9%;
+}
+.tem > h4 {
+  font-size: 20px;
+  margin: -40px 0 0 -17vh;
+}
+.conteiner-tem {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-left: 10%;
+}
+
+.tema > hr {
+  width: 60%;
+  margin: 10% 0 0 5%;
+  display: inline-block;
+}
+
+.tema > h3 {
+  margin: 5% 0 2% 10%;
+  display: inline-block;
+}
+
+.temaL {
+  background-color: #575755;
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-image: url(../../../assets/new/Arrow_L.png);
+  background-size: 16% 32%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 0 2%;
+  display: inline-block;
+}
+
+.temaR {
+  background-color: #575755;
+  width: 70px;
+  height: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  color: white;
+  background-image: url(../../../assets/new/ArrowR.png);
+  background-size: 16% 32%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 2% -2%;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #2e2e2e;
+  cursor: pointer;
+}
+
+
+
