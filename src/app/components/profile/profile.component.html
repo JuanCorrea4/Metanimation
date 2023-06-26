@@ -99,7 +99,7 @@
     <label>Cargar imagen principal del proyecto</label>
     <input id="Img1" type="file" style="border-radius:15px" (change)="handleImage1Change($event)">
     <button type="submit" class="guardar" (click)="sendProjectServer()">Siguiente</button> 
-    <div>
+    <div *ngIf="mostrarImagenes">
     <label>Cargar imagenes del proyecto</label>
     <p>en ese espacio podras cargar las imegens que muestran tu proyecto</p>
     <input id="Img2" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img2')">
