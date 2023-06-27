@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ClientsService } from '../../services/clients.service';
 import { Person } from '../../interface/Person';
 
@@ -22,6 +23,22 @@ export class RegistrationComponent implements OnInit {
   toggleRepeatPasswordVisibility() {
     this.showRepeatPassword = !this.showRepeatPassword;
   }
+
+  onKeyPress(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+    const keyCode = event.keyCode || event.which;
+    const keyValue = String.fromCharCode(keyCode);
+
+    // Permite solo números del 0 al 9
+    if (!/^[0-9]+$/.test(keyValue)) {
+      event.preventDefault();
+      return false;
+    }
+    return true
+  }
+
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  
 
   constructor(private fb: FormBuilder, private clients: ClientsService) {
     this.form = this.fb.group({
@@ -56,4 +73,6 @@ export class RegistrationComponent implements OnInit {
 
     console.log(PersonSave);
   }
+
+
 }

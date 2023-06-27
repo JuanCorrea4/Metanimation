@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadInfoUserService } from 'src/app/services/load-info-user.service';
 import { UsersService } from 'src/app/services/users.service';
+import { ApiService } from 'src/app/services/api.service';
+
 
 
 @Component({
@@ -12,8 +14,16 @@ export class DashboardComponent implements OnInit {
   public dataUser: any = {};
   usuarioDetails: { Id: any; IdPerson: any; Ocupation: any; PersonFullName: any; ImgPerfil: any; }[] | undefined; nameUsers: any;ocupacion: any; ImgPerfil: any; userId!: string; token: string | null | undefined;
   detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; Likes: any; ImgProject: any; ProjectCount: any; }[] | undefined; ProjectCount: any;
+  news : [] = [];
 
-  constructor(private loadInfoUser: LoadInfoUserService, private usuario: UsersService) { }
+  constructor(private loadInfoUser: LoadInfoUserService, private usuario: UsersService, private apiService: ApiService) { }
+
+  llenarData() {
+    this.apiService.getData().subscribe(dataNews => {
+      this.news = dataNews;
+      console.log(this.news)
+    })
+  }
 
   ngOnInit(): void {
     this.completarInfo()

@@ -32,17 +32,6 @@
           <hr/>
         </div> -->
 
-        <div class="Cedula">
-          <div class="Cedula">
-            <span>Cedula</span>
-            <input
-              type="text"
-              formControlName="Cedula"
-              id=""
-              placeholder="Cedula"
-            />
-          </div>
-        </div>
         <div class="namesAndLastNames">
           <div class="names">
             <span>Nombres</span>
@@ -50,27 +39,49 @@
               type="text"
               formControlName="Nombre"
               id=""
-              placeholder="Ingresa tu nombre"
+              placeholder="Ingresa tus nombres"
             />
           </div>
           <div class="lastName">
-            <span>Apellido</span>
+            <span>Apellidos</span>
             <input
               type="text"
               formControlName="Apellido"
               id=""
-              placeholder="Ingresa tu apellido"
+              placeholder="Ingresa tus apellidos"
             />
           </div>
+        </div>
+        <div class="Cedula">
+          <span>Numero de documento</span>
+          <input
+            type="text"
+            pattern="[0-9]*" 
+            inputmode="numeric"
+            formControlName="Cedula"
+            id=""
+            placeholder="Numero de documento"
+            class="input-large"
+            (keypress)="onKeyPress($event)"
+          />
+        </div>
+        <div class="typeUser">
+          <span>Tipo de usuario</span>
+          <select class="input-large">
+            <option value="profesor">Profesor</option>
+            <option value="usuario">Aprendiz</option>
+          </select>
         </div>
         <div class="number">
           <span>Número</span>
           <input
             type="text"
+            inputmode="numeric"
             formControlName="Celular"
             id=""
             placeholder="Ingresa tu número"
             class="input-large"
+            (keypress)="onKeyPress($event)"
           />
         </div>
         <div class="email">
@@ -81,28 +92,28 @@
             id=""
             placeholder="Ingresa tu correo"
             class="input-large"
+            [formControl]="emailFormControl"
           />
         </div>
         <div class="password">
           <span>Contraseña</span>
           <div class="inputAndButtonPassword">
-            <input type="password" formControlName="Password" placeholder="Ingresa tu contraseña" class="input-large" />
-          <button (click)="togglePasswordVisibility()">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</button>
+            <input type="password" formControlName="Password" [attr.type]="showPassword ? 'text' : 'password'"  placeholder="Ingresa tu contraseña" class="input-large" />
+          <button type="button" (click)="togglePasswordVisibility()">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</button>
           </div>
         </div>
         <div class="repeatPassword">
           <span>Confirmar contraseña</span>
           <div class="inputAndButtonPassword">
-            <input type="password" placeholder="Confirma tu contraseña" class="input-large" />
-            <button (click)="toggleRepeatPasswordVisibility()">{{ showRepeatPassword ? 'Ocultar' : 'Mostrar' }}</button>
+            <input type="password" placeholder="Confirma tu contraseña" [attr.type]="showRepeatPassword ? 'text' : 'password'"  class="input-large" />
+            <button type="button" (click)="toggleRepeatPasswordVisibility()">{{ showRepeatPassword ? 'Ocultar' : 'Mostrar' }}</button>
           </div>
         </div>   
-        <button type="submit" [routerLink]="['/login']">Continuar</button>
+        <button type="submit" [routerLink]="['/login']" [disabled]="form.invalid">Registrarme</button>
         <div class="termsAndConditions">
           <input type="checkbox" name="iAgree" id="" />
           <p>
-            Deseo recibir noticias, promociones, ofertas e información de nuevos
-            productos
+            He leído y acepto los términos y condiciones.
           </p>
         </div>
       </form>
