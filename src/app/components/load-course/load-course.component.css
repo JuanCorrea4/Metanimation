@@ -8,12 +8,12 @@
 }
 
 .info{
-  width: 40%;
+  width: 35%;
   border-right: 1px solid #656565;
 }
 
 .form{
-  width: 60%;
+  width: 65%;
   
 }
 
@@ -87,7 +87,7 @@ justify-content: space-evenly;
 }
 
 .containerForm{
-  width: 300%;
+  width: 400%;
   display: flex;
   overflow: auto;
 }
@@ -187,8 +187,11 @@ select, textarea, button{
   margin: 5px 0;
 }
 
+.class{
+  padding: 20px;
+}
+
 .formClass{
-  margin: 20px;
   padding: 20px;
   border: 1px solid #656565;
   background-color: #272727;
@@ -216,6 +219,10 @@ select, textarea, button{
   width: 50%;
 }
 
+.inforResource{
+  width: 100%;
+}
+
 .containerUrl{
   display: flex;
   flex-direction: column;
@@ -240,6 +247,7 @@ select, textarea, button{
   background-color: transparent;
   border: none;
   height: 20px;
+  padding: 5px 10px;
 }
 
 .containerButtons{
@@ -248,8 +256,10 @@ select, textarea, button{
 
 .containerButtons button{
   cursor: pointer;
-  width: 40%;
-  margin: 0 20px;
+  width: 49%;
+  background: transparent;
+  border: 1px solid #57b772;
+  margin: 0 5px;
 }
 
 .inputClase{
@@ -270,10 +280,15 @@ select, textarea, button{
   border: none;
   color: #5c5c5c;
   margin-right: 5px;
+  width: 70px;
 }
 
 .inputClase:hover{
-  background-color: #656565;
+  background-color: #2e2e2e;
   padding: 20px;
   color: white;
+}
+
+.priceCourse{
+  width: 100%;
 }

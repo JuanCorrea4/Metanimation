@@ -8,6 +8,7 @@ hr{
 }
 
 .container{
+  margin-top: 5rem;
   padding: 50px;
 }
 
@@ -77,8 +78,7 @@ hr{
 .section-right > form > div{
   display: flex;
   flex-direction: column;
-  margin: 20PX 0;
-
+  margin: 10px 0;
 }
 
 .namesAndLastNames{
@@ -96,23 +96,21 @@ hr{
   margin-right: 20px;
 }
 
-.namesAndLastNames > .lastName > input{
-}
-
-
 .section-right > form > div > span{
   color: #40b584;
+  margin: 5px 0;
 }
 
-.section-right > form > div > .input-large{
-
-}
-.section-right > form > button, input{
+.section-right > form > button, input , select {
   background: none;
   border: 1px solid gray;
   border-radius: 15px;
   padding: 10px;
   color: #fff;
+}
+
+option{
+  color: gray;
 }
 
 .section-right > form > .optionRegister{
@@ -133,6 +131,7 @@ hr{
   padding: 10px;
   border-radius: 15px;
   cursor: pointer;
+  border: none;
 }
 
 .inputAndButtonPassword{
@@ -174,6 +173,7 @@ hr{
 
 .section-right > form > .namesAndLastNames > div > span{
   color: #40B584;
+  margin: 5px 0px;
 }
 
 .section-right > form > .termsAndConditions{

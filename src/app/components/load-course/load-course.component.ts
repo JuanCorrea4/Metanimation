@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CoursesService } from 'src/app/services/courses.service';
 @Component({
   selector: 'app-load-course',
   templateUrl: './load-course.component.html',
@@ -8,31 +7,22 @@ import { CoursesService } from 'src/app/services/courses.service';
 
 
 export class LoadCourseComponent {
-  
+
   colorDiamont: number = 1;
   colorText: number = 1;
   numberClass: number = 1
   textoBoton = 'chevron-right';
   arrayModulos: any[] = [];
-  arrayCursos : any = {};
   arrayClases: any[] = [];
+  arrayRecursos: any[] = [];
   editableFields: boolean[] = [];
-  categoryes: any[] = [];;
-  courseName: any;
-  courseDescription: any;
 
-
-  constructor (private cursosService: CoursesService) {}
-
-  ngOnInit(): void {
-    this.loadCategorys()
-  }
 
   nextStep() {
-    if (this.colorDiamont == 2 || this.colorText == 2) {
+    if (this.colorDiamont == 3 || this.colorText == 3) {
       this.textoBoton = ' none'
     }
-    if (this.colorDiamont == 3 || this.colorText == 3) {
+    if (this.colorDiamont == 4 || this.colorText == 4) {
       this.colorDiamont = 1
       this.colorText = 1
       this.textoBoton = 'chevron-right'
@@ -42,11 +32,13 @@ export class LoadCourseComponent {
     containerForm.style.marginLeft = '-' + this.colorDiamont + '00%';
     this.colorDiamont++
     this.colorText++
-    this.saveInfoCourse()
   }
 
   previousStep() {
     const containerForm: any = document.getElementById("containerForm")
+    if (this.colorDiamont == 4 || this.colorText == 4) {
+      containerForm.style.marginLeft = '-200%';
+    }
     if (this.colorDiamont == 3 || this.colorText == 3) {
       containerForm.style.marginLeft = '-100%';
     }
@@ -85,44 +77,49 @@ export class LoadCourseComponent {
 
     const urlClase: any = document.getElementById("urlClase")
 
-    const nameModule: any = document.getElementById("nameModule")
-
-    if (nameModule.value == "") {
-      alert("Por favor dale un nombre al modulo")
-    }else{
-      if (nombreClase.value != "" && urlClase.value != "") {
-        let dataClase = {
-          "nombreClase": nombreClase.value,
-          "urlClase": urlClase.value
-        }
-        this.arrayClases.push(dataClase)
-        nombreClase.value = ""
-        urlClase.value = ""
-
-      } else {
-        alert("Por favor completa los campos de la clase")
+    if (nombreClase.value != "" && urlClase.value != "") {
+      let dataClase = {
+        "nombreClase": nombreClase.value,
+        "urlClase": urlClase.value
       }
-  }
+      this.arrayClases.push(dataClase)
+      nombreClase.value = ""
+      urlClase.value = ""
 
-  }
-
-  clearClass(){
-    const classDiv: any = document.getElementById("class")
-    const nameModule: any = document.getElementById("nameModule")
-
-    console.log(classDiv)
-    if (nameModule.value == "") {
-      if (classDiv.childNodes.length > 1) {
-        this.arrayClases = [];
-      }
+    } else {
+      alert("Por favor completa los campos de la clase")
     }
+
+
   }
 
+  createOneSource() {
 
+    const nombreRecurso: any = document.getElementById("nombreRecurso")
+
+    const urlRecurso: any = document.getElementById("urlRecurso")
+
+    if (nombreRecurso.value != "" && urlRecurso.value != "") {
+      let dataRecurso = {
+        "nombreClase": nombreRecurso.value,
+        "urlClase": urlRecurso.value
+      }
+      this.arrayRecursos.push(dataRecurso)
+      nombreRecurso.value = ""
+      urlRecurso.value = ""
+
+    } else {
+      alert("Por favor completa los campos de la clase")
+    }
+
+
+  }
 
   saveModule() {
     const classDiv: any = document.getElementById("class")
     const nameModule: any = document.getElementById("nameModule")
+    const nombreClase: any = document.getElementById("nombreClase")
+    const urlClase: any = document.getElementById("urlClase")
     if (nameModule.value != "") {
       if (classDiv.childNodes.length > 1){
 
@@ -143,9 +140,10 @@ export class LoadCourseComponent {
   }
 
   loadInfoCourse(index){
+    this.arrayModulos[index].clases.readonly = false  
 
     this.arrayClases = this.arrayModulos[index].clases
-
+    
     const divModule: any = document.getElementById("modules")
 
     divModule.childNodes[0].removeAttribute("readonly")
@@ -154,29 +152,7 @@ export class LoadCourseComponent {
   
   }
 
-  saveInfoCourse(){
-    this.courseName = document.getElementById("courseName")
-    this.courseDescription = document.getElementById("courseDescription")
-
-    this.arrayCursos= [
-      {
-        "cursoNombre": this.courseName.value,
-        "cursoDescripcion": this.courseDescription.value,
-        "modulos" : this.arrayModulos
-      }
-    ]
-    console.log(this.arrayCursos)
+  postCourse(){
+    
   }
-
-  loadCategorys(){
-    this.cursosService.obtenerCategorias().subscribe(
-      (response) => {
-        console.log(response)
-        this.categoryes = response;
-        console.log(this.categoryes)
-      },
-      (error) => {
-        console.error(error);
-      }
-    )}
 }
