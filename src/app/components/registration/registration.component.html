@@ -25,12 +25,13 @@
     </section>
     <section class="section-right">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <button id="btnGoogle"><img src="../../../assets/Register/Google_Icon.png" alt=""> <p>Resgitrate con Google</p></button>
+        <!-- <button id="btnGoogle"><img src="../../../assets/Register/Google_Icon.png" alt=""> <p>Resgitrate con Google</p></button>
         <div class="optionRegister">
           <hr/>
           <span>O resgitrate con</span>
           <hr/>
-        </div>
+        </div> -->
+
         <div class="Cedula">
           <div class="Cedula">
             <span>Cedula</span>
@@ -92,11 +93,11 @@
         <div class="repeatPassword">
           <span>Confirmar contraseña</span>
           <div class="inputAndButtonPassword">
-            <input type="password" formControlName="repeatPassword" placeholder="Confirma tu contraseña" class="input-large" />
+            <input type="password" placeholder="Confirma tu contraseña" class="input-large" />
             <button (click)="toggleRepeatPasswordVisibility()">{{ showRepeatPassword ? 'Ocultar' : 'Mostrar' }}</button>
           </div>
         </div>   
-        <button type="submit" [disabled]="form.invalid">Continuar</button>
+        <button type="submit" [routerLink]="['/login']">Continuar</button>
         <div class="termsAndConditions">
           <input type="checkbox" name="iAgree" id="" />
           <p>
