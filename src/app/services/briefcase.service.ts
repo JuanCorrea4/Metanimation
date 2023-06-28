@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class BriefcaseService {
    private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
-//private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+ // private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
@@ -34,20 +34,18 @@ export class BriefcaseService {
     return this.http.get<any[]>(url);
   }
 
-  insertProjectUsers(id: string, details: any, token: string) {
-    console.log('Datos enviados al servidor:', details);
-
+  insertProjectUsers(id: string, userProject: any, token: string) {
+    console.log('Datos enviados al servidor:', userProject);
     const url = `${this.apiUrl}/project/Insertproject/${id}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': token
     });
 
-    return this.http.post(url, details, { headers })
+    return this.http.post(url, userProject, { headers })
       .toPromise()
       .then(response => {
         console.log('Detalles del usuario modificados con éxito:', response);
-        window.location.reload();
         return response;
       })
       .catch(error => {
@@ -56,11 +54,10 @@ export class BriefcaseService {
       });
   }
   insertRecourse(projectId: string, resouceProject: any , token:string) {
-    const url = `${this.apiUrl}/project/Insertproject/${projectId}`;
+    const url = `${this.apiUrl}/project/Insertrecurso/${projectId}`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const payload = { resouceProject };
   
-    return this.http.post(url, payload, { headers })
+    return this.http.post(url, resouceProject, { headers })
       .toPromise()
       .then(response => {
         console.log('Recursos insertados correctamente:', response);

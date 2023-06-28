@@ -95,17 +95,16 @@
     <button class="close-button" (click)="showModal = false">&times;</button>
     <h2>Agregar proyecto</h2>
     <input [(ngModel)]="nombreProyecto" type="text" placeholder="Nombre del proyecto">
-    <textarea [(ngModel)]="descripcionPoyecto" placeholder="Descripción del proyecto"></textarea>   
+    <textarea [(ngModel)]="descripcionProyecto" placeholder="Descripción del proyecto"></textarea>   
     <label>Cargar imagen principal del proyecto</label>
     <input id="Img1" type="file" style="border-radius:15px" (change)="handleImage1Change($event)">
-    <button type="submit" class="guardar" (click)="sendProjectServer()">Siguiente</button> 
-    <div *ngIf="mostrarImagenes">
+    <div >
     <label>Cargar imagenes del proyecto</label>
     <p>en ese espacio podras cargar las imegens que muestran tu proyecto</p>
     <input id="Img2" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img2')">
     <input id="Img3" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img3')">
     <input id="Img4" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img4')">
-    <button type="submit" class="guardar" (click)="sendRecousesServer(ImgProject)">Guardar</button>
+    <button type="submit" class="guardar" (click)="sendProjectServer()" (click)="sendRecousesServer(ImgProject)">Guardar</button>
   </div>
   </div>
   <section *ngFor="let project of detailsProject">
