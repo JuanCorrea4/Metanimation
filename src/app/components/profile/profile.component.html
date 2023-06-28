@@ -17,7 +17,7 @@
       <label>
         <img src="../../../assets/portafolio/ubicacion.png">
         <input type="text" [(ngModel)]="ubicacion" [disabled]="!campoHabilitado" placeholder="Ingresa tu ubicación">
-        <button  (click)="sendDetailsToServer()" *ngIf="mostrarBotonGuardar">Guardar</button>
+        <button  (click)="sendDetailsToServer()" (click)="sendToolsToServer()"*ngIf="mostrarBotonGuardar">Guardar</button>
       </label>
       <!--<section>
         <button>Arte digital <img src="../../../assets/portafolio/rojo.png"></button>
@@ -98,14 +98,13 @@
     <textarea [(ngModel)]="descripcionProyecto" placeholder="Descripción del proyecto"></textarea>   
     <label>Cargar imagen principal del proyecto</label>
     <input id="Img1" type="file" style="border-radius:15px" (change)="handleImage1Change($event)">
-    <button type="submit" class="guardar" (click)="sendProjectServer()">Siguiente</button> 
-    <div *ngIf="mostrarImagenes">
+    <div >
     <label>Cargar imagenes del proyecto</label>
     <p>en ese espacio podras cargar las imegens que muestran tu proyecto</p>
     <input id="Img2" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img2')">
     <input id="Img3" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img3')">
     <input id="Img4" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img4')">
-    <button type="submit" class="guardar"  (click)="sendRecousesServer(ImgProject)">Guardar</button>
+    <button type="submit" class="guardar" (click)="sendProjectServer()" (click)="sendRecousesServer(ImgProject)">Guardar</button>
   </div>
   </div>
   <section *ngFor="let project of detailsProject">
