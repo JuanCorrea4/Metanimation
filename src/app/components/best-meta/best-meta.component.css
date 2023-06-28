@@ -143,7 +143,8 @@ option :hover {
 /*CONTENEDOR 1 */
 .best-container1 {
   background-image: url("https://vigorgame.com/files/DfsR2rOJ8BeLdjFGnUYb.jpg");
-  background-size: 100% 100%;
+  background-position-y: 50%;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 20px;
   width: 70%;
@@ -240,7 +241,8 @@ option :hover {
 
 .best-container2 {
   background-image: url("https://e.rpp-noticias.io/large/2022/09/06/170317_1310112.jpg");
-  background-size: 100% 100%;
+  background-position-y: 50%;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 20px;
   width: 87%;
@@ -332,7 +334,8 @@ option :hover {
 
 .best-container3 {
   background-image: url("https://www.grupoanton.es/ntn/wp-content/consumidor.jpg");
-  background-size: 100% 100%;
+  background-position-y: 50%;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 20px;
   width: 80%;
@@ -372,7 +375,8 @@ option :hover {
 /*CONTENEDOR 4*/
 .best-container4 {
   background-image: url("https://c8.alamy.com/comp/2GGJPH1/ankum-caf-am-dom-artland-osnabrcker-land-lower-saxony-germany-2GGJPH1.jpg");
-  background-size: 100% 100%;
+  background-position-y: 50%;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   border-radius: 20px;
   width: 80%;
@@ -529,6 +533,7 @@ option :hover {
   border: none;
   color: white;
   background-image: url(../../../assets/new/Arrow_L.png);
+  background-position-y: 50%;
   background-size: 16% 32%;
   background-repeat: no-repeat;
   background-position: center;
@@ -545,6 +550,7 @@ option :hover {
   border: none;
   color: white;
   background-image: url(../../../assets/new/ArrowR.png);
+  background-position-y: 50%;
   background-size: 16% 32%;
   background-repeat: no-repeat;
   background-position: center;

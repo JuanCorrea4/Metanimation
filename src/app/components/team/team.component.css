@@ -60,6 +60,7 @@
     width: 70%;
     border-radius: 50%;
     object-fit: cover;
+    height: 60%;
    }
 
    .info-members {
