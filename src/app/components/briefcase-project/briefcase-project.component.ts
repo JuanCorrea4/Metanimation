@@ -47,6 +47,10 @@ export class BriefcaseProjectComponent implements OnInit {
       }
     );
   }
-  
+  // Agrega este método al componente
+getProcessedImages(images: string): string[] {
+  return images.split(',').map((img: string) => img.trim()).slice(0, 3);
+}
+
   
 }

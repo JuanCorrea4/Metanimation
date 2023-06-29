@@ -77,32 +77,69 @@ a{
     width: 1.5%;
 }
 
-.new-conteiner > section > button{
+.new-conteiner > section > section> button{
     display: inline-block;
     border-radius: 10px;
-    height: 10%;
+    height: 20%;
     background-color:rgba(179, 179, 179, 0.384) ;
     border: none;
-    margin: 0 2% 0 2%;
+    margin: 0 2% 0 10%;
 }
-.new-conteiner > section > button:hover{
+.new-conteiner > section > section button:hover{
     background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);
     cursor: pointer;
 }
 
-.new-conteiner > section > button > img{
+.new-conteiner > section > section >button> img{
     object-fit: contain;
     width: 6%;
-    margin: 0 0 0 0;
-}
-.new-conteiner > section > p{
-    display: inline-block;
-    width: 70%;
     margin: 0 0 0 5%;
 }
-.new-conteiner > section > h4{
+.new-conteiner > section > section >p{
+    display: inline-block;
+    width: 60%;
+    margin: 0 0 5% 5%;
+}
+.new-conteiner > section > section{
+    background-color: rgba(0, 0, 0, 0.583);
+    z-index: 5;
+    position: relative;
+    height: 50%;
+    width: 100%;
+    display: inline-block;
+    margin: 30% 0 0 0;
+}
+
+.sombra{
+    background-color: rgba(0, 0, 0, 0.649);
+    z-index: 5;
+    position: relative;
+    height: 65%;
+    border-radius: 0 0 15px 15px;
+    margin-top: 3%;
+}
+.new-conteiner > section > section > h4{
+    margin: 5% 5% 0 5%;
+}
+.new-conteiner > div > section > section > h4{
+    margin: 5% 5% 0 5%;
+    display: inline-block;
+}
+.new-conteiner > div > section > section > p{
+    margin: 0 5% 0 5%;
+    display: inline-block;
     width: 70%;
-    margin: 35% 5% 0 5%;
+}
+.new-conteiner > div > section > section > button{
+    border-radius: 15px;
+    background-color:rgba(179, 179, 179, 0.384) ;
+    border: none;
+    height: 205;
+}
+.new-conteiner > div > section > section > button > img{
+    object-fit: contain;
+    width: 5%;
+    margin: 0 0 0 5%;
 }
 .btn-l{
     width: 5%;

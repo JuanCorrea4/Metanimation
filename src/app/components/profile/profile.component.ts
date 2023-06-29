@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  selectedImage: File | undefined; nameTools: any; detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; ImgProject: any; ProjectCount: any; Likes:any; }[] | undefined;NameProject: any; DescriptionProject: any; Likes: any;ImgProject: any; ProjectCount: any;campoHabilitado: boolean | undefined; mostrarBotonGuardar: boolean | undefined;  campoTexto: any; token: string | null | undefined; userId: string | null | undefined;usuarioDetails: { Id: any; IdPerson: any; DescriptionPerson: any; Ocupation: any; telefono: any; Facebook: any; Instagram: any; Youtube: any; Likes: any; Followers: any; Followed: any; Ubication: any;PersonFullName: any; ImgPerfil: any; Email: any; Tools: any }[] | undefined; youtube: any; instagram: any; facebook: any; telefono: any; ocupacion: any; ImgPerfil: any; email: any; tools: string[] = []; ubicacion: any; usuarioName: {Phone: any; Id: any; IdPerson: any; PersonName: any; PersonLastName: any; Email: any; }[] | undefined; PersonName: any; PersonLastName: any; correo: any; cantProjects: any; likes: any = 0; followers: any = 0;  followed: any = 0; nameUsers: any; description: any; city: any;public showModal: boolean = false;nombreProyecto: any;descripcionPoyecto: any;mostrarImagenes: boolean = false; Url: any; descripcionProyecto: any;isSavingResources: boolean = false;idProject: number = 0;telefonos: any;
+  selectedImage: File | undefined; nameTools: any; detailsProject: { IdProject: any; NameProject: any; DescriptionProject: any; ImgProject: any; ProjectCount: any; Likes:any; }[] | undefined;NameProject: any; DescriptionProject: any; Likes: any;ImgProject: any; ProjectCount: any;campoHabilitado: boolean | undefined; mostrarBotonGuardar: boolean | undefined;  campoTexto: any; token: string | null | undefined; userId: string | null | undefined;usuarioDetails: { Id: any; IdPerson: any; DescriptionPerson: any; Ocupation: any; telefono: any; Facebook: any; Instagram: any; Youtube: any; Likes: any; Followers: any; Followed: any; Ubication: any ; PersonFullName: any; ImgPerfil: any; Email: any; Tools: any }[] | undefined; youtube: any; instagram: any; facebook: any; telefono: any; ocupacion: any; ImgPerfil: any; email: any; tools: any ; ubicacion: any; usuarioName: {Phone: any; Id: any; IdPerson: any; PersonName: any; PersonLastName: any; Email: any; }[] | undefined; PersonName: any; PersonLastName: any; correo: any; cantProjects: any; likes: any = 0; followers: any = 0;  followed: any = 0; nameUsers: any; description: any; city: any;public showModal: boolean = false;nombreProyecto: any;descripcionPoyecto: any;mostrarImagenes: boolean = false; Url: any; descripcionProyecto: any;isSavingResources: boolean = false;idProject: number = 0;telefonos: any;
 
   
   constructor(private authService: AuthService, private usuario: UsersService, private portafolio: BriefcaseService) { }
@@ -24,6 +24,8 @@ export class ProfileComponent implements OnInit {
     this.obtenerDetailsPerson(this.userId);
     this.obtenerNamePerson(this.userId);
     this.obtenerDetailsProject(this.userId);
+    this.ubicacion = "Selecciona tu ubicación";
+
   }
 
   sendDetailsToServer(): void {
@@ -53,7 +55,7 @@ export class ProfileComponent implements OnInit {
           // Realizar acciones adicionales después de enviar los datos
         })
         .catch(error => {
-          // Manejar el error si ocurriera
+          console.log('Error al enviar los datos al servidor:', error);
         });
     } else {
       console.log('No se cumplen las condiciones necesarias para enviar los detalles al servidor.');
@@ -61,17 +63,16 @@ export class ProfileComponent implements OnInit {
     }
   }
   
-
   sendToolsToServer(): void {
     if (this.userId && this.token) {
       const userTools = {
         id: this.userId,
         token: this.token,
-        nameTools: this.tools.map(tool => tool.trim())
+        nameTools: this.tools.split(',').map(tool => tool.trim())
       };      
-
+  
       console.log('Enviando detalles al servidor:', userTools);
-
+  
       this.usuario.insertToolsUsers(this.userId, userTools, this.token)
         .then(() => {
           // Manejar la respuesta del servidor si es necesario
@@ -86,6 +87,10 @@ export class ProfileComponent implements OnInit {
       console.log('this.userId:', this.userId);
     }
   }
+  
+  
+  
+  
 
 // Llamada a la función sendProjectServer()
 sendProjectServer(): void {
@@ -138,9 +143,11 @@ sendRecousesServer(idProject: number): void {
       this.portafolio.insertRecourse(this.userId!, resouceProject, this.token!)
         .then(() => {
           // Aquí puedes realizar cualquier acción adicional después de enviar el recurso
+          this.showModal = false;
         })
         .catch(error => {
           // Manejar el error si ocurriera
+          this.showModal = false;
         });
     });
   } else {
@@ -320,9 +327,19 @@ handleImageChange(event: any, fieldName: string): void {
         }
       
     }
+
+    showToolsImage = '../../../assets/profile/flechaabjo.png';
+    showSocialImage = '../../../assets/profile/flechaabjo.png';
+
+
     mostrarComponente = [false, false, false];
     toggleComponent(index: number): void {
       this.mostrarComponente[index] = !this.mostrarComponente[index];
+      if (index === 0) {
+        this.showToolsImage = this.mostrarComponente[index] ? '../../../assets/profile/flechaarriba.png' : '../../../assets/profile/flechaabjo.png';
+      } else if (index === 1) {
+        this.showSocialImage = this.mostrarComponente[index] ? '../../../assets/profile/flechaarriba.png' : '../../../assets/profile/flechaabjo.png';
+      }
     }
-  
+    
 }

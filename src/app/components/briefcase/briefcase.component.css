@@ -207,6 +207,7 @@ section > hr{
   border-radius: 15px;
   width: 85%;
   height: 80%;
+  cursor: pointer;
 }
 .professional-profile >section > img{
   object-fit: cover;
@@ -214,15 +215,23 @@ section > hr{
   height: 70%;
   border-radius: 15px;
 }
-.professional-profile >section > h6 {
+.professional-profile >section > article> h6 {
   font-size: 15px;
   margin: -30% 0 0 5%;
 }
-.professional-profile >section > p{
+.professional-profile >section > article> p{
   margin: 2% 0 5% 5%;
-  height: 20%;
+  height: 70%;
   overflow-x: hidden; /* Mostrar scroll horizontal */
   overflow-y: auto; /* Ocultar scroll vertical */
+}
+
+.professional-profile >section > article{
+  z-index: 5;
+  position: relative;
+  height: 40%;
+  border-radius: 15px;
+  background-image: linear-gradient(to top, #03030386 50%, #03030386 50%);
 }
 
 .description::-webkit-scrollbar {

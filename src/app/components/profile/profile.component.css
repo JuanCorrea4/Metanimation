@@ -110,13 +110,17 @@ vertical-align: middle;
 width: 3%;
 margin: 0 0 0 10%;
 }
-.people > label  > input{
+.people > label  > select{
 background-color: transparent;
 color: white;
 border: none;
 border-bottom: 1px #575755 solid;
 outline: none;
 margin: 5% 0 20% 2%;
+}
+.people > label > select > option {
+  background-color: black;
+  color: white;
 }
 
 /*
@@ -156,6 +160,11 @@ width: 15%;
  width: 100%;
  height: 50px;
 }
+.project > article > button > img{
+object-fit: contain;
+width: 5%;
+margin-left: 5%;
+ }
 
 .project > article > h2{
 font-size: 80px;
@@ -271,7 +280,7 @@ text-align: center;
 
 .info-person > div > button > img{
   object-fit: contain;
-  width: 12%;
+  width: 5%;
   margin-left: 5%;
 }
 
@@ -311,23 +320,39 @@ color: white;
   width: 85%;
   height: 80%;
   cursor: pointer;
-  background: linear-gradient(167deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 100%);/* Color del thumb (manija) del scrollbar */
+  background: linear-gradient(167deg, rgba(28, 178, 163, 0.518) 0%, rgba(104, 184, 100, 0.518) 100%);/* Color del thumb (manija) del scrollbar */
+
 }
 .professional-profile >section > img{
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  background-image: linear-gradient(to top, #030303af 50%, #000000cb 40%)
+  z-index: 0;
 }
-.professional-profile >section > h6 {
+.professional-profile >section > section> h6 {
   font-size: 15px;
   margin: -35% 0 0 5%;
   font-size: 18px;
 }
-.professional-profile >section > p{
+
+.professional-profile >section > section{
+  z-index: 5;
+  position: relative;
+  height: 55%;
+  background-image: linear-gradient(to top, #03030386 50%, #03030386 50%);
+  border-radius: 0 0 15px 15px;
+}
+#agregar{
+  object-fit: contain;
+  width: 30%;
+  background-color: transparent;
+  margin-left: 35%;
+}
+.professional-profile >section > section> p{
   margin: 3% 0 2% 5%;
-  height: 25%;
+  height: 75px;
+  text-transform: capitalize;
   overflow-x: hidden; /* Mostrar scroll horizontal */
   overflow-y: auto; /* Ocultar scroll vertical */
 }
@@ -360,6 +385,14 @@ color: white;
   width: 95%;
 }
 
+.professional-profile > section > h6 {
+color: #000000;
+font-weight:900;
+}
+.professional-profile > section > p {
+  color: #000000;
+  font-weight:900;
+  }
 .professional-profile >section > div {
   display: inline-block;
   width: 15%;
@@ -445,6 +478,12 @@ border-color: #575755;
 
 .modal h2 {
   margin-bottom: 20px;
+  font-family: 'Outer Limits Solid', sans-serif;
+  background: linear-gradient(104deg, rgba(28,178,162,1) 0%, rgba(104,184,100,1) 76%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
 }
 
 .modal input[type="text"] {
@@ -474,6 +513,7 @@ textarea::placeholder{
 }
 .modal input[type="text"]::placeholder{
   color: white;
+  text-align: center;
 }
 .modal label,
 .modal button {
@@ -513,3 +553,14 @@ margin-bottom: 10px;
 .modal > div > button{
   margin: 0 0 0 35%;
 }
+
+.custom-file-input {
+  /* Estilos personalizados */
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 8px;
+  color: #333;
+  /* Otros estilos opcionales */
+  /* Agregar margen, tamaño de fuente, etc. según tus necesidades */
+}
+

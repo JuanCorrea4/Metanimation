@@ -73,31 +73,6 @@ export class ProfileArtistComponent implements OnInit {
   }
   
 
-  sendToolsToServer(): void {
-    if (this.userId && this.token) {
-      const userTools= {
-        id: this.userId, // No es necesario convertirlo a entero
-        token: this.token,
-        nameTools: this.tools
-      };
-
-      console.log('Enviando detalles al servidor:', userTools);
-
-      this.usuario.insertToolsUsers(this.userId, userTools, this.token)
-        .then(() => {
-          // Manejar la respuesta del servidor si es necesario
-          // Realizar acciones adicionales después de enviar los datos
-        })
-        .catch(error => {
-          // Manejar el error si ocurriera
-        });
-    } 
-    else {
-      console.log('No se cumplen las condiciones necesarias para enviar los detalles al servidor.');
-      console.log('this.userId:', this.userId);
-    }
-  }
-
   sendProjectServer(): void {
     if (this.userId && this.token) {
       const userProject = {

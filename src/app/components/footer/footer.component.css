@@ -8,7 +8,7 @@
  }
 .accesos{
     display: grid;
-
+margin-left: 20%;
 }
 img{
     width: 50px;
@@ -21,8 +21,8 @@ img{
     font-size: 15px;
     list-style-type:none;
     margin-bottom: 50px;
-
-    
+    margin-left: 10%;
+    cursor: pointer; 
 }
 .container img{
     margin-left: 40%;
@@ -35,7 +35,7 @@ img{
     background-color: rgba(173, 173, 173, 0.721);
     border-radius: 15px;
     padding: 8px;
-    margin-left: 50px;
+    margin-left: 6%;
     padding-right: 30px;
     
 }

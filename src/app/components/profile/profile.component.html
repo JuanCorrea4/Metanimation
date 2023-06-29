@@ -16,7 +16,23 @@
       <textarea [(ngModel)]="description" [disabled]="!campoHabilitado" placeholder="Ingresa la información de tu perfil profesional"></textarea>
       <label>
         <img src="../../../assets/portafolio/ubicacion.png">
-        <input type="text" [(ngModel)]="ubicacion" [disabled]="!campoHabilitado" placeholder="Ingresa tu ubicación">
+        <select [(ngModel)]="ubicacion" [disabled]="!campoHabilitado">
+          <option value="" disabled selected>Selecciona tu ubicación</option>
+          <option value="Bogotá">Bogotá</option>
+          <option value="Medellín">Medellín</option>
+          <option value="Barranquilla">Barranquilla</option>
+          <option value="Cartagena">Cartagena</option>
+          <option value="Bucaramanga">Bucaramanga</option>
+          <option value="Cúcuta">Cúcuta</option>
+          <option value="Pereira">Pereira</option>
+          <option value="Santa Marta">Santa Marta</option>
+          <option value="Ibagué">Ibagué</option>
+          <option value="Villavicencio">Villavicencio</option>
+          <option value="Pasto">Pasto</option>
+          <option value="Manizales">Manizales</option>
+          <option value="Neiva">Neiva</option>
+          <option value="Armenia">Armenia</option>
+        </select>
         <button  (click)="sendDetailsToServer()" (click)="sendToolsToServer()"*ngIf="mostrarBotonGuardar">Guardar</button>
       </label>
       <!--<section>
@@ -30,14 +46,17 @@
         <h2>{{ProjectCount}}</h2>
         <h4>Proyectos Creados</h4>
         <h5>Por: <strong>{{nameUsers}}</strong></h5>
-        <button (click)="toggleComponent(0)">Software y herramientas utilizadas</button>
-      </article>
+        <button (click)="toggleComponent(0)">
+          Software y herramientas utilizadas
+          <img [src]="showToolsImage">
+        </button>
+        </article>
       <section>
         <div class="tools" *ngIf="mostrarComponente[0]">
           <h6>Software y herramientas utilizadas:</h6>
           <label>
-              <textarea [(ngModel)]="tools" [disabled]="!campoHabilitado" placeholder="Ingresa la información de tu perfil profesional"></textarea>
-            </label>
+            <textarea [(ngModel)]="tools" [disabled]="!campoHabilitado" placeholder="Ingresa la información de tu perfil profesional"></textarea>
+          </label>
         </div>
       </section>
     </div>
@@ -56,8 +75,11 @@
     <button id="seguir">+ Seguir</button>
     <button id="mensaje">Mensaje <img src="../../../assets/cursos/enviar.png"></button>
     -->
-    <button (click)="toggleComponent(1)">Redes y comentarios</button>
-  </div>
+    <button (click)="toggleComponent(1)">
+      Redes y comentarios
+      <img [src]="showSocialImage">
+    </button>
+      </div>
   <section *ngIf="mostrarComponente[1]">
     <h6>Email y Telefonos</h6>
     <section class="form" >
@@ -88,29 +110,31 @@
 </div>
 <div class="professional-profile">
   <section (click)="showModal = true">
-    <img src="../../../assets/portafolio/61050.png">
+    <img id="agregar" src="../../../assets/portafolio/61050.png">
     <h3>Agregar proyecto</h3>
   </section>  
   <div class="modal" *ngIf="showModal">
     <button class="close-button" (click)="showModal = false">&times;</button>
-    <h2>Agregar proyecto</h2>
-    <input [(ngModel)]="nombreProyecto" type="text" placeholder="Nombre del proyecto">
-    <textarea [(ngModel)]="descripcionProyecto" placeholder="Descripción del proyecto"></textarea>   
-    <label>Cargar imagen principal del proyecto</label>
-    <input id="Img1" type="file" style="border-radius:15px" (change)="handleImage1Change($event)">
+    <h2>agregar proyecto</h2>
+    <input [(ngModel)]="nombreProyecto" type="text" placeholder="Ingrese el nombre del proyecto">
+    <textarea [(ngModel)]="descripcionProyecto" placeholder="Ingrese la descripción del proyecto"></textarea>   
+    <label>CARGAR IMAGEN PRINCIPAL DEL PROYECTO</label>
+    <input id="Img1" type="file" class="custom-file-input" (change)="handleImage1Change($event)">
     <div >
-    <label>Cargar imagenes del proyecto</label>
-    <p>en ese espacio podras cargar las imegens que muestran tu proyecto</p>
-    <input id="Img2" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img2')">
-    <input id="Img3" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img3')">
-    <input id="Img4" type="file" style="border-radius:15px" (change)="handleImageChange($event, 'Img4')">
+    <label>OTRAS IMAGENES </label>
+    <p>En ese espacio podras cargar las imegens que muestran tu proyecto</p>
+    <input id="Img2" type="file" class="custom-file-input"(change)="handleImageChange($event, 'Img2')">
+    <input id="Img3" type="file" class="custom-file-input"(change)="handleImageChange($event, 'Img3')">
+    <input id="Img4" type="file" class="custom-file-input" (change)="handleImageChange($event, 'Img4')">
     <button type="submit" class="guardar" (click)="sendProjectServer()" (click)="sendRecousesServer(ImgProject)">Guardar</button>
   </div>
   </div>
   <section *ngFor="let project of detailsProject">
-    <img [src]=" '../../../assets/portafolio/pj/' + project.ImgProject" alt="Imagen del proyecto">
+    <img routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}" [src]=" '../../../assets/portafolio/pj/' + project.ImgProject" alt="Imagen del proyecto">
+   <section>
     <h6>{{ project.NameProject }}</h6>
     <p class="description">{{ project.DescriptionProject }}</p>
+   </section>
     <!--
     <div>
       <img *ngIf="project.ProjectCount > 0" src="../../../assets/portafolio/Heart-follow.png">

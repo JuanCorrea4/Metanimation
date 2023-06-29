@@ -147,7 +147,7 @@ option :hover {
   background-repeat: no-repeat;
   border-radius: 20px;
   width: 70%;
-  height: 90%;
+  height: 85%;
   margin: 10% 0 0 20%;
   cursor: pointer;
 }
@@ -159,7 +159,7 @@ option :hover {
   );
   border-radius: 20px;
   width: 80%;
-  height: 13%;
+  height: 20%;
   padding: 10px;
   margin: 5% 0 0 5%;
   display: grid;
@@ -182,7 +182,7 @@ option :hover {
   text-align: center;
 }
 .best-container1 > h4 {
-  margin: 50% 0 0 -75%;
+  margin: 40% 0 0 -27%;
   position: relative;
   font-size: 15px;
 }
@@ -243,7 +243,7 @@ option :hover {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border-radius: 20px;
-  width: 87%;
+  width: 90%;
   height: 50%;
   margin: 10% 0 0 -5%;
   cursor: pointer;
@@ -256,9 +256,9 @@ option :hover {
   );
   border-radius: 20px;
   width: 50%;
-  height: 20%;
+  height: 30%;
   padding: 10px;
-  margin: -10% 0 0 40%;
+  margin: -12% 0 0 40%;
 }
 .best-container2 > section > h5 {
   font-size: 20px;
@@ -271,8 +271,9 @@ option :hover {
 }
 .best-container2 > section > h6 {
   font-size: 50px;
-  margin: -8% 0 0 35%;
+  margin: -30% 0 0 93%;
   display: inline-block;
+  position: relative;
 }
 .best-container2 > h3 {
   font-size: 15px;
@@ -358,7 +359,7 @@ option :hover {
   display: inline-block;
 }
 .best-container3 > h4 {
-  margin: 40% 0 0 -65%;
+  margin: 40% 0 0 -15%;
   position: relative;
   font-size: 15px;
 }
@@ -398,7 +399,7 @@ option :hover {
   display: inline-block;
 }
 .best-container4 > h4 {
-  margin: 40% 0 0 -65%;
+  margin: 40% 0 0 -15%;
   position: relative;
   font-size: 15px;
 }
@@ -491,13 +492,13 @@ option :hover {
 .tem > img {
   border-radius: 10px;
   margin: 0px;
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   margin: 3% 0 0 0;
 }
 .tem > p {
   font-size: 15px;
-  margin: -25% 0 0 9%;
+  margin: -25% 0 0 5%;
 }
 .tem > h4 {
   font-size: 20px;

@@ -91,7 +91,7 @@
         -->
         <div class="project-profile">
           <section class="profile-project" *ngFor="let project of project.slice(0, 3)">
-            <img [src]="'../../../assets/portafolio/pj/' +project.ImgProject" alt="Imagen del proyecto">
+            <img routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}" [src]="'../../../assets/portafolio/pj/' +project.ImgProject" alt="Imagen del proyecto">
             <h6></h6>
             <h4>{{project.NameProject}}</h4>
             <label>

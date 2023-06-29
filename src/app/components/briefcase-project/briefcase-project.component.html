@@ -37,14 +37,14 @@
         <div class="info-person">
           <div class="person">
             <div class="person-perfil">
-              <img [src]="'../../../assets/profile/' + imgPerfil " alt="Imagen de perfil">
+              <img [src]="'../../../assets/profile/' + artistAll.ImgPerfil " alt="Imagen de perfil">
               <hr>
             </div>
             <label>
-              <h5 routerLink='/profile-artist' [queryParams]="{id: iduser}">{{nameuser}}</h5>
-              <h3>{{ocupation}}</h3>
+              <h5 routerLink='/profile-artist' [queryParams]="{id: iduser}">{{artistAll.PersonFullName}}</h5>
+              <h3>{{artistAll.Ocupation}}</h3>
               <hr>
-              <p><img src="../../../assets/portafolio/ubicacion.png">{{ubication}}</p>
+              <p><img src="../../../assets/portafolio/ubicacion.png">{{artistAll.Ubication}}</p>
             </label>
           </div>
         </div>
@@ -55,12 +55,14 @@
         </label>
         -->
         <hr>
-        <p class="description">{{descriptionP}}</p>
+        <p class="description">{{artistAll.DescriptionPerson}}</p>
       </section>
       <hr id="galery-hr">
-      <section class="galery"  >
-        <img *ngFor="let img of imgProject.slice(0,3)" [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
+      <section class="galery">
+        <img *ngFor="let img of getProcessedImages(artistAll.ImgsProject)"
+          [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
       </section>
+      
     </div>
   </div>
 
