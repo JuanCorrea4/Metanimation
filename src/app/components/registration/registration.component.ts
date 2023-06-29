@@ -48,7 +48,7 @@ export class RegistrationComponent implements OnInit {
       Celular: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       Email: ['', Validators.required],
       Password: ['', Validators.required],
-      Rol: ['User'],
+      Rol: [''],
       RolAd: ['']
     });
   }
@@ -63,7 +63,8 @@ export class RegistrationComponent implements OnInit {
       Apellido: this.form.get('Apellido')?.value,
       Celular: this.form.get('Celular')?.value,
       Email: this.form.get('Email')?.value,
-      Password: this.form.get('Password')?.value
+      Password: this.form.get('Password')?.value,
+      Rol:this.form.get('Rol')?.value
     };
 
     this.clients.CreatePerson(PersonSave).subscribe(data => {

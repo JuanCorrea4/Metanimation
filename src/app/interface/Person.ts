@@ -5,5 +5,6 @@ export class Person{
   "Celular":String
   "Email":String
   "Password":String
+  "Rol":String
   
 }
