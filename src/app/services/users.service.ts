@@ -7,7 +7,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class UsersService {
- private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
+private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
 //private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) { }
@@ -50,11 +50,11 @@ export class UsersService {
     return this.http.post(url, userTools, { headers })
       .toPromise()
       .then(response => {
-        console.log('Tools del usuario modificados con éxito:', response);
+        console.log('herramientas del usuario modificados con éxito:', response);
         return response;
       })
       .catch(error => {
-        console.error('Error al modificar los Tools del usuario:', error);
+        console.error('Error al modificar las herramientas del usuario:', error);
         throw error;
       });
   }
