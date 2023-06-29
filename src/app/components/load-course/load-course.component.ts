@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoursesService } from 'src/app/services/courses.service';
 @Component({
   selector: 'app-load-course',
   templateUrl: './load-course.component.html',
@@ -16,7 +17,18 @@ export class LoadCourseComponent {
   arrayClases: any[] = [];
   arrayRecursos: any[] = [];
   editableFields: boolean[] = [];
+  public categorias: any = {};
 
+  constructor(private coursesService: CoursesService) { }
+  ngOnInit(): void {
+    this.getCategory()
+  }
+getCategory(){
+  this.coursesService.obtenerCategorias().subscribe(category => {
+    this.categorias = category
+    console.log(this.categorias)
+  })
+}
 
   nextStep() {
     if (this.colorDiamont == 3 || this.colorText == 3) {
@@ -167,8 +179,9 @@ export class LoadCourseComponent {
       "modulos": this.arrayModulos,
       "recursos":this.arrayRecursos
     }  
-    
-    fetch('/api/cursos/add', {
+
+    console.log(course)
+    fetch('https://metanimation-back.onrender.com/api/course/add', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',

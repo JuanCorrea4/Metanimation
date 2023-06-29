@@ -1,6 +1,27 @@
 <section class="main">
   <div class="info">
-
+    <div class="headInfo">
+      <img src="../../../assets/Dashboard/curs.PNG" alt="">
+      <div class="content">
+        <p class="titleHeadInfo">Subir nuevo curso:</p>
+        <p>Es una serie de television estadounidense postapocaliptica que se estrenó el 15 de enero de 2023</p>
+      </div>
+    </div>
+    <div class="bodyInfo">
+      <div class="contentBody">
+        <div class="point"></div>
+        <div class="textCont">Tu curso pasara por un tiempo de entre 24 a 72 horas para ser aprobados o no </div>
+      </div>
+      <div class="contentBody">
+        <div class="point"></div>
+        <div class="textCont">Tu curso pasara por un tiempo de entre 24 a 72 horas para ser aprobados o no </div>
+      </div>
+      <div class="contentBody">
+        <div class="point"></div>
+        <div class="textCont">Tu curso pasara por un tiempo de entre 24 a 72 horas para ser aprobados o no </div>
+      </div>
+    </div>
+    <div class="footerInfo"></div>
   </div>
   <div class="form">
     <div class="topSection">
@@ -53,7 +74,8 @@
           <div class="infoCourse">
             <p>Categoria del curso : </p>
             <select name="" id="categoria">
-              <option value="" disabled selected>Selecciona una categoria</option>
+              <option disabled selected>Selecciona una categoria</option>
+              <option *ngFor="let categoria of categorias" value="{{categoria.NameCategory}}" d>{{categoria.NameCategory}}</option>
             </select>
             <!-- <p>Nivel del curso : </p>
             <select name="" id="">
@@ -107,11 +129,11 @@
           <div class="inforResource" id="inforResource">
             <div class="class">
               <div class="oneClass" id="class">
-                <div class="inputClase" *ngFor="let clase of arrayRecursos; let i = index">
+                <div class="inputClase" *ngFor="let recurso of arrayRecursos; let i = index">
                   <p>Recursos: </p>
-                  <input type="text" name="" id="" value="{{clase.nombreClase}}"  [readonly]="!editableFields[i]">
+                  <input type="text" name="" id="" value="{{recurso.nombreRecurso}}"  [readonly]="!editableFields[i]">
                   <p>URL: </p>
-                  <input type="text" name="" id="" value="{{clase.urlClase}}"  [readonly]="!editableFields[i]">
+                  <input type="text" name="" id="" value="{{recurso.urlRecurso}}"  [readonly]="!editableFields[i]">
                 </div>
               </div>
               <div class="formClass">
