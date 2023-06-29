@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ClientsService {
 
 
- ApiPerson = 'https://metanimation-back.onrender.com/Api/Users'; 
+ ApiPerson = 'https://metanimation-back.onrender.com/Api/Users/'; 
   // ApiPerson='http://localhost:5000/api/Users/'
 
   constructor(private http: HttpClient) {}
