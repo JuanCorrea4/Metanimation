@@ -148,7 +148,7 @@ option :hover {
   background-repeat: no-repeat;
   border-radius: 20px;
   width: 70%;
-  height: 85%;
+  height: 100%;
   margin: 10% 0 0 20%;
   cursor: pointer;
 }

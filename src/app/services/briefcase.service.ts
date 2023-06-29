@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BriefcaseService {
-   //private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
- private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+   private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
+ //private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
