@@ -224,14 +224,17 @@ grid-template-rows: 50% 50%;
     height: 95%;
     border-radius: 15px;
     background-image: url("https://imagenes.elpais.com/resizer/mpMS5yJgWUF-ReSv5E6ASxBs6NI=/1960x1103/cloudfront-eu-central-1.images.arcpublishing.com/prisa/C3DOG3POWNFBPHGHJL2BD4M7SQ.jpg");
-    background-size: 100% 170%;
+    background-size: 100% auto;
     background-repeat:repeat;
+    background-position-y: 32%;
+
 }
 
 #new  {
     background-image: url("https://assets-global.website-files.com/5e73a1e3ba24f2cd5dd2232a/6266ee6f424054f713441d46_Jogos%20NFT%20o%20que%20s%C3%A3o%20e%20como%20funcionam.jpg");
-    background-size: 100% 160%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
+    background-position-y: 32%;
 }
 .new-conteiner >div > section > p{
     display: inline-block;

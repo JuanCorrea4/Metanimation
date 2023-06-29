@@ -36,9 +36,13 @@ export class NavComponent implements OnInit {
   }
 
 
-  rutas(ruta: string) {
+  rutas(ruta: string, element: any) {
     const elementNews = this.elementReF.nativeElement.ownerDocument.querySelector(ruta);
-    console.log(elementNews);
+    const allElements = element.parentNode.parentNode.childNodes
+    allElements.forEach(e => {
+      e.children[0].classList.remove("nav-active")
+      element.classList.add("nav-active")
+    });
     elementNews.scrollIntoView({ behavior: 'smooth' });
   }
 

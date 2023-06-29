@@ -9,6 +9,7 @@ hr{
 
 .container{
   padding: 50px;
+  margin-top: 5rem;
 }
 
 .header{
@@ -17,9 +18,14 @@ hr{
   margin: 30px 0;
 }
 
-.header > .header-rigth > p > a{
+.header > .header-rigth {
+  display: flex;
+}
+
+.header > .header-rigth > a{
   color: #40B584;
   text-decoration: none;
+  margin-left: 5px;
 }
 
 .main{
@@ -58,12 +64,13 @@ hr{
   padding: 30px;
   border-radius: 15px;
   background-color: #1A1A1A;
+  margin-top: 70px;
 }
 
 .section-log > form > div{
   display: flex;
   flex-direction: column;
-  margin: 20PX 0;
+  margin: 10px 0;
 
 }
 
@@ -117,6 +124,8 @@ hr{
   background: transparent;
   border-left: 1px solid gray;
   cursor: pointer;
+  color: #fff;
+  width: 10%;
 }
 .section-log > form > button {
   color: #fff;
@@ -125,6 +134,7 @@ hr{
   padding: 10px;
   border-radius: 15px;
   cursor: pointer;
+  border: none;
 }
 
 #btnGoogle{
@@ -141,3 +151,6 @@ hr{
   }
 }
 
+ .olvideC{
+    margin-top: 5px;
+ }

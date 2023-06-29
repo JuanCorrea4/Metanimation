@@ -17,6 +17,7 @@ import { DetailsNewsComponent } from './components/details-news/details-news.com
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GuardGuard } from './guards/guard.guard';
 import { ProfileArtistComponent } from './components/profile-artist/profile-artist.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 
 
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'details-news', component: DetailsNewsComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: '', component: NewsComponent },
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'details-news/:id', component: DetailsNewsComponent, canActivate: [GuardGuard] }
 
 ];

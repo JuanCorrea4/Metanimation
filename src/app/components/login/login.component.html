@@ -3,23 +3,23 @@
 <div class="container">
   <div class="header">
     <div class="header-left">
-      <span>Hola de nuevo</span>
-      <h2>INICIA SESION</h2>
+      <h2>INICIA SESIÓN</h2>
     </div>
     <div class="header-rigth">
-      <p>¿Eres nuevo? <br><a routerLink="/registration">Crea una cuenta</a></p>
+      <p>¿Eres nuevo? <br></p>
+      <a routerLink="/registration">Crea una cuenta</a>
     </div>
   </div>
   <hr />
   <div class="main">
     <section class="section-log">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <button id="btnGoogleLog">Iniciar sesion con Google</button>
+        <!-- <button id="btnGoogleLog">Iniciar sesion con Google</button>
         <div class="optionLogin">
           <hr/>
           <span>O inicia con</span>
           <hr/>
-        </div>
+        </div> -->
         <div class="email">
           <span>Email</span>
           <input
@@ -41,11 +41,11 @@
              [attr.type]="showPassword ? 'text' : 'password'" 
              placeholder="Ingresa tu contraseña"
               class="input-large"/>
-            <button (click)="togglePasswordVisibility()">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</button>
+            <button type="button" (click)="togglePasswordVisibility()">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</button>
           </div>
-          <span><a href="#">Olvide mi contraseña</a></span>
+          <span class="olvideC"><a href="#">Olvide mi contraseña</a></span>
         </div>
-        <button type="submit">Continuar</button>
+        <button type="submit">Iniciar sesión</button>
       </form>
     </section>
   </div>

@@ -43,7 +43,7 @@
         <div class="box">
           <div class="uploadImage" id="uploadImage">
             <p>Nombre del curso : </p>
-            <input class="inputBox" name="courseName" placeholder="Nombre del curso" type="text">
+            <input class="inputBox" name="courseName" placeholder="Nombre del curso" type="text" id="cursoNombre">
             <p>Subir portada : </p>
             <label for="file-upload" class="custom-file-upload">
               <i class="fa-solid fa-file-arrow-up"></i> Subir Imagen
@@ -52,7 +52,7 @@
           </div>
           <div class="infoCourse">
             <p>Categoria del curso : </p>
-            <select name="" id="">
+            <select name="" id="categoria">
               <option value="" disabled selected>Selecciona una categoria</option>
             </select>
             <!-- <p>Nivel del curso : </p>
@@ -60,7 +60,7 @@
               <option value="" disabled selected>Selecciona una nivel</option>
             </select> -->
             <p>Descripción del curso : </p>
-            <textarea name="courseDescription" placeholder="Descripcion del curso" type="text"></textarea>
+            <textarea name="courseDescription" placeholder="Descripcion del curso" type="text" id="cursoDescripcion"></textarea>
             <button (click)="nextStep()">Siguiente paso <i class="fa-solid fa-chevron-right"></i></button>
           </div>
         </div>

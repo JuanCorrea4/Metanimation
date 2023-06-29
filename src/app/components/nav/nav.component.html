@@ -9,10 +9,12 @@
   <!-- NAV PARA CUANDO NO SE ESTA LOGUEADO-->
   <div class="menu" *ngIf="!(isLoggedIn$ | async)">
     <ul>
-      <li><a routerLink="/">Inicio</a></li>
-      <li><a (click)="rutas('#news')">Noticias</a></li>
-      <li><a (click)="rutas('#courses')">Cursos</a></li>
-      <li><a (click)="rutas('#briefcase')">Portafolio</a></li>
+      <li><a (click)="rutas('#home', $event.target)" routerLink="/">Inicio</a></li>
+      <li><a (click)="rutas('#news', $event.target)">Noticias</a></li>
+      <li><a (click)="rutas('#courses', $event.target)">Cursos</a></li>
+      <li><a (click)="rutas('#briefcase', $event.target)">Portafolio</a></li>
+    </ul>
+    <ul>
       <hr>
       <li><button routerLink="/registration" id="btnRegister">Registrarse</button></li>
       <li><button routerLink="/login" id="btnLogin">Ingresar</button></li>

@@ -34,6 +34,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoadCourseComponent } from './components/load-course/load-course.component';
 import { FilterDashboardComponent } from './components/filter-dashboard/filter-dashboard.component';
 import { ProfileArtistComponent } from './components/profile-artist/profile-artist.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ProfileArtistComponent } from './components/profile-artist/profile-arti
     DashboardComponent,
     LoadCourseComponent,
     FilterDashboardComponent,
-    ProfileArtistComponent
+    ProfileArtistComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,

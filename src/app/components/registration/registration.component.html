@@ -7,20 +7,20 @@
       <h2>CREAR UNA NUEVA CUENTA</h2>
     </div>
     <div class="header-rigth">
-      <p>¿Ya eres miembro? <a href="">Inicia sesión</a></p>
+      <p>¿Ya eres miembro? </p>
+      <a routerLink="/login">Inicia sesión</a>
     </div>
   </div>
   <hr />
   <div class="main">
     <section class="section-left">
       <div class="backgroundImage">
-        <button id="backSlide" class="backSlide"></button>
         <img src="../../../assets/Register/Grupo de desplazamiento 9.png" alt="">
       </div>
       <div class="slide"><hr /></div>
       <div class="information">
-        <p>Paso 1 de 4</p>
-        <h2>CON TU INFORMACION <br>BÁSICA YA SERÁS PARTE</h2>
+        <!-- <p>Paso 1 de 4</p> -->
+        <h2>CON TU INFORMACION BÁSICA <br> SERÁS PARTE DE METANIMATION</h2>
       </div>
     </section>
     <section class="section-right">
@@ -113,7 +113,7 @@
         <div class="termsAndConditions">
           <input type="checkbox" name="iAgree" id="" />
           <p>
-            He leído y acepto los términos y condiciones.
+            He leído y acepto los <a routerLink="/terms-and-conditions">términos y condiciones.</a> 
           </p>
         </div>
       </form>

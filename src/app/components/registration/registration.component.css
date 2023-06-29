@@ -12,15 +12,21 @@ hr{
   padding: 50px;
 }
 
+
 .header{
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
 }
 
-.header > .header-rigth > p > a{
+.header > .header-rigth {
+  display: flex;
+}
+
+.header > .header-rigth > a{
   color: #40B584;
   text-decoration: none;
+  margin-left: 5px;
 }
 
 .main{
@@ -153,6 +159,8 @@ option{
   background: transparent;
   border-left: 1px solid gray;
   cursor: pointer;
+  width: 10%;
+  color: #fff;
 }
 
 #btnGoogle{

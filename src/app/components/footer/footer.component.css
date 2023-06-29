@@ -51,9 +51,12 @@ img{
     width: 600px;
     padding: 30px;
     margin-left: 30%;
-    margin-bottom: 30px;
-    
+    margin-bottom: 30px;  
+}
 
+.terminosyCondiciones li a{
+    text-decoration: none;
+    color: #fff;
 }
 
 hr{

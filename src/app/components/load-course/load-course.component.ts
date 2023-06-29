@@ -101,8 +101,8 @@ export class LoadCourseComponent {
 
     if (nombreRecurso.value != "" && urlRecurso.value != "") {
       let dataRecurso = {
-        "nombreClase": nombreRecurso.value,
-        "urlClase": urlRecurso.value
+        "nombreRecurso": nombreRecurso.value,
+        "urlRecurso": urlRecurso.value
       }
       this.arrayRecursos.push(dataRecurso)
       nombreRecurso.value = ""
@@ -153,6 +153,33 @@ export class LoadCourseComponent {
   }
 
   postCourse(){
+    const cursoNombre: any = document.getElementById("cursoNombre")
+
+    const cursoDescripcion: any = document.getElementById("cursoDescripcion")
+
+    const categoria: any = document.getElementById("categoria")
+
+    const course =
+    {
+      "cursoNombre": cursoNombre.value,
+      "cursoDescripcion": cursoDescripcion.value,
+      "categoria": categoria.value,
+      "modulos": this.arrayModulos,
+      "recursos":this.arrayRecursos
+    }  
     
+    fetch('localhost:5000/api/cursos/add', {
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body:
+          JSON.stringify(course)
+  })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      });
   }
 }

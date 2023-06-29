@@ -11,13 +11,11 @@ h4{
     -webkit-background-clip: text;
     color: transparent;
     text-align: center;
-    margin: 0 0 0 -30%;
 }
 
 h5{
     display: inline-block;
     font-size: 15px;
-    margin: 0 0 0 5px; 
 }
 h2{
     font-size: 60px;
@@ -44,16 +42,22 @@ main{
 
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .us-parrafo{
     display: grid;
     grid-template-columns: 50% 50%;
-    width: 90%;
+    width: 100%;
     justify-content: space-evenly;
     margin-bottom: 15%;
 }
 .logo{
     width: 50px;
-    margin: 0 0 0 45%;
 }
 
 
@@ -66,7 +70,4 @@ main{
     float:left;
 }
 
-.us{
-    margin-left: 30%;
-}
 

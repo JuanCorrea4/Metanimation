@@ -20,17 +20,23 @@
 }
 .menu{
   width: 100%;
+  display: flex;
   position: absolute;
+  justify-content: right;
 }
 
 .menu > ul {
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 .menu > ul > li {
   margin: 0 20px;
   list-style: none;
+  cursor: pointer;
 }
 img {
   width: 60px;
@@ -291,3 +297,7 @@ border-radius: 0 0 15px;
   top: 0;left: 0;
 }
 /*MOSTRAR EN QUE SECCION DEL NAV SE ESTA */
+
+.nav-active {
+  border-bottom: 2px solid  #68b864; 
+}
