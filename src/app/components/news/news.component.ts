@@ -38,6 +38,7 @@ export class NewsComponent implements OnInit {
     this.apiPodcast.getDataPodcast().subscribe(podcast => {
       this.podcast = podcast;
       this.podcastItems = this.podcast.data.podcastUnionV2.episodesV2.items
+      console.log(this.podcastItems)
   
     })
   }

@@ -168,7 +168,7 @@ export class LoadCourseComponent {
       "recursos":this.arrayRecursos
     }  
     
-    fetch('localhost:5000/api/cursos/add', {
+    fetch('/api/cursos/add', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',
