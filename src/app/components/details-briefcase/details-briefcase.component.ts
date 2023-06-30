@@ -2,14 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { BriefcaseService } from 'src/app/services/briefcase.service'; 
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-details-briefcase',
   templateUrl: './details-briefcase.component.html',
   styleUrls: ['./details-briefcase.component.css']
 })
 export class DetailsBriefcaseComponent implements OnInit {
-  project: any; nameProject: any; descriptionProject: any; likes: any; imgProject: any; nameuser: any; ocupation: any; imgPerfil: any; ubication: any;
+  project: any; 
+  nameProject: any; 
+  descriptionProject: any; 
+  likes: any; 
+  imgProject: any[] = [];
+  nameuser: any; 
+  ocupation: any; 
+  imgPerfil: any; 
+  ubication: any;
   projectId: any;
   projectDetailsId: any[] | undefined;
   projectImageUrls: any;
@@ -19,19 +26,18 @@ export class DetailsBriefcaseComponent implements OnInit {
   constructor(private projects: BriefcaseService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.obtenerDetailsProject();
     this.route.queryParams.subscribe(params => {
       this.projectId = params['id'];
       console.log('ID del proyecto:', this.projectId);
       this.ObtenerDetalleProyectotId(this.projectId);
-      this.obtenerDetailsProject();
     });
   }
-  
-  
+
   obtenerDetailsProject() {
     this.projects.obtenerAllPortafolios().subscribe(
       (response) => {
-        console.log('Holaaa', response);
+        console.log('Hola', response);
   
         // Verificar si la respuesta es un arreglo con al menos un elemento
         if (response && response.length > 0) {
@@ -51,10 +57,11 @@ export class DetailsBriefcaseComponent implements OnInit {
       }
     );
   }
+
   ObtenerDetalleProyectotId(idproject: string) {
     this.projects.obtenerProyecto(idproject).subscribe(
       (response) => {
-        console.log('Holaaa id proyecto', response);
+        console.log('Hola id proyecto', response);
   
         // Verificar si la respuesta es un arreglo con al menos un elemento
         if (response && response.length > 0) {
@@ -81,30 +88,26 @@ export class DetailsBriefcaseComponent implements OnInit {
       }
     );
   }
-  
-    /*MANEJO BOTON FAVORITOS*/
-    counters= [0,0,0,0];
-    favoriteCount = 0;
-  
-    toggleFavorite(index: number) {
-      if (this.counters[index] === 0) {
-        this.counters[index]++;
-        this.favoriteCount++;
-      } else {
-        this.counters[index]--;
-        this.favoriteCount--;
-      }
-    
+
+  /* MANEJO BOTON FAVORITOS */
+  counters = [0, 0, 0, 0];
+  favoriteCount = 0;
+
+  toggleFavorite(index: number) {
+    if (this.counters[index] === 0) {
+      this.counters[index]++;
+      this.favoriteCount++;
+    } else {
+      this.counters[index]--;
+      this.favoriteCount--;
+    }
   }
 
-  /* MANEJO BOTON DE SEGUIR*/
-isActive = [false, false, false,false];
-buttonLabel = 'Seguir';
+  /* MANEJO BOTON DE SEGUIR */
+  isActive = [false, false, false, false];
+  buttonLabel = 'Seguir';
 
-toggleButton(index: number) {
-  if (this.counters[index] === 0){
+  toggleButton(index: number) {
     this.isActive[index] = !this.isActive[index];
-  } 
-}
-
+  }
 }

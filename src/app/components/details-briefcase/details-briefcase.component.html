@@ -69,8 +69,8 @@
         </section>
       </div>
     </div>
-    <div class="img-project" *ngFor="let img of imgProject.slice(1)">
-      <img [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
+    <div class="img-project" *ngIf="imgProject">
+      <img *ngFor="let img of imgProject.slice(1)" [src]="'../../../assets/portafolio/pj/' + img" alt="Imagen de proyecto">
     </div>
     
     
@@ -89,27 +89,27 @@
           <button>Programador<img src="../../../assets/portafolio/azul.png"></button>
         </section>
         -->
-        <div class="project-profile">
-          <section class="profile-project" *ngFor="let project of project.slice(0, 3)">
-            <img routerLink="/detailsBriefcase" [queryParams]="{id: project.IdProject}" [src]="'../../../assets/portafolio/pj/' +project.ImgProject" alt="Imagen del proyecto">
+        <div class="project-profile" *ngIf="project">
+          <section class="profile-project" *ngFor="let projectItem of project.slice(0, 3)">
+            <img routerLink="/detailsBriefcase" [queryParams]="{id: projectItem.IdProject}" [src]="'../../../assets/portafolio/pj/' + projectItem.ImgProject" alt="Imagen del proyecto">
             <h6></h6>
-            <h4>{{project.NameProject}}</h4>
+            <h4>{{ projectItem.NameProject }}</h4>
             <label>
-              <img [src]="'../../../assets/profile/' + project.ImgPerfil" alt="Imagen de perfil">
-              <h3>{{project.PersonFullName}}</h3>
+              <img [src]="'../../../assets/profile/' + projectItem.ImgPerfil" alt="Imagen de perfil">
+              <h3>{{ projectItem.PersonFullName }}</h3>
               <button [ngClass]="{'continue': isActive[1]}">
                 <img *ngIf="!isActive[1]" src="../../../assets/portafolio/Seguir.png">
-                {{isActive[1] ? 'Siguiendo!' : 'Seguir'}}
+                {{ isActive[1] ? 'Siguiendo!' : 'Seguir' }}
               </button>
               <div class="follow">
                 <img *ngIf="counters[1] > 0" src="../../../assets/portafolio/Heart-follow.png">
                 <img *ngIf="counters[1] === 0" src="../../../assets/portafolio/Heart-nofollow.png">
-                <button> {{counters[1]}} </button>
+                <button> {{ counters[1] }} </button>
               </div>
             </label>
           </section>
-          
-      </div>
+        </div>
+        
       </div>
 </main>
 <app-footer></app-footer>
