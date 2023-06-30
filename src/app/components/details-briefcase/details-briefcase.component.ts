@@ -22,8 +22,8 @@ export class DetailsBriefcaseComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.projectId = params['id'];
       console.log('ID del proyecto:', this.projectId);
-      this.obtenerDetailsProject();
       this.ObtenerDetalleProyectotId(this.projectId);
+      this.obtenerDetailsProject();
     });
   }
   
