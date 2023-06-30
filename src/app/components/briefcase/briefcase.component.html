@@ -40,7 +40,7 @@
       </article>
       <label>
         <img [src]="'../../../assets/profile/' + project.ImgPerfil" alt="Imagen de perfil">
-        <h3 routerLink='/profile-artist' [queryParams]="{id: idusers}">{{project.PersonFullName}}</h3>
+        <h3 routerLink='/profile-artist' [queryParams]="{id: project.IdPerson}">{{project.PersonFullName}}</h3>
         <button [ngClass]="{'continue': isActive[0]}">
           <img *ngIf="!isActive[0]" src="../../../assets/portafolio/Seguir.png">
           {{isActive[0] ? 'Siguiendo!' : 'Seguir'}}
