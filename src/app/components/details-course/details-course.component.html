@@ -4,30 +4,27 @@
     <div class="course">
         <section>
             <section class="courses">
-            <h3>{{nameCurso}}</h3>
-            <p>{{descripcionCurso}}</p>
+            <h3>Curso de Animación en Realidad Virtual</h3>
+            <p>Curso de Animación en Realidad Virtual: Descubre las técnicas de animación específicas para la realidad virtual, desde la creación de personajes y movimientos hasta la implementación de interacciones y emociones en entornos inmersivos.</p>
             </section> 
             <div class="module">
                 <section>
                 <img src="../../../assets/cursos/vidanegra.png">
                 <h4>Modulos</h4>
                 </section>
-                <div class="section-modules" *ngFor="let detalleCurso of detallesCurso">
+                <div class="section-modules">
                     <section *ngIf="detallesCargados" >
                       <img src="">
                       <label>
-                        <h3>{{ detalleCurso.NameCourses }}</h3>
+                        <h3>Conceptos</h3>
                       </label>
-                      <button (click)="toggleMostrarClases(detalleCurso.Id)"><img src="../../../assets/cursos/ionic-ios-arrow-up.png" ></button>
-                      <div *ngIf="mostrarClases && detalleCursoSeleccionado === detalleCurso.Id">
-                        <p *ngFor="let clase of contenidoCurso" (click)="obtenerUrlVideo(clase)">{{ clase.DescriptionCourses }}</p>
-                    </div>
+                      <button (click)="toggleMostrarClases"><img src="../../../assets/cursos/ionic-ios-arrow-up.png" ></button>
                     </section>
                   </div>                    
             </div>
         </section>
         <section>
-            <iframe width="880" height="415" [src]=" getSafeVideoUrl()" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src ="https://www.youtube.com/embed/G-CG06D3UqA" width=400 height=300>"No es posible visualizar el contenido"</iframe>
         </section>
     </div>
     <!--OPCIONES INTERACCION DEL CURSO-->
@@ -106,15 +103,15 @@
                <img src="../../../assets/cursos/Star.png"> 
                <p>4,9</p>
                 </section>
-               <h3>{{nameCurso}}</h3>
+               <h3>Curso de Realidad Virtual</h3>
               <!-- <img src="../../../assets/new/Punto_verde.png"> -->
                <hr>
             </label>
             <label class="price">
-                <p>{{descripcionCurso}}</p>
+                <p>Explora los fundamentos y aplicaciones de la realidad virtual, aprende a crear entornos inmersivos y descubre cómo esta tecnología está revolucionando diversos campos.</p>
                 <div>
                 <hr>
-                <h4>${{valueCourses}}Cop</h4>
+                <h4>$59.900Cop</h4>
                 <h5>65% Dto. <del>$156.000 cop</del></h5>
                 </div>
               <!--  <button>Obtener curso > </button>
@@ -125,11 +122,11 @@
                     <div class="person-perfil">
                     <img src="https://xavierferras.com/wp-content/uploads/2019/02/266-Persona.jpg">
                     <hr>
-                    <p>Experiencia: <br>{{experienciaSeleccionada}}</p>
+                    <p>Experiencia: <br>3 años</p>
                     </div>
                     <label>
-                    <h5>{{nombreProfeSeleccionado}}</h5>
-                    <h3>{{profesionSeleccionada}}</h3>
+                    <h5>AndresGrcia</h5>
+                    <h3>Desarrollador de Realidad Virtual</h3>
                     <hr>
                     <div class="qualification">
                         <img src="../../../assets/cursos/Star.png">
@@ -165,7 +162,7 @@
             <hr>
             <label *ngFor="let comment of comentsCurso; let i = index">
                 <h4>{{ comment.PersonFullName }}:</h4>
-                <p>{{ comment.comments }}</p>
+                <p>Esta muy lindo</p>
                 <hr>
                 <a (click)="setActiveSection(i)"><img src="../../../assets/cursos/comentarios.png">Responder</a>
                 <div>

@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'profile-artist', component: ProfileArtistComponent, canActivate: [GuardGuard] },
   { path: 'membership', component: MembershipComponent},
   { path: 'suscription', component: SuscriptionComponent},
-  { path: 'detailsCourse/:idCurso', component: DetailsCourseComponent ,canActivate: [GuardGuard]},
+  { path: 'detailsCourse', component: DetailsCourseComponent ,canActivate: [GuardGuard]},
   { path: 'detailsBriefcase', component: DetailsBriefcaseComponent ,canActivate: [GuardGuard]},
   { path: 'briefcase-project', component: BriefcaseProjectComponent ,canActivate: [GuardGuard]},
   { path: 'membership', component: MembershipComponent},
