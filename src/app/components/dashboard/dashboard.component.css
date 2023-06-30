@@ -520,6 +520,7 @@ main{
   margin: 10px 0;
   height: 80px;
   border: 1px solid #656565;
+  cursor: pointer;
 }
 
 .course img{
