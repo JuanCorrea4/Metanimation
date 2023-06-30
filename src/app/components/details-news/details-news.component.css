@@ -3,7 +3,7 @@ main{
 }
 
 .sectionShortVideo{
-  width: 300px;
+  width: 20%;
   margin-top: 7rem;
 }
 
@@ -35,7 +35,7 @@ main{
 
 
 .sectionNewInfo{
-  width: 45%;
+  width: 60%;
   padding-right: 40px;
   border-right: 2px solid gray;
   margin-top: 7rem;
