@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
       Cedula: ['', Validators.required],
       Nombre: ['', Validators.required],
       Apellido: ['', Validators.required],
-      Celular: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      Celular: ['', Validators.required],
       Email: ['', Validators.required],
       Password: ['', Validators.required],
       Rol: [''],

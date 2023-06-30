@@ -99,6 +99,11 @@ main{
   margin: 20px;
 }
 
+.centerPart > div{
+  z-index: 1;
+  position: inherit;
+}
+
 .centerPart .imageBackground{
   width: 100%;
   height: 100%;
@@ -187,7 +192,7 @@ main{
 }
 
 .categoryAndTitle p{
-  font-size: 28pt;
+  font-size: 22pt;
 }
 
 .buttonsEnd{

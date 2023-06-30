@@ -2,8 +2,8 @@
 <main>
   <section class="sectionShortVideo">
     <div class="targetVideo">
-      <iframe [src]="safeUrl"></iframe>
-      <p class="titleVideo">Este es un ejemplo de un titulo para una tarjeta</p>
+      <iframe [src]=""></iframe>
+      <p class="titleVideo">{{news.Description}}</p>
     </div>
 
   </section>
@@ -38,7 +38,7 @@
       </div>
       <hr>
     </div>
-    <div class="othersCommentarys">
+    <!-- <div class="othersCommentarys">
       <div class="comment">
         <p class="userName">Usuario x : <span>Hagalo reaaaaaaalAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span></p>
       </div>
@@ -49,7 +49,7 @@
         <i class="fa-solid fa-comments commentaryIcon"></i> 
         <button>Ver todos los comentario(27)</button>
       </div>
-    </div>
+    </div> -->
     <div class="interactionNew">
       <button class="save" ><i class="fa-solid fa-bookmark"></i></button>
       <button class="share" ><i class="fa-solid fa-share"></i></button>
@@ -64,8 +64,6 @@
     <div class="containerNav">
       <ul class="navPodcast">
         <li class="selected">Popular</li>
-        <li>Reciente</li>
-        <li>Tendencia</li>
       </ul>
     </div>
     <div class="containerPodcast" id="containerPodcast">
@@ -76,15 +74,15 @@
         <div class="informationPodcast">
           <p class="titlePodcast">{{dataPodcast.entity.data.name}}</p>
         </div>
-        <div class="duration">
+        <!-- <div class="duration">
           <p>2:25</p>
-        </div>
+        </div> -->
         <div class="audioItem">
         </div>
       </div>
     </div>
     <div class="bannerAdvertising">
-      <img src="../../../assets/details news/banner ejemplo.avif" alt="">
+      <img src="../../../assets/detailsNews/banner ejemplo.avif" alt="">
     </div>
   </section>
 </main>
