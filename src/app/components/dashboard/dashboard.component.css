@@ -477,6 +477,11 @@ main{
   margin: 20px;
 }
 
+.titleCourseP{
+  font-weight: 600;
+  font-size: 18pt;
+}
+
 .titleCourse button{
   border-radius: 1rem;
   height: 50px;
@@ -515,6 +520,7 @@ main{
   margin: 10px 0;
   height: 80px;
   border: 1px solid #656565;
+  cursor: pointer;
 }
 
 .course img{
@@ -553,3 +559,5 @@ app-filter-dashboard{
 app-load-course{
   width: 80%;
 }
+
+

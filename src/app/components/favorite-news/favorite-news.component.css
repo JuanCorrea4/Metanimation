@@ -114,9 +114,11 @@ a{
     background-color: rgba(0, 0, 0, 0.649);
     z-index: 5;
     position: relative;
-    height: 65%;
+    height: 62%;
     border-radius: 0 0 15px 15px;
     margin-top: 3%;
+    display: flex;
+    flex-direction: column;
 }
 .new-conteiner > section > section > h4{
     margin: 5% 5% 0 5%;
@@ -134,7 +136,11 @@ a{
     border-radius: 15px;
     background-color:rgba(179, 179, 179, 0.384) ;
     border: none;
-    height: 205;
+    padding: 9px;
+    width: 105px;
+    position: absolute;
+    right: 35px;
+    bottom: 10px;
 }
 .new-conteiner > div > section > section > button > img{
     object-fit: contain;
@@ -196,6 +202,7 @@ a{
     margin: 2% 0 0 85%;
     background-color:rgba(26, 26, 26, 0.692);
     border-radius: 15px;
+    padding: 3px;
 }
 .new-conteiner > div > section > button{
     display: inline-block;
