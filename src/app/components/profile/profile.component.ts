@@ -69,16 +69,17 @@ export class ProfileComponent implements OnInit {
         id: this.userId,
         token: this.token,
         nameTools: this.tools.split(',').map(tool => tool.trim())
-      };      
+      };   
   
       console.log('Enviando detalles al servidor:', userTools);
   
       this.usuario.insertToolsUsers(this.userId, userTools, this.token)
-        .then(() => {
+        .then(() => {          
           // Manejar la respuesta del servidor si es necesario
           // Realizar acciones adicionales después de enviar los datos
         })
         .catch(error => {
+          console.log("ERROR", error); 
           // Manejar el error si ocurriera
         });
     } 

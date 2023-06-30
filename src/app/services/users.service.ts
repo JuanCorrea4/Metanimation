@@ -7,8 +7,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class UsersService {
-//private apiUrl = 'https://metanimation-back.onrender.com/Api'; 
-private apiUrl = 'http://localhost:5000/api'; // URL base de la API
+private apiUrl = 'https://metanimation-back.onrender.com/api'; 
+//private apiUrl = 'http://localhost:5000/api'; // URL base de la API
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +20,7 @@ private apiUrl = 'http://localhost:5000/api'; // URL base de la API
   insertdetailsUsers(id: string, details: any, token: string) {
     console.log('Datos enviados al servidor:', details);
 
-    const url = `${this.apiUrl}/users/InsertDetails/${id}`;
+    const url = `${this.apiUrl}/Users/InsertDetails/${id}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': token
@@ -42,7 +42,7 @@ private apiUrl = 'http://localhost:5000/api'; // URL base de la API
   insertToolsUsers(id: string, userTools: any, token: string) {
     console.log('Datos enviados al servidor:', userTools);
 
-    const url = `${this.apiUrl}/users/InsertTools/${id}`;
+    const url = `${this.apiUrl}/Users/InsertTools/${id}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': token
@@ -59,7 +59,7 @@ private apiUrl = 'http://localhost:5000/api'; // URL base de la API
       });
   }
   obtenernamePerson(userId: string): Observable<any[]> {
-    const url = `${this.apiUrl}/users/${userId}`;
+    const url = `${this.apiUrl}/Users/${userId}`;
     return this.http.get<any[]>(url);
   }
     ////////////////PROYECTO////////////////////
